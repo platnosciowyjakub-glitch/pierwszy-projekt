@@ -42,6 +42,22 @@
     li.done span { text-decoration: line-through; opacity: .5; }
     li button { background: transparent; color: #f87171; padding: 4px 8px; font-size: 18px; }
     #quote { font-style: italic; min-height: 48px; }
+
+    /* Tęczowy guzik: animacja płynnie zmienia kolor tła i poświaty */
+    #rainbow {
+      font-size: 20px; padding: 16px 28px; color: #fff;
+      animation: rainbow 4s linear infinite;
+    }
+    #rainbow.paused { animation-play-state: paused; }
+    @keyframes rainbow {
+      0%   { background: #ef4444; box-shadow: 0 0 24px #ef4444; }
+      17%  { background: #f97316; box-shadow: 0 0 24px #f97316; }
+      33%  { background: #eab308; box-shadow: 0 0 24px #eab308; }
+      50%  { background: #22c55e; box-shadow: 0 0 24px #22c55e; }
+      67%  { background: #3b82f6; box-shadow: 0 0 24px #3b82f6; }
+      83%  { background: #a855f7; box-shadow: 0 0 24px #a855f7; }
+      100% { background: #ef4444; box-shadow: 0 0 24px #ef4444; }
+    }
   </style>
 </head>
 <body>
@@ -52,7 +68,11 @@
     <div id="count">0</div>
     <button id="btn">Kliknij mnie</button>
     <p><small id="time"></small></p>
-    <span class="badge">wersja 2</span>
+    <span class="badge">wersja 3</span>
+
+    <hr>
+    <button id="rainbow">🌈 Tęczowy guzik</button>
+    <p><small id="rainbow-info">Kliknij, żeby zatrzymać kolory</small></p>
 
     <hr>
     <h2>📝 Lista zadań</h2>
@@ -102,6 +122,13 @@
       document.getElementById('todo-info').textContent =
         todos.length ? `Do zrobienia: ${left} z ${todos.length}` : 'Brak zadań. Dodaj coś!';
     }
+
+    // Tęczowy guzik: kliknięcie zatrzymuje / wznawia zmianę kolorów
+    document.getElementById('rainbow').addEventListener('click', e => {
+      const paused = e.currentTarget.classList.toggle('paused');
+      document.getElementById('rainbow-info').textContent =
+        paused ? 'Zatrzymane. Kliknij, żeby wznowić' : 'Kliknij, żeby zatrzymać kolory';
+    });
 
     document.getElementById('todo-form').addEventListener('submit', e => {
       e.preventDefault();
