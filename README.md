@@ -1,8 +1,19 @@
-# Testujemy czy to działa
+# Gwiazdka
 
-Prosta strona testowa (`index.html`) do sprawdzenia, czy działa praca w repo i deploy na Vercelu.
+Spokojny planner świąteczny. Na razie: strona główna z zapisami przed premierą.
 
-## Deploy na Vercel
-1. Wejdź na https://vercel.com/new
-2. Zaimportuj to repozytorium z GitHuba
-3. Framework Preset: **Other** (bez komendy build) → **Deploy**
+## Gdzie co zmieniać
+- **Teksty strony:** `content/landing.ts`
+- **Przełącznik premiery, adresy, ceny:** `config/site.ts`
+- **Kolory, czcionki, zaokrąglenia:** `app/globals.css` (sekcja `@theme`)
+- **Zapis adresów e-mail (miejsce na podłączenie usługi):** `lib/subscribers.ts`
+
+## Uruchomienie na komputerze
+```
+npm install
+npm run dev
+```
+Potem otwórz http://localhost:3000
+
+## Wdrożenie
+Vercel, Framework Preset: **Next.js**.

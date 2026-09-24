@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+/* Wygląd całej strony w jednym miejscu: kolory, czcionki, zaokrąglenia, cienie. */
+@theme {
+  --color-cream: #fbf6ee;
+  --color-sand: #f4ecdf;
+  --color-sand-deep: #ebe0cf;
+  --color-spruce: #1f3a2e;
+  --color-moss: #5b6b61;
+  --color-cranberry: #a8443a;
+  --color-cranberry-deep: #8f3930;
+  --color-gold: #c9a15b;
+  --color-gold-text: #8a6a2f;
+
+  --font-serif: var(--font-fraunces), Georgia, serif;
+  --font-sans: var(--font-nunito), system-ui, sans-serif;
+
+  --radius-soft: 1rem;
+  --radius-card: 1.5rem;
+  --radius-phone: 2.5rem;
+
+  --shadow-soft: 0 1px 2px rgb(31 58 46 / 0.04), 0 8px 24px -6px rgb(31 58 46 / 0.1);
+  --shadow-lifted: 0 2px 4px rgb(31 58 46 / 0.04), 0 24px 48px -12px rgb(31 58 46 / 0.18);
+
+  --ease-calm: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  html {
+    font-size: 112.5%; /* 18 px */
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    background: var(--color-cream);
+    color: var(--color-spruce);
+    font-family: var(--font-sans);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: clip;
+  }
+  h1, h2, h3 {
+    font-family: var(--font-serif);
+    font-optical-sizing: auto;
+    font-variation-settings: "SOFT" 60;
+    font-weight: 500;
+    text-wrap: balance;
+  }
+  p { text-wrap: pretty; }
+  ::selection { background: rgb(201 161 91 / 0.35); }
+  :focus-visible {
+    outline: 2px solid var(--color-cranberry);
+    outline-offset: 3px;
+    border-radius: 0.5rem;
+  }
+}
+
+/* Łagodne pojawianie się elementów przy wejściu na stronę */
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: none; }
+}
+.rise-in {
+  animation: rise-in 900ms var(--ease-calm) both;
+  animation-delay: var(--delay, 0ms);
+}
+
+/* Bardzo delikatny, złoty „śnieg” w pierwszej sekcji */
+@keyframes drift {
+  from { transform: translate3d(0, -10vh, 0); opacity: 0; }
+  10% { opacity: var(--flake-opacity, 0.5); }
+  90% { opacity: var(--flake-opacity, 0.5); }
+  to { transform: translate3d(var(--sway, 20px), 105vh, 0); opacity: 0; }
+}
+.flake {
+  animation: drift var(--duration, 22s) linear infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+/* Migocące światełko przy gwiazdce */
+@keyframes glow {
+  0%, 100% { opacity: 0.55; }
+  50% { opacity: 1; }
+}
+.glow { animation: glow 4s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .rise-in, .glow { animation: none; }
+  .flake { display: none; }
+  *, *::before, *::after { transition-duration: 0.01ms !important; }
+}
