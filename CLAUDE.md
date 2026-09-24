@@ -40,7 +40,7 @@ Etap 1: **tylko strona główna (landing page)**, na razie jako strona przedprem
 („Zapisz się – damy znać, gdy ruszymy”). Po premierze jeden przełącznik w konfiguracji zmienia ją
 w stronę sprzedażową z przyciskiem „Zacznij za darmo”. Nie buduj jeszcze aplikacji (konta, prezenty, zadania).
 
-Stan: plan zaakceptowany. Gotowy pierwszy ekran (hero) z formularzem zapisu. Kolejne sekcje dopiero po akceptacji hero przez właściciela.
+Stan: cała strona główna zbudowana (hero, problemy, co dostajesz z podglądami ekranów, rodzina, pakiety, pytania, zakończenie, stopka) plus proste strony „Wkrótce”. Zawartość pakietów to wstępna propozycja — do potwierdzenia przez właściciela. Strona ma jasno pokazywać, co oferujemy i jakie problemy rozwiązujemy, a nie tylko chwytliwe hasła.
 
 ## Najważniejsza zasada: ukojenie
 Przytulnie, ciepło, łatwo, bez przepychu. Ciepłe światło, koc, kubek herbaty, cichy grudniowy wieczór.

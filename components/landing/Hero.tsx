@@ -5,6 +5,7 @@ import { buttonClass } from "@/components/ui/Button";
 import { SignupForm } from "@/components/landing/SignupForm";
 import { PhonePreview } from "@/components/landing/PhonePreview";
 import { Snowfall } from "@/components/landing/Snowfall";
+import { Star } from "@/components/illustrations/Star";
 
 const t = landing.hero;
 
@@ -29,7 +30,20 @@ export function Hero() {
             {t.subtitle}
           </p>
 
-          <div className="rise-in mt-10" style={{ "--delay": "360ms" } as React.CSSProperties}>
+          <ul
+            aria-label="Co dostajesz"
+            className="rise-in mt-7 flex flex-col gap-2.5 sm:flex-row sm:flex-wrap sm:gap-x-6"
+            style={{ "--delay": "300ms" } as React.CSSProperties}
+          >
+            {t.points.map((point) => (
+              <li key={point} className="flex items-center gap-2.5 font-semibold">
+                <Star className="h-4 w-4 shrink-0 text-gold" />
+                {point}
+              </li>
+            ))}
+          </ul>
+
+          <div className="rise-in mt-10" style={{ "--delay": "400ms" } as React.CSSProperties}>
             {siteConfig.launched ? (
               <>
                 <a href={siteConfig.appUrl} className={buttonClass}>

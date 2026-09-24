@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /* Wygląd całej strony w jednym miejscu: kolory, czcionki, zaokrąglenia, cienie. */
-@theme {
+@theme static {
   --color-cream: #fbf6ee;
   --color-sand: #f4ecdf;
   --color-sand-deep: #ebe0cf;
@@ -88,3 +88,24 @@
   .flake { display: none; }
   *, *::before, *::after { transition-duration: 0.01ms !important; }
 }
+
+/* Sekcje łagodnie wyłaniają się przy przewijaniu (tylko w przeglądarkach, które to umieją;
+   w pozostałych treść jest po prostu widoczna). */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal {
+      animation: rise-in linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 35%;
+    }
+  }
+}
+
+/* Płynne rozwijanie odpowiedzi w pytaniach */
+details::details-content {
+  block-size: 0;
+  overflow-y: clip;
+  transition: block-size 400ms var(--ease-calm), content-visibility 400ms allow-discrete;
+}
+details[open]::details-content { block-size: auto; }
+:root { interpolate-size: allow-keywords; }

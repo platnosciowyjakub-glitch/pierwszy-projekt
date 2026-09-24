@@ -13,7 +13,21 @@ export const siteConfig = {
 
   // Adres strony w internecie (do podglądu przy udostępnianiu linku).
   // Po podpięciu domeny wpisz ją tutaj, np. "https://gviazdka.pl".
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
+  // Bez wpisu Vercel sam podstawi swój adres.
+  url:
+    process.env.NEXT_PUBLIC_SITE_URL ??
+    (process.env.VERCEL_PROJECT_PRODUCTION_URL
+      ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+      : "http://localhost:3000"),
+
+  // Ceny pakietów. Wpisz np. "19 zł" i zapisz. Puste ("") = na stronie pokaże się „Cena wkrótce”.
+  // Dopisek pod ceną, np. "za cały sezon", wpisz w priceNote.
+  prices: {
+    darmowy: "0 zł",
+    podstawowy: "",
+    rodzinny: "",
+  },
+  priceNote: "",
 
   links: {
     privacy: "/polityka-prywatnosci",
