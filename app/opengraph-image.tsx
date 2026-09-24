@@ -33,7 +33,7 @@ export default async function OpengraphImage() {
           <svg width="44" height="44" viewBox="0 0 24 24">
             <path d={STAR_PATH} fill="#C9A15B" stroke="#C9A15B" strokeWidth="1.6" strokeLinejoin="round" />
           </svg>
-          Gwiazdka
+          Gviazdka
         </div>
         <div style={{ marginTop: 56, fontFamily: "Fraunces", fontSize: 88, lineHeight: 1.05, letterSpacing: -2 }}>
           {landing.hero.title}

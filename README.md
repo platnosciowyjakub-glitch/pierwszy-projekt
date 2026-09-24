@@ -1,4 +1,4 @@
-# Gwiazdka
+# Gviazdka
 
 Spokojny planner świąteczny. Na razie: strona główna z zapisami przed premierą.
 

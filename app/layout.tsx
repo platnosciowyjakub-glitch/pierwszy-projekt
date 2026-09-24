@@ -42,6 +42,7 @@ const structuredData = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
   name: siteConfig.name,
+  alternateName: ["Gwiazdka", "Gviazdka – planer świąteczny"],
   description: landing.meta.description,
   url: siteConfig.url,
   applicationCategory: "LifestyleApplication",

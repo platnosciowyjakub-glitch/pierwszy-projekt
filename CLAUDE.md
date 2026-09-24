@@ -15,10 +15,11 @@ Rozmawiaj z nim po polsku.
 - Zapisuj postęp w git z czytelnymi opisami zmian (po polsku).
 - Przy wyglądzie i animacjach korzystaj ze skilla `.claude/skills/apple-design`.
 
-# Projekt: Gwiazdka
+# Projekt: Gviazdka
 
 Świąteczny planner (aplikacja webowa), który daje ludziom spokój w najbardziej zabieganym okresie roku.
 Rynek: Polska, język polski. Mówimy do użytkownika na „Ty”.
+Nazwa pisana przez „v”: **Gviazdka** (odmiana: Gviazdki, Gviazdkę). Nie „Gwiazdka”.
 
 - **Dla kogo:** dla każdego, kto przeżywa święta — nastolatek kupujący prezenty, rodzic ogarniający
   porządki, osoba jadąca na święta do rodziny. Nie tylko dla organizatorów.
@@ -57,7 +58,7 @@ Nie jarmark, nie reklama, nie kicz.
 - Akcent `#A8443A` (żurawina) — przyciski i najważniejsze elementy.
 - Złoto `#C9A15B` — tylko ozdoby (za mały kontrast na tekst; na złoty tekst użyj `#8A6A2F`).
 - Nagłówki: Fraunces. Tekst: Nunito Sans. Obie z polskimi znakami. Tekst min. 18 px, wysoka interlinia.
-- Logo: napis „Gwiazdka” (Fraunces) + mała złota gwiazdka SVG (też jako favicon i ikona aplikacji).
+- Logo: napis „Gviazdka” (Fraunces) + mała złota gwiazdka SVG (też jako favicon i ikona aplikacji).
 
 ## Technika
 - Next.js (App Router) + TypeScript + Tailwind CSS, wdrożenie na Vercel.
@@ -68,6 +69,9 @@ Nie jarmark, nie reklama, nie kicz.
   kontrast min. 4.5:1, klawiatura, teksty alternatywne, `lang="pl"`.
 - Czcionki przez `next/font`, lekkie SVG zamiast ciężkich obrazów.
 - SEO: tytuł, opis, Open Graph, favicon, dane strukturalne.
+  Główne hasło: „Twoje spokojne święta”. Frazy do wplatania naturalnie w teksty sekcji:
+  „planer świąteczny”, „spokojne święta”, „lista prezentów”, „porządki przed świętami”,
+  „lista pakowania na święta”, „przygotowania do świąt”. Pisz „planer” (poprawna polska forma), nie „planner”.
 - Formularz zapisu: walidacja e-maila, stan ładowania, ciepłe podziękowanie bez przeładowania,
   przyjazny błąd, checkbox zgody (RODO) z linkiem do polityki prywatności, ukryte pole „honeypot”.
   Zapis przez funkcję serwerową z miejscem na podłączenie usługi.

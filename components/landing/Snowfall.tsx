@@ -1,17 +1,28 @@
-// Kilka drobnych, złotych płatków, które bardzo powoli opadają w tle.
+// Drobne, złote płatki, które bardzo powoli opadają w tle.
 // Przy włączonym „ograniczeniu ruchu” w systemie w ogóle się nie pokazują (globals.css).
 
-const flakes = [
-  { left: 6, size: 5, duration: 26, delay: -3, sway: 18, opacity: 0.45 },
-  { left: 17, size: 3, duration: 32, delay: -18, sway: -14, opacity: 0.35 },
-  { left: 29, size: 4, duration: 28, delay: -9, sway: 22, opacity: 0.4 },
-  { left: 41, size: 3, duration: 35, delay: -24, sway: -20, opacity: 0.3 },
-  { left: 53, size: 5, duration: 30, delay: -14, sway: 16, opacity: 0.4 },
-  { left: 64, size: 3, duration: 27, delay: -2, sway: -18, opacity: 0.35 },
-  { left: 75, size: 4, duration: 33, delay: -20, sway: 20, opacity: 0.45 },
-  { left: 86, size: 3, duration: 29, delay: -11, sway: -16, opacity: 0.3 },
-  { left: 94, size: 5, duration: 36, delay: -27, sway: 14, opacity: 0.4 },
-];
+// Ile płatków ma padać. Więcej = gęstszy śnieg.
+const FLAKE_COUNT = 22;
+
+// Stały „los”, żeby płatki za każdym razem układały się tak samo (bez migania przy ładowaniu).
+function seeded(n: number) {
+  const x = Math.sin(n * 9301 + 49297) * 233280;
+  return x - Math.floor(x);
+}
+
+const flakes = Array.from({ length: FLAKE_COUNT }, (_, i) => {
+  const r = (k: number) => seeded(i * 7 + k);
+  const depth = r(1); // 0 = daleko (małe, blade, wolne), 1 = blisko (większe, wyraźniejsze)
+  return {
+    left: ((i + r(2) * 0.8) / FLAKE_COUNT) * 100,
+    size: 3 + depth * 4,
+    duration: 38 - depth * 16,
+    delay: -r(3) * 38,
+    sway: (r(4) - 0.5) * 60,
+    opacity: 0.3 + depth * 0.35,
+    blur: depth > 0.8 ? 1 : 0,
+  };
+});
 
 export function Snowfall() {
   return (
@@ -22,13 +33,14 @@ export function Snowfall() {
           className="flake absolute top-0 rounded-full bg-gold"
           style={
             {
-              left: `${f.left}%`,
-              width: f.size,
-              height: f.size,
-              "--duration": `${f.duration}s`,
-              "--delay": `${f.delay}s`,
-              "--sway": `${f.sway}px`,
-              "--flake-opacity": f.opacity,
+              left: `${f.left.toFixed(2)}%`,
+              width: f.size.toFixed(1) + "px",
+              height: f.size.toFixed(1) + "px",
+              filter: f.blur ? "blur(1px)" : undefined,
+              "--duration": `${f.duration.toFixed(1)}s`,
+              "--delay": `${f.delay.toFixed(1)}s`,
+              "--sway": `${f.sway.toFixed(0)}px`,
+              "--flake-opacity": f.opacity.toFixed(2),
             } as React.CSSProperties
           }
         />

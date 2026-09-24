@@ -51,7 +51,7 @@ export function PhonePreview() {
         </div>
       </div>
       <figcaption className="sr-only">
-        Podgląd aplikacji Gwiazdka: listy prezentów, zadań rodzinnych i pakowania z postępem.
+        Podgląd aplikacji Gviazdka: listy prezentów, zadań rodzinnych i pakowania z postępem.
       </figcaption>
     </figure>
   );

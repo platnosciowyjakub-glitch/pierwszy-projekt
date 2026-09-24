@@ -1,7 +1,7 @@
 // Ustawienia strony. Tutaj zmieniasz rzeczy, które nie są tekstami.
 
 export const siteConfig = {
-  name: "Gwiazdka",
+  name: "Gviazdka",
 
   // Przełącznik premiery:
   //   false = strona przedpremierowa (formularz „Zapisz się”)
@@ -12,7 +12,7 @@ export const siteConfig = {
   appUrl: "/aplikacja",
 
   // Adres strony w internecie (do podglądu przy udostępnianiu linku).
-  // Po podpięciu domeny wpisz ją tutaj, np. "https://gwiazdka.pl".
+  // Po podpięciu domeny wpisz ją tutaj, np. "https://gviazdka.pl".
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
 
   links: {
