@@ -16,4 +16,4 @@ npm run dev
 Potem otwórz http://localhost:3000
 
 ## Wdrożenie
-Vercel, Framework Preset: **Next.js**.
+Vercel. Rodzaj projektu (Next.js) jest ustawiony w `vercel.json`, więc w panelu Vercela nie trzeba nic zmieniać.
