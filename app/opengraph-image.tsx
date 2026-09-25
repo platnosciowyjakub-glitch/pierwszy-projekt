@@ -3,6 +3,7 @@ import { join } from "node:path";
 import { ImageResponse } from "next/og";
 import { landing } from "@/content/landing";
 import { siteConfig } from "@/config/site";
+import { plain } from "@/components/ui/Rich";
 import { STAR_PATH } from "@/components/illustrations/Star";
 
 // Obrazek, który pojawia się przy udostępnianiu linku (Messenger, WhatsApp, Facebook).
@@ -26,7 +27,7 @@ export default async function OpengraphImage() {
           flexDirection: "column",
           justifyContent: "center",
           padding: "0 96px",
-          background: "radial-gradient(circle at 85% 20%, #F3E3C3 0%, #FBF6EE 55%)",
+          background: "radial-gradient(circle at 85% 20%, #F3E3C3 0%, #FFFCF7 55%)",
           color: "#1F3A2E",
         }}
       >
@@ -37,7 +38,7 @@ export default async function OpengraphImage() {
           {siteConfig.name}
         </div>
         <div style={{ marginTop: 56, fontFamily: "Fraunces", fontSize: 88, lineHeight: 1.05, letterSpacing: -2 }}>
-          {landing.hero.title}
+          {plain(landing.hero.title)}
         </div>
         <div style={{ marginTop: 28, fontFamily: "Nunito Sans", fontSize: 32, color: "#5B6B61", maxWidth: 860 }}>
           {landing.hero.subtitle}

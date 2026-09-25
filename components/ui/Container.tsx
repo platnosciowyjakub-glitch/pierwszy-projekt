@@ -1,5 +1,7 @@
 import type { ReactNode } from "react";
 
-export function Container({ children, className = "" }: { children: ReactNode; className?: string }) {
-  return <div className={`mx-auto w-full max-w-6xl px-5 sm:px-8 ${className}`}>{children}</div>;
+// Szerokość treści jak u Zoli: pełna szerokość z marginesem 20 px (telefon) / 40 px (komputer).
+// flush = bez bocznych marginesów (gdy sekcja sama rysuje linie od krawędzi).
+export function Container({ children, className = "", flush = false }: { children: ReactNode; className?: string; flush?: boolean }) {
+  return <div className={`mx-auto w-full max-w-[90rem] ${flush ? "" : "px-5 md:px-10"} ${className}`}>{children}</div>;
 }

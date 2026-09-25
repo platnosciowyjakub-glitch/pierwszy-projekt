@@ -1,5 +1,6 @@
 // Wszystkie teksty strony głównej. Możesz je swobodnie poprawiać.
 // Zmieniaj tylko tekst w cudzysłowach, nie ruszaj nazw przed dwukropkiem.
+// Słowa między gwiazdkami, np. *zaczynają się*, są w nagłówku wyróżnione ozdobnym krojem.
 
 export const landing = {
   meta: {
@@ -9,21 +10,202 @@ export const landing = {
       "Planer świąteczny na spokojne święta: gotowy plan przygotowań do świąt, lista prezentów i zadania z rodziną. Od listopada do Wigilii, bez stresu.",
   },
 
+  // Nawigacja u góry strony. „Panel” pokazuje się po najechaniu myszką.
   nav: {
+    items: [
+      { label: "Kalendarz", href: "#plan", photo: "tile-kalendarz", text: "Twój plan świąt, tydzień po tygodniu, od listopada do Wigilii." },
+      { label: "Prezenty", href: "#prezenty", photo: "tile-prezenty", text: "Pomysły, zakupy i budżet w jednym miejscu. Tylko dla Twoich oczu." },
+      { label: "Rodzina", href: "#rodzina", photo: "tile-rodzina", text: "Wspólne porządki i przygotowania. Każdy wie, co ma zrobić." },
+      { label: "Wigilia", href: "#wigilia", photo: "tile-goscie", text: "Zaproszenia, potwierdzenia i lista gości z dietami." },
+      { label: "Kartki", href: "#szczegoly", photo: "tile-kartki", text: "Życzenia dla każdego, na czas. Z pomocą w pisaniu." },
+    ],
+    panelLink: "Zobacz",
+    pricing: "Cennik",
     signup: "Zapisz się",
+    menu: "Menu",
+    close: "Zamknij menu",
+    mobileExtra: [
+      { label: "Pytania", href: "#pytania" },
+      { label: "Napisz do nas", href: "contact" },
+    ],
   },
 
   hero: {
-    eyebrow: "Planer świąteczny",
-    title: "Twoje spokojne święta.",
-    subtitle:
-      "Gviazdka prowadzi Cię przez przygotowania do świąt krok po kroku, od listopada do Wigilii. Nie zaczynasz od pustej kartki – plan już na Ciebie czeka.",
-    // Trzy rzeczy, które dostajesz (krótko, widoczne od razu na pierwszym ekranie)
-    points: ["Gotowy plan w kalendarzu", "Lista prezentów z budżetem", "Zadania z całą rodziną"],
-    note: "Damy znać, gdy Gviazdka wystartuje. Bez spamu, obiecujemy.",
-    // Używane dopiero po premierze (gdy w config/site.ts jest launched: true)
-    launchedButton: "Zaplanuj spokojne święta",
-    launchedNote: "Wersja darmowa na zawsze. Bez karty, bez zobowiązań.",
+    title: "Spokojne święta *zaczynają się* tutaj",
+    subtitle: "Od listy prezentów po wigilijny stół – Gviazdka jest z Tobą każdego dnia aż do świąt.",
+    secondary: "Zobacz, jak to działa",
+    photoAlt: "Gałązka świerku z czerwonymi owocami na tle ciepłych, rozmytych świateł",
+  },
+
+  // Sekcja z sześcioma kafelkami
+  categories: {
+    title: "Wszystko, czego potrzebujesz do *spokojnych świąt*",
+    subtitle: "Od listopada aż do Wigilii",
+    more: "Dowiedz się więcej",
+    items: [
+      { title: "Kalendarz świąteczny", text: "Wszystko w swoim czasie, bez pośpiechu.", href: "#plan", photo: "tile-kalendarz", alt: "Osoba zapisuje coś w notesie na kanapie", sticker: "Ten tydzień · 3 rzeczy" },
+      { title: "Gotowy plan", text: "Kilkadziesiąt zadań, ułożonych za Ciebie.", href: "#plan", photo: "tile-plan", alt: "Ręka z ołówkiem nad otwartym planerem", sticker: "Plan gotowy" },
+      { title: "Prezenty", text: "Nikt nie zostanie bez prezentu.", href: "#prezenty", photo: "tile-prezenty", alt: "Dłonie trzymające zapakowany prezent", sticker: "Mama · kupione" },
+      { title: "Razem z rodziną", text: "Każdy wie, co ma zrobić.", href: "#rodzina", photo: "tile-rodzina", alt: "Dłonie wykrawające pierniki z ciasta", sticker: "Pierniki · Ola ✓" },
+      { title: "Goście i zaproszenia", text: "Zbierz potwierdzenia, także od babci.", href: "#wigilia", photo: "tile-goscie", alt: "Nakryty stół ze świecami i kieliszkami", sticker: "Babcia · będzie" },
+      { title: "Kartki i życzenia", text: "Ciepłe słowa dla każdego, na czas.", href: "#szczegoly", photo: "tile-kartki", alt: "Kartki świąteczne, herbata i gałązki na stole", sticker: "Wysłane · 12" },
+    ],
+  },
+
+  // Cztery duże sekcje funkcji
+  features: {
+    helpTitle: "Masz pytanie?",
+    helpLink: "Napisz do nas",
+    items: [
+      {
+        id: "plan",
+        label: "Plan świąt",
+        title: "Zobacz swój *plan świąt*",
+        text: "Odpowiedz na 4 pytania, a Gviazdka ułoży Twoje przygotowania w kalendarzu – od listopada do Wigilii. Zawsze wiesz, co warto zrobić w tym tygodniu.",
+        primary: "cta",
+        secondary: { label: "Co jeszcze potrafi", href: "#szczegoly" },
+        photo: "feature-plan",
+        alt: "Dłonie w swetrze trzymające kubek z herbatą",
+      },
+      {
+        id: "prezenty",
+        label: "Prezenty",
+        title: "Prezenty *pod kontrolą*",
+        text: "Pomysły, linki, to, co już kupione, i ile wydałeś – w jednym miejscu. A obdarowany niczego nie podejrzy.",
+        primary: "cta",
+        secondary: { label: "Zobacz cennik", href: "#cennik" },
+        photo: "feature-prezenty",
+        alt: "Mężczyzna pakuje prezenty przy stole",
+      },
+      {
+        id: "rodzina",
+        label: "Razem z rodziną",
+        title: "Cała rodzina *w jednym miejscu*",
+        text: "Zaproś bliskich jednym linkiem – bez instalowania aplikacji. Rozdzielcie porządki i przygotowania, a potem odhaczajcie razem.",
+        primary: "cta",
+        secondary: { label: "Pytania i odpowiedzi", href: "#pytania" },
+        photo: "feature-rodzina",
+        alt: "Babcia i wnuczka razem przygotowują świąteczne wypieki",
+      },
+      {
+        id: "wigilia",
+        label: "Wigilia u Ciebie",
+        title: "Wigilia *u Ciebie*",
+        text: "Wyślij ciepłe zaproszenie i zbierz potwierdzenia. Babcia nie ma smartfona? Potwierdzisz za nią jednym kliknięciem.",
+        primary: "cta",
+        secondary: { label: "Zobacz cennik", href: "#cennik" },
+        photo: "feature-wigilia",
+        alt: "Świątecznie nakryty stół z potrawami",
+      },
+    ],
+  },
+
+  // Interaktywny podgląd powitania (sekcja „plan świąt”)
+  welcome: {
+    step: "Pytanie 1 z 4",
+    question: "Gdzie spędzasz święta?",
+    planTitle: "Twój plan zaczyna się od:",
+    options: [
+      { label: "U siebie", plan: ["Zaproś gości", "Zaplanuj menu", "Porządki przed Wigilią"] },
+      { label: "Jadę do rodziny", plan: ["Lista pakowania", "Prezenty w podróży", "Co przywieźć gospodarzom"] },
+      { label: "Różnie", plan: ["Kalendarz spotkań", "Prezenty", "Lista pakowania"] },
+    ],
+  },
+
+  // Przykładowe dane na makietach ekranów
+  mockups: {
+    gifts: {
+      title: "Prezenty",
+      summary: "Wydane 340 zł z 600 zł",
+      items: [
+        { who: "Mama", what: "Szalik z wełny", status: "kupione" },
+        { who: "Tata", what: "Książka o Tatrach", status: "zapakowane" },
+        { who: "Zosia", what: "Zestaw do malowania", status: "pomysł" },
+      ],
+      privacy: "Widzisz tylko Ty",
+    },
+    family: {
+      title: "Porządki przed Wigilią",
+      items: [
+        { task: "Umyć okna", who: ["K"], names: "Kasia", done: true },
+        { task: "Choinka", who: ["T"], names: "Tomek", done: false },
+        { task: "Pierogi", who: ["B", "O"], names: "Babcia i Ola", done: false },
+      ],
+      packingTitle: "Pakowanie",
+      packing: [
+        { item: "Prezenty", done: true },
+        { item: "Ładowarki", done: false },
+      ],
+    },
+    invitation: {
+      label: "Zaproszenie",
+      title: "Wigilia u Kowalskich",
+      date: "24 grudnia, 17:00",
+      address: "ul. Świerkowa 5, Kraków",
+      yes: "Będę",
+      no: "Nie dam rady",
+      guestsTitle: "Goście · 8 osób",
+      guests: [
+        { name: "Babcia Hela", note: "potwierdzone za nią", diet: "" },
+        { name: "Ania i Marek", note: "będą", diet: "bez glutenu" },
+        { name: "Wujek Staszek", note: "czekamy", diet: "" },
+      ],
+    },
+  },
+
+  // „Gviazdka tkwi w szczegółach”
+  details: {
+    title: "Gviazdka *tkwi w szczegółach*",
+    items: [
+      { id: "sekret", title: "Prezenty w sekrecie", text: "Obdarowany nie zobaczy, co dla niego szykujesz – nawet jeśli jest w tej samej rodzinie w Gviazdce." },
+      { id: "babcia", title: "Babcia też się liczy", text: "Nie każdy ma smartfona. Dodasz gościa ręcznie i potwierdzisz obecność za niego." },
+      { id: "plan", title: "Plan zamiast pustej kartki", text: "Gotowe zadania w polskich realiach: od listy prezentów po sianko pod obrusem." },
+      { id: "link", title: "Bez instalowania", text: "Rodzina dołącza z linku wysłanego SMS-em, na WhatsAppie albo mailem." },
+      { id: "zyczenia", title: "Pomoc w życzeniach", text: "Podpowiemy ciepłe słowa do kartek i pomysły na prezenty dla każdego." },
+    ],
+    panels: {
+      sekret: { title: "Prezent dla Mamy", line: "Szalik z wełny · 120 zł", badge: "Widzisz tylko Ty", hidden: "Mama widzi: nic tu nie ma" },
+      babcia: { name: "Babcia Hela", status: "Czekamy na odpowiedź", button: "Potwierdź za babcię", done: "Potwierdzone" },
+      plan: { title: "Gotowy plan", rows: [["Listopad", "Lista osób do obdarowania"], ["Początek grudnia", "Kartki i życzenia"], ["2 tygodnie przed", "Okna i zamówienie karpia"], ["23 grudnia", "Pierogi i uszka"], ["24 grudnia", "Sianko pod obrusem"]] },
+      link: { title: "Dołącz do listy rodziny", url: "gviazdka.pl/r/kowalscy", button: "Otwórz w przeglądarce", note: "Bez instalowania, bez konta" },
+      zyczenia: { for: "Dla: Babcia Hela", tones: ["ciepłe", "zabawne", "oficjalne"], text: "Kochana Babciu, dziękujemy, że przy Twoim stole zawsze jest miejsce dla każdego. Zdrowych, spokojnych świąt." },
+    },
+  },
+
+  // Sekcja wsparcia (ciemna)
+  support: {
+    title: "Masz pytanie? *Jesteśmy tu*, żeby pomóc.",
+    text: "Napisz do nas – odpowiadamy po ludzku, bez automatów.",
+    button: "Napisz do nas",
+    photoAlt: "Kobieta siedzi przy oknie w ciepłym świetle",
+    bubbles: ["Kiedy najlepiej zamówić karpia?", "Około dwóch tygodni przed Wigilią. Dodamy to do Twojego planu."],
+  },
+
+  pricingSection: {
+    title: "Zacznij *za darmo*. Więcej, gdy zechcesz.",
+    subtitle: "Ceny ogłosimy przed startem. Wersja darmowa zostanie z Tobą na zawsze.",
+    button: "Zapisz się",
+    featuredTag: "Dla całej rodziny",
+  },
+
+  faq: {
+    title: "Zanim *zapytasz*",
+    items: [
+      { q: "Kiedy Gviazdka wystartuje?", a: "W listopadzie 2026. Zapisz się, a damy znać." },
+      { q: "Czy muszę coś instalować?", a: "Nie, Gviazdka działa w przeglądarce na telefonie i komputerze. Jeśli chcesz, dodasz ją do ekranu głównego telefonu." },
+      { q: "Czy rodzina musi zakładać konta?", a: "Nie. Wystarczy link, który im wyślesz." },
+      { q: "Czy ktoś zobaczy prezenty, które dla niego planuję?", a: "Nie. Swoje prezenty widzisz tylko Ty." },
+      { q: "A jeśli babcia nie ma smartfona?", a: "Dodasz ją ręcznie i potwierdzisz obecność za nią." },
+      { q: "Ile to kosztuje?", a: "Będzie wersja darmowa. Ceny pakietów ogłosimy przed startem." },
+    ],
+  },
+
+  // Zamknięcie z formularzem zapisu
+  closing: {
+    title: "Zrób sobie w tym roku *prezent: spokój*.",
+    text: "Zapisz się na listę oczekujących. Napiszemy, gdy Gviazdka będzie gotowa – w listopadzie, z zapasem przed świętami.",
+    launchedText: "Gviazdka już działa. Zacznij od czterech krótkich pytań.",
+    photoAlt: "Ciepłe, złote światełka choinkowe",
   },
 
   signup: {
@@ -31,6 +213,7 @@ export const landing = {
     emailPlaceholder: "np. ania@poczta.pl",
     button: "Zapisz się",
     buttonLoading: "Zapisuję…",
+    note: "Bez spamu, obiecujemy. Jedna wiadomość, gdy ruszymy.",
     consent: "Zgadzam się na wiadomości o starcie Gviazdki. Zasady opisujemy w",
     consentLink: "polityce prywatności",
     errors: {
@@ -45,246 +228,24 @@ export const landing = {
     },
   },
 
-  // Przykładowe dane na ekranie telefonu w pierwszej sekcji
-  phone: {
-    greeting: "Dobry wieczór, Ania",
-    date: "Wtorek, 9 grudnia",
-    lists: [
-      { name: "Plan na ten tydzień", done: 3, total: 5, hint: "Wysłać kartki świąteczne" },
-      { name: "Prezenty", done: 5, total: 8, hint: "Szalik dla mamy – kupione" },
-      { name: "Zadania rodzinne", done: 4, total: 7, hint: "Umyć okna – Kasia" },
-    ],
-    footer: "Zostało kilka drobnych rzeczy. Dasz radę.",
-  },
-
-  // Sekcja 2: problemy, które rozwiązujemy
-  problems: {
-    eyebrow: "Znasz to?",
-    title: "Grudzień potrafi przytłoczyć. Gviazdka pomaga to poukładać.",
-    items: [
-      {
-        icon: "calendar",
-        question: "Od czego w ogóle zacząć?",
-        answer: "Od gotowego planu. Gviazdka ułożyła przygotowania za Ciebie, Ty tylko dopasowujesz i odhaczasz.",
-      },
-      {
-        icon: "gift",
-        question: "Co ja kupię i komu?",
-        answer: "Wszystkie pomysły na prezenty w jednym miejscu. Widzisz, co już kupione, a co jeszcze czeka.",
-      },
-      {
-        icon: "home",
-        question: "Kto miał posprzątać?",
-        answer: "Zaproś rodzinę, rozdzielcie zadania i odhaczajcie je razem.",
-      },
-    ],
-  },
-
-  // Sekcja 3: jak to działa
-  steps: {
-    eyebrow: "Jak to działa",
-    title: "Trzy kroki do spokojnych świąt.",
-    items: [
-      {
-        title: "Odpowiadasz na 4 pytania",
-        text: "Gdzie spędzasz święta, dla ilu osób kupujesz prezenty i czy planujesz z rodziną.",
-      },
-      {
-        title: "Dostajesz gotowy plan",
-        text: "Gviazdka układa przygotowania od listopada do Wigilii, dopasowane do Ciebie.",
-      },
-      {
-        title: "Odhaczasz w swoim tempie",
-        text: "Samodzielnie albo razem z bliskimi. Wszystko możesz zmienić, przesunąć, dopisać.",
-      },
-    ],
-  },
-
-  // Sekcja 4: najważniejsze funkcje (z podglądem ekranów)
-  features: {
-    eyebrow: "Co znajdziesz w Gviazdce",
-    title: "Jedno miejsce zamiast karteczek, notatek i czatów.",
-    items: [
-      {
-        id: "plan",
-        name: "Kalendarz i gotowy plan",
-        title: "Przygotowania do świąt, rozpisane za Ciebie",
-        text: "Po otwarciu widzisz tylko ten tydzień: co spokojnie ogarnąć w najbliższych dniach. Reszta czeka na swoją kolej.",
-        points: [
-          "Gotowy plan przygotowań oparty na polskich tradycjach",
-          "Twoje wydarzenia: Mikołajki, jasełka, wyjazd, Wigilia",
-          "Zadania z prezentów i rodziny w jednym kalendarzu",
-          "Delikatne przypomnienia, bez poganiania",
-        ],
-      },
-      {
-        id: "prezenty",
-        name: "Lista prezentów",
-        title: "Prezenty bez zgadywania",
-        text: "Zapisujesz, komu chcesz coś dać, i zbierasz pomysły wcześniej. W grudniu nic nie umyka.",
-        points: [
-          "Osoby, pomysły, rozmiary i linki do sklepów",
-          "Status: pomysł, kupione, zapakowane, wręczone",
-          "Podsumowanie „ile wydałem” w złotówkach",
-          "Tylko Ty widzisz swoje prezenty",
-        ],
-      },
-      {
-        id: "rodzina",
-        name: "Zadania z rodziną",
-        title: "Porządki przed świętami, podzielone po równo",
-        text: "Jedna wspólna lista dla całego domu. Każdy wie, co ma zrobić, i nikt nie musi przypominać.",
-        points: [
-          "Przydzielasz zadanie konkretnej osobie",
-          "Bliscy dołączają przez link, bez instalowania",
-          "Widać postęp całej rodziny",
-        ],
-      },
-    ],
-  },
-
-  // Sekcja 5: pozostałe funkcje, w skrócie
-  extras: {
-    eyebrow: "I wszystko, czego potrzebują święta",
-    title: "Różnica jest w szczegółach.",
-    items: [
-      { icon: "suitcase", title: "Lista pakowania", text: "Gotowa lista na świąteczny wyjazd. Ładowarki, prezenty, leki – nic nie zostaje w domu." },
-      { icon: "envelope", title: "Goście i zaproszenia", text: "Ładne zaproszenie wysłane linkiem. Goście potwierdzają obecność bez zakładania konta." },
-      { icon: "card", title: "Kartki i życzenia", text: "Lista osób, którym składasz życzenia, i spokój, że nikogo nie pominiesz." },
-      { icon: "sparkle", title: "Pomoc w pomysłach", text: "Opisz osobę, a podpowiemy prezent. Pomożemy też napisać ciepłe życzenia." },
-      { icon: "bell", title: "Odliczanie do Wigilii", text: "Łagodne przypomnienia w stylu: „Na ten tydzień zostały 3 drobne rzeczy.”" },
-      { icon: "phone", title: "Bez instalowania", text: "Działa w przeglądarce na telefonie i komputerze. Możesz dodać ją do ekranu głównego." },
-    ],
-  },
-
-  // Przykładowe dane na ekranach telefonów w sekcji 4
-  screens: {
-    plan: {
-      title: "Ten tydzień",
-      subtitle: "15–21 grudnia",
-      items: [
-        { task: "Umyć okna", meta: "Kasia · pon", done: true },
-        { task: "Zamówić karpia", meta: "wt", done: true },
-        { task: "Jasełka u Zosi", meta: "czw, 17:00", done: false, event: true },
-        { task: "Zapakować prezenty", meta: "pt", done: false },
-        { task: "Kupić choinkę", meta: "Tata · sob", done: false },
-      ],
-      footer: "Na ten tydzień zostały 3 drobne rzeczy.",
-    },
-    gifts: {
-      title: "Prezenty",
-      summaryLabel: "Wydane",
-      summary: "340 zł z 600 zł",
-      people: [
-        { name: "Mama", gift: "Szalik z wełny", status: "kupione", price: "120 zł" },
-        { name: "Tata", gift: "Książka o Tatrach", status: "pomysł", price: "" },
-        { name: "Kasia", gift: "Zestaw do kawy", status: "zapakowane", price: "140 zł" },
-        { name: "Babcia", gift: "Ciepłe kapcie", status: "kupione", price: "80 zł" },
-      ],
-    },
-    tasks: {
-      title: "Zadania rodzinne",
-      subtitle: "Dom · 4 osoby · 2 z 5",
-      items: [
-        { task: "Umyć okna", who: "Kasia", done: true },
-        { task: "Upiec pierniki", who: "Mama", done: true },
-        { task: "Kupić choinkę", who: "Tata", done: false },
-        { task: "Posprzątać przedpokój", who: "Ty", done: false },
-        { task: "Odebrać karpia", who: "Tata", done: false },
-      ],
-    },
-  },
-
-  // Sekcja 6: wspólne planowanie
-  family: {
-    eyebrow: "Razem z rodziną",
-    title: "Święta to praca zespołowa.",
-    text: "Zaproś bliskich jednym linkiem – nie muszą niczego instalować.",
-    linkText:
-      "Link wysyłasz SMS-em, na WhatsAppie albo mailem. Każdy otwiera go w telefonie i od razu widzi swoje zadania.",
-    privacyTitle: "A prezenty?",
-    privacyText: "Tylko Ty je widzisz. Niespodzianka zostaje niespodzianką.",
-  },
-
-  // Sekcja 7: pakiety (ceny wpisujesz w config/site.ts)
-  plans: {
-    eyebrow: "Pakiety",
-    title: "Zacznij za darmo. Więcej, gdy zechcesz.",
-    priceSoon: "Cena wkrótce",
-    items: [
-      {
-        id: "darmowy",
-        name: "Darmowy",
-        for: "Na dobry początek",
-        points: [
-          "Gotowy plan w kalendarzu",
-          "Odliczanie do Wigilii",
-          "Lista prezentów dla kilku osób",
-          "Lista pakowania",
-        ],
-      },
-      {
-        id: "pelny",
-        name: "Pełny",
-        for: "Dla Ciebie, bez limitów",
-        points: ["Wszystko bez limitów", "Kartki i życzenia", "Pomoc w pomysłach na prezenty i życzenia"],
-      },
-      {
-        id: "rodzinny",
-        name: "Rodzinny",
-        for: "Dla całego domu",
-        points: [
-          "Wszystko z pakietu Pełnego",
-          "Zadania z rodziną i zapraszanie linkiem",
-          "Goście i zaproszenia na Wigilię",
-        ],
-      },
-    ],
-  },
-
-  // Sekcja 8: pytania
-  faq: {
-    eyebrow: "Pytania",
-    title: "Zanim zapytasz.",
-    items: [
-      {
-        q: "Od czego zacznę?",
-        a: "Od czterech krótkich pytań. Na ich podstawie Gviazdka układa Twój plan przygotowań do świąt, a Ty tylko dopasowujesz go do siebie.",
-      },
-      {
-        q: "Czy muszę instalować aplikację?",
-        a: "Nie. Gviazdka działa w przeglądarce na telefonie i komputerze. Jeśli chcesz, dodasz ją do ekranu głównego telefonu jak zwykłą aplikację.",
-      },
-      {
-        q: "Czy moja rodzina musi zakładać konta?",
-        a: "Nie. Wysyłasz bliskim link do wspólnej listy zadań, a oni po prostu ją otwierają i odhaczają to, co zrobili.",
-      },
-      {
-        q: "Czy ktoś zobaczy prezenty, które dla niego planuję?",
-        a: "Nie. Lista prezentów jest tylko Twoja, nawet jeśli obdarowany należy do tej samej rodziny w Gviazdce.",
-      },
-      {
-        q: "Kiedy Gviazdka wystartuje?",
-        a: "W połowie listopada, z zapasem przed świętami. Jeśli się zapiszesz, napiszemy do Ciebie w dniu startu.",
-      },
-      {
-        q: "Ile to kosztuje?",
-        a: "Będzie wersja darmowa z gotowym planem i listą prezentów. Ceny pozostałych pakietów ogłosimy przed startem.",
-      },
-    ],
-  },
-
-  // Sekcja 9: zakończenie
-  closing: {
-    title: "Tegoroczne święta mogą być inne. Spokojniejsze.",
-    text: "Zapisz się, a damy Ci znać, gdy Gviazdka będzie gotowa.",
-  },
-
   footer: {
-    tagline: "Spokojny planer świąteczny.",
-    privacy: "Polityka prywatności",
-    terms: "Regulamin",
-    contact: "Kontakt",
+    tagline: "Spokojne święta zaczynają się tutaj.",
+    columns: [
+      { title: "Gviazdka", links: [{ label: "O nas", href: "about" }, { label: "Kontakt", href: "contact-page" }] },
+      {
+        title: "Funkcje",
+        links: [
+          { label: "Kalendarz", href: "#plan" },
+          { label: "Prezenty", href: "#prezenty" },
+          { label: "Rodzina", href: "#rodzina" },
+          { label: "Wigilia", href: "#wigilia" },
+          { label: "Kartki", href: "#szczegoly" },
+        ],
+      },
+      { title: "Pomoc", links: [{ label: "Pytania i odpowiedzi", href: "#pytania" }, { label: "Napisz do nas", href: "contact" }] },
+      { title: "Informacje", links: [{ label: "Polityka prywatności", href: "privacy" }, { label: "Regulamin", href: "terms" }] },
+    ],
+    copyright: "© 2026 Gviazdka",
   },
 
   // Proste strony, które jeszcze czekają na treść
@@ -292,5 +253,6 @@ export const landing = {
     title: "Wkrótce",
     text: "Pracujemy nad tą stroną. Zajrzyj tu niedługo.",
     back: "Wróć na stronę główną",
+    pages: { privacy: "Polityka prywatności", terms: "Regulamin", contact: "Kontakt", about: "O nas" },
   },
 } as const;

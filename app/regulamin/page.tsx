@@ -4,10 +4,10 @@ import { siteConfig } from "@/config/site";
 import { SoonPage } from "@/components/pages/SoonPage";
 
 export const metadata: Metadata = {
-  title: `${landing.footer.terms} – ${siteConfig.name}`,
+  title: `${landing.soon.pages.terms} – ${siteConfig.name}`,
   robots: { index: false },
 };
 
 export default function Page() {
-  return <SoonPage title={landing.footer.terms} />;
+  return <SoonPage title={landing.soon.pages.terms} />;
 }

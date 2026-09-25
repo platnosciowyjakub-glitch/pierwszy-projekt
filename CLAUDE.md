@@ -47,9 +47,11 @@ Etap 1: **tylko strona główna (landing page)**, strona przedpremierowa z zapis
 Po premierze przełącznik w konfiguracji zamienia zapis na rejestrację („Zaczynajmy”).
 Nie buduj jeszcze aplikacji (konta, prezenty, zadania).
 
-Stan: **przebudowa strony na wzór układu zola.com** (brief z 25.09.2026). Krok 0: analiza Zoli i plan
-czekają na akceptację właściciela. Kolejność pracy: analiza + plan → strona `/style` do porównania
-z Zolą → sekcje po kolei, z akceptacją. Zapisy jeszcze nie są nigdzie przechowywane.
+Stan: **strona główna przebudowana na wzór układu Zoli** (analiza: `docs/analiza-zola.md`). Właściciel
+pominął osobną stronę `/style` – od razu powstała strona główna. Sekcje: przyklejone menu z panelami,
+hero ze zdjęciem, 6 kafelków, 4 funkcje w ciemnym pasie ze spisem, „szczegóły”, wsparcie, cennik, FAQ,
+zapis, stopka. Czeka na uwagi właściciela. Zapisy jeszcze nie są nigdzie przechowywane. Zdjęcia CC0
+(`docs/zdjecia.md`) są w niskiej rozdzielczości – do wymiany na lepsze.
 
 ## Kierunek: układ Zoli, marka Gviazdki
 Strona ma wyglądać i działać bardzo podobnie do zola.com (układ, rytm, hierarchia, sposób prezentowania
@@ -82,8 +84,8 @@ Nie jarmark, nie reklama, nie kicz.
 - Ciemne sekcje i stopka `#1F3A2E` z tekstem `#FBF6EE`.
 - Detale: złoto `#C9A15B` (tylko ozdobniki, nigdy tekst na jasnym tle), szałwia `#DCE5DA` (tła ikon, tagi).
 - Linie i obramowania `#E8DDCC`.
-- Nagłówki: szeryf z Google Fonts (Fraunces / Playfair Display / DM Serif Display — wybór na stronie `/style`),
-  z wyróżnieniem jednego słowa (kursywa lub pogrubienie). Tekst: DM Sans albo Nunito Sans. Polskie znaki.
+- Kroje: tekst i zwykła część nagłówków **DM Sans**; H1 i wyróżnione słowa **Fraunces** (w tekstach słowa
+  wyróżnione zapisujemy w gwiazdkach: `*słowo*`). Polskie znaki.
 - Logo: nazwa w kroju nagłówkowym + mała złota gwiazdka SVG, wersje na jasne i ciemne tło, favicon.
 
 ## Technika

@@ -1,33 +1,34 @@
 import { landing } from "@/content/landing";
-import { siteConfig } from "@/config/site";
-import { Section } from "@/components/ui/Section";
-import { buttonClass } from "@/components/ui/Button";
+import { primaryAction, siteConfig } from "@/config/site";
+import { Container } from "@/components/ui/Container";
+import { ButtonLink } from "@/components/ui/Button";
+import { Photo } from "@/components/ui/Photo";
+import { Rich } from "@/components/ui/Rich";
 import { SignupForm } from "@/components/landing/SignupForm";
-import { CandleIllustration } from "@/components/illustrations/Illustrations";
 
 const t = landing.closing;
 
+// Zamknięcie: kremowe tło, duże zdjęcie z ciepłym światłem i formularz zapisu.
 export function Closing() {
+  const cta = primaryAction();
   return (
-    <Section id="zapisy" labelledBy="closing-title">
-      <div className="reveal mx-auto max-w-xl text-center">
-        <CandleIllustration className="mx-auto h-20 w-20" />
-        <h2 id="closing-title" className="mt-6 text-[2rem] leading-[1.15] tracking-[-0.015em] sm:text-[2.75rem]">
-          {t.title}
-        </h2>
-        {!siteConfig.launched && <p className="mt-4 text-lg text-moss">{t.text}</p>}
-        <div className="mt-10 text-left">
-          {siteConfig.launched ? (
-            <div className="text-center">
-              <a href={siteConfig.appUrl} className={buttonClass}>
-                {landing.hero.launchedButton}
-              </a>
-            </div>
-          ) : (
-            <SignupForm note={landing.hero.note} />
-          )}
+    <section id="zapis" aria-labelledby="closing-title" className="bg-cream py-16 lg:py-24">
+      <Container className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+        <Photo name="zapis" alt={t.photoAlt} sizes="(min-width: 1024px) 50vw, 100vw" className="reveal aspect-[4/3] lg:aspect-[5/4]" />
+        <div className="reveal max-w-xl">
+          <h2 id="closing-title" className="text-[2rem] leading-10 tracking-[-0.04em] lg:text-5xl lg:leading-[3.25rem]">
+            <Rich text={t.title} />
+          </h2>
+          <p className="mt-4 text-lg text-moss">{siteConfig.launched ? t.launchedText : t.text}</p>
+          <div className="mt-8">
+            {siteConfig.launched ? (
+              <ButtonLink href={cta.href}>{cta.label}</ButtonLink>
+            ) : (
+              <SignupForm note={landing.signup.note} />
+            )}
+          </div>
         </div>
-      </div>
-    </Section>
+      </Container>
+    </section>
   );
 }

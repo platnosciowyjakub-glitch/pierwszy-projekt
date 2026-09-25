@@ -1,14 +1,15 @@
 // Ustawienia strony. Tutaj zmieniasz rzeczy, które nie są tekstami.
+// Ceny i nazwy pakietów są w osobnym pliku: config/pricing.ts
 
 export const siteConfig = {
   name: "Gviazdka",
 
   // Przełącznik premiery:
-  //   false = strona przedpremierowa (formularz „Zapisz się”)
-  //   true  = strona po premierze (przycisk „Zacznij za darmo” prowadzący do aplikacji)
+  //   false = strona przedpremierowa (zapis na listę oczekujących)
+  //   true  = strona po premierze (przyciski „Zaczynajmy” prowadzą do rejestracji w aplikacji)
   launched: false,
 
-  // Adres aplikacji, do którego prowadzi „Zacznij za darmo” po premierze.
+  // Adres rejestracji w aplikacji, używany po premierze.
   appUrl: "/aplikacja",
 
   // Adres strony w internecie (do podglądu przy udostępnianiu linku).
@@ -20,18 +21,32 @@ export const siteConfig = {
       ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
       : "http://localhost:3000"),
 
-  // Ceny pakietów. Wpisz np. "19 zł" i zapisz. Puste ("") = na stronie pokaże się „Cena wkrótce”.
-  // Dopisek pod ceną, np. "za cały sezon", wpisz w priceNote.
-  prices: {
-    darmowy: "0 zł",
-    pelny: "",
-    rodzinny: "",
+  // Adres e-mail do przycisku „Napisz do nas”. Puste ("") = przycisk prowadzi na stronę Kontakt.
+  contactEmail: "",
+
+  // Profile w mediach społecznościowych. Ikona pokaże się w stopce dopiero po wpisaniu adresu.
+  social: {
+    instagram: "",
+    facebook: "",
+    tiktok: "",
+    pinterest: "",
   },
-  priceNote: "",
 
   links: {
     privacy: "/polityka-prywatnosci",
     terms: "/regulamin",
     contact: "/kontakt",
+    about: "/o-nas",
   },
 } as const;
+
+// Główne wezwanie do działania: przed premierą zapis, po premierze rejestracja.
+export function primaryAction(): { href: string; label: string } {
+  return siteConfig.launched
+    ? { href: siteConfig.appUrl, label: "Zaczynajmy" }
+    : { href: "#zapis", label: "Zapisz się na start" };
+}
+
+export function contactHref() {
+  return siteConfig.contactEmail ? `mailto:${siteConfig.contactEmail}` : siteConfig.links.contact;
+}

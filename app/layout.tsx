@@ -1,19 +1,22 @@
 import type { Metadata, Viewport } from "next";
-import { Fraunces, Nunito_Sans } from "next/font/google";
+import { DM_Sans, Fraunces } from "next/font/google";
 import { landing } from "@/content/landing";
 import { siteConfig } from "@/config/site";
 import "./globals.css";
 
 const fraunces = Fraunces({
   subsets: ["latin", "latin-ext"],
-  axes: ["opsz", "SOFT"],
+  axes: ["SOFT"],
+  style: ["normal", "italic"],
   variable: "--font-fraunces",
   display: "swap",
+  // Krój nagłówków doczytuje się chwilę później, żeby nie opóźniać pierwszego ekranu
+  preload: false,
 });
 
-const nunito = Nunito_Sans({
+const dmSans = DM_Sans({
   subsets: ["latin", "latin-ext"],
-  variable: "--font-nunito",
+  variable: "--font-dm-sans",
   display: "swap",
 });
 
@@ -35,7 +38,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#FBF6EE",
+  themeColor: "#FFFCF7",
 };
 
 const structuredData = {
@@ -52,7 +55,7 @@ const structuredData = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pl" className={`${fraunces.variable} ${nunito.variable}`}>
+    <html lang="pl" className={`${fraunces.variable} ${dmSans.variable}`}>
       <body>
         {children}
         <script
