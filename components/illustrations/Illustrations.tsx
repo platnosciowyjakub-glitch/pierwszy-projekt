@@ -78,21 +78,74 @@ export function CandleIllustration({ className }: Props) {
   );
 }
 
-export function BranchIllustration({ className }: Props) {
+export function CalendarIllustration({ className }: Props) {
   return (
-    <svg viewBox="0 0 120 40" aria-hidden="true" className={className}>
-      <path d="M4 30C30 22 70 18 116 10" {...line} />
-      {[16, 30, 44, 58, 72, 86, 100].map((x, i) => {
-        const y = 30 - (x / 116) * 18;
-        return (
-          <g key={x}>
-            <path d={`M${x} ${y}l${6} ${-9 + (i % 2)}`} {...line} strokeWidth="1.3" />
-            <path d={`M${x} ${y}l${7} ${6 - (i % 2)}`} {...line} strokeWidth="1.3" />
-          </g>
-        );
-      })}
-      <circle cx="60" cy="26" r="3.2" fill="var(--color-cranberry)" />
-      <circle cx="66" cy="28" r="2.6" fill="var(--color-cranberry)" opacity="0.85" />
+    <svg viewBox="0 0 64 64" aria-hidden="true" className={className}>
+      <Blob />
+      <rect x="12" y="16" width="40" height="36" rx="4" {...line} />
+      <path d="M12 26h40M22 11v9M42 11v9" {...line} />
+      <path d="M20 34h.01M28 34h.01M36 34h.01M44 34h.01M20 42h.01M28 42h.01" {...line} strokeWidth="3" />
+      <path d="M40.5 38.5l1.4 2.9 3.1.4-2.3 2.1.6 3.1-2.8-1.6-2.8 1.6.6-3.1-2.3-2.1 3.1-.4z" fill="var(--color-cranberry)" />
+    </svg>
+  );
+}
+
+export function EnvelopeIllustration({ className }: Props) {
+  return (
+    <svg viewBox="0 0 64 64" aria-hidden="true" className={className}>
+      <Blob />
+      <rect x="11" y="18" width="42" height="30" rx="3.5" {...line} />
+      <path d="M12 20l20 15 20-15" {...line} />
+      <circle cx="32" cy="37" r="4" fill="var(--color-cranberry)" />
+    </svg>
+  );
+}
+
+export function CardIllustration({ className }: Props) {
+  return (
+    <svg viewBox="0 0 64 64" aria-hidden="true" className={className}>
+      <Blob />
+      <rect x="14" y="14" width="30" height="38" rx="3" {...line} transform="rotate(-6 29 33)" />
+      <path d="M22 40h14M22 45h9" {...line} transform="rotate(-6 29 33)" />
+      <path d="M29 20l1.6 3.3 3.6.5-2.6 2.5.6 3.6-3.2-1.7-3.2 1.7.6-3.6-2.6-2.5 3.6-.5z" fill="var(--color-gold)" transform="rotate(-6 29 33)" />
+      <path d="M44 50l8-20 3 1.2-8 20-3.5 1.5z" {...line} stroke="var(--color-cranberry)" />
+    </svg>
+  );
+}
+
+export function SparkleIllustration({ className }: Props) {
+  return (
+    <svg viewBox="0 0 64 64" aria-hidden="true" className={className}>
+      <Blob />
+      <path d="M30 14c1.5 9 5 12.5 14 14-9 1.5-12.5 5-14 14-1.5-9-5-12.5-14-14 9-1.5 12.5-5 14-14z" {...line} />
+      <path d="M46 38c.7 3.8 2.2 5.3 6 6-3.8.7-5.3 2.2-6 6-.7-3.8-2.2-5.3-6-6 3.8-.7 5.3-2.2 6-6z" fill="var(--color-gold)" />
+      <circle cx="47" cy="17" r="2" fill="var(--color-cranberry)" />
+    </svg>
+  );
+}
+
+export function BellIllustration({ className }: Props) {
+  return (
+    <svg viewBox="0 0 64 64" aria-hidden="true" className={className}>
+      <Blob />
+      <path d="M20 42V30a12 12 0 0124 0v12l4 4H16z" {...line} />
+      <path d="M28 50a4 4 0 008 0" {...line} />
+      <path d="M32 14v4" {...line} />
+      <path d="M26 30c0-3 2-5.5 5-6" {...line} stroke="var(--color-gold)" />
+      <circle cx="46" cy="18" r="3.5" fill="var(--color-cranberry)" />
+    </svg>
+  );
+}
+
+export function PhoneIllustration({ className }: Props) {
+  return (
+    <svg viewBox="0 0 64 64" aria-hidden="true" className={className}>
+      <Blob />
+      <rect x="21" y="10" width="22" height="44" rx="4.5" {...line} />
+      <path d="M29 15h6" {...line} />
+      <rect x="26" y="22" width="12" height="4" rx="1.5" fill="var(--color-gold)" opacity="0.8" />
+      <rect x="26" y="30" width="12" height="4" rx="1.5" fill="var(--color-gold)" opacity="0.5" />
+      <path d="M27 42l3 3 6-6" {...line} stroke="var(--color-cranberry)" />
     </svg>
   );
 }

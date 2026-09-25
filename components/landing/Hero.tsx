@@ -32,7 +32,7 @@ export function Hero() {
 
           <ul
             aria-label="Co dostajesz"
-            className="rise-in mt-7 flex flex-col gap-2.5 sm:flex-row sm:flex-wrap sm:gap-x-6"
+            className="rise-in mt-7 flex flex-col gap-2.5"
             style={{ "--delay": "300ms" } as React.CSSProperties}
           >
             {t.points.map((point) => (

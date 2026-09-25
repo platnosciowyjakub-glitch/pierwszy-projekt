@@ -1,14 +1,14 @@
 import { landing } from "@/content/landing";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { CheckIcon } from "@/components/ui/CheckIcon";
-import { GiftsScreen, PackingScreen, TasksScreen } from "@/components/landing/AppScreens";
+import { GiftsScreen, PlanScreen, TasksScreen } from "@/components/landing/AppScreens";
 
 const t = landing.features;
-const screens = { prezenty: GiftsScreen, zadania: TasksScreen, pakowanie: PackingScreen };
+const screens = { plan: PlanScreen, prezenty: GiftsScreen, rodzina: TasksScreen };
 
 export function Features() {
   return (
-    <Section id="co-dostajesz" labelledBy="features-title">
+    <Section id="co-dostajesz" tone="sand" labelledBy="features-title">
       <SectionHeading id="features-title" eyebrow={t.eyebrow} title={t.title} />
       <div className="mt-16 space-y-24 sm:mt-20 sm:space-y-32">
         {t.items.map((item, i) => {

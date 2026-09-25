@@ -21,26 +21,33 @@ Rozmawiaj z nim po polsku.
 Rynek: Polska, język polski. Mówimy do użytkownika na „Ty”.
 Nazwa pisana przez „v”: **Gviazdka** (odmiana: Gviazdki, Gviazdkę). Nie „Gwiazdka”.
 
-- **Dla kogo:** dla każdego, kto przeżywa święta — nastolatek kupujący prezenty, rodzic ogarniający
-  porządki, osoba jadąca na święta do rodziny. Nie tylko dla organizatorów.
-- **Funkcje na premierę:**
-  1. Prezenty — lista osób, pomysły, linki, status (pomysł → kupione → zapakowane → wręczone),
-     opcjonalna cena i podsumowanie „ile wydałem”. Prezenty są prywatne.
-  2. Zadania — lista osobista i wspólna lista rodzinna (przydzielanie, odhaczanie; rodzina
-     dołącza przez link, bez instalowania czegokolwiek).
-  3. Lista pakowania — checklista na wyjazd świąteczny.
-- **Później:** moduł „Gospodarz” (zaproszenia, goście, menu, plan stołu), AI do pomysłów na prezenty i życzeń.
-- **Pakiety:** Darmowy, Podstawowy, Rodzinny. Ceny jeszcze nieustalone („Cena wkrótce”).
-- **Premiera aplikacji:** ok. 10–15 listopada 2026. Strona główna rusza wcześniej i zbiera zapisy.
-- Pełna specyfikacja miała być w `specyfikacja-planner-swiateczny.md`, ale tego pliku nie ma w repo.
-  Jeśli właściciel go dośle, zapisz go w `docs/` i uzupełnij ten plik.
+**Pełna specyfikacja: `docs/specyfikacja.md`** (wersja 2, 25.09.2026). Przeczytaj ją przed większą pracą.
+W specyfikacji nazwa jest jeszcze „Gwiazdka” — obowiązuje „Gviazdka”.
+
+- **Obietnica:** „Święta zaczynają się tutaj. Jesteśmy z Tobą każdego dnia aż do Wigilii.”
+- **Najważniejsza zasada produktu:** użytkownik nigdy nie zaczyna od pustej kartki. Gviazdka ma gotowy
+  plan — on tylko dopasowuje i odhacza.
+- **Dla kogo:** każdy, kto przeżywa święta — nastolatek kupujący prezenty, rodzic ogarniający porządki,
+  osoba jadąca do rodziny, gospodarz Wigilii.
+- **Inspiracja:** Zola (zola.com) — ciepło, elegancko, dużo przestrzeni; jedno zdanie obiecujące całą
+  podróż; przycisk jak zaproszenie („Zaczynajmy”, „Zaplanuj spokojne święta”); każda funkcja = jedno
+  zdanie korzyści; menu 4–5 pozycji.
+- **Funkcje na premierę:** powitanie w 4 pytaniach → osobisty plan; kalendarz (ekran główny, widok
+  „Ten tydzień”); gotowy plan 60–80 zadań od listopada do Wigilii; odliczanie i delikatne przypomnienia;
+  prezenty (statusy, cena, „ile wydałem”, prywatne, linki partnerskie); zadania z rodziną (link, bez
+  instalowania); lista pakowania; goście i zaproszenia; kartki i życzenia; pomoc AI (pomysły na prezenty,
+  życzenia).
+- **Pakiety (robocze):** Darmowy (powitanie, kalendarz z planem, odliczanie, prezenty z limitem, pakowanie),
+  Pełny (bez limitów + kartki i życzenia + AI), Rodzinny (Pełny + zadania z rodziną + goście i zaproszenia).
+  Ceny i limity nieustalone („Cena wkrótce”).
+- **Premiera aplikacji:** 10–15 listopada 2026. Strona główna rusza wcześniej i zbiera zapisy.
 
 ## Aktualny etap
 Etap 1: **tylko strona główna (landing page)**, na razie jako strona przedpremierowa z zapisami
 („Zapisz się – damy znać, gdy ruszymy”). Po premierze jeden przełącznik w konfiguracji zmienia ją
 w stronę sprzedażową z przyciskiem „Zacznij za darmo”. Nie buduj jeszcze aplikacji (konta, prezenty, zadania).
 
-Stan: cała strona główna zbudowana (hero, problemy, co dostajesz z podglądami ekranów, rodzina, pakiety, pytania, zakończenie, stopka) plus proste strony „Wkrótce”. Zawartość pakietów to wstępna propozycja — do potwierdzenia przez właściciela. Strona ma jasno pokazywać, co oferujemy i jakie problemy rozwiązujemy, a nie tylko chwytliwe hasła.
+Stan: cała strona główna zbudowana i dopasowana do specyfikacji: hero (gotowy plan, prezenty, rodzina), „Znasz to?”, „Jak to działa” (3 kroki), trzy główne funkcje z podglądem ekranów (kalendarz i plan, prezenty, zadania z rodziną), „Różnica jest w szczegółach” (pozostałe funkcje), rodzina, pakiety Darmowy/Pełny/Rodzinny, pytania, zakończenie, stopka, strony „Wkrótce”. Czeka na uwagi właściciela. Zapisy jeszcze nie są nigdzie przechowywane (trzeba wybrać usługę).
 
 ## Najważniejsza zasada: ukojenie
 Przytulnie, ciepło, łatwo, bez przepychu. Ciepłe światło, koc, kubek herbaty, cichy grudniowy wieczór.

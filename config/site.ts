@@ -24,7 +24,7 @@ export const siteConfig = {
   // Dopisek pod ceną, np. "za cały sezon", wpisz w priceNote.
   prices: {
     darmowy: "0 zł",
-    podstawowy: "",
+    pelny: "",
     rodzinny: "",
   },
   priceNote: "",

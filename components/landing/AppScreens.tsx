@@ -80,21 +80,31 @@ export function TasksScreen() {
   );
 }
 
-export function PackingScreen() {
-  const p = s.packing;
+export function PlanScreen() {
+  const p = s.plan;
   return (
-    <PhoneFrame glow={false} label="Przykładowy ekran listy pakowania na świąteczny wyjazd.">
+    <PhoneFrame glow={false} label="Przykładowy ekran kalendarza: zadania i wydarzenia na ten tydzień.">
       <ScreenTitle title={p.title} subtitle={p.subtitle} />
       <ul className="mt-5 space-y-2.5">
         {p.items.map((item) => (
-          <li key={item.item} className="flex items-center gap-3 rounded-soft bg-white/80 p-3 shadow-soft">
-            <Tick done={item.done} />
-            <span className={`text-sm ${item.done ? "text-moss line-through decoration-moss/50" : ""}`}>
-              {item.item}
+          <li key={item.task} className="flex items-center gap-3 rounded-soft bg-white/80 p-3 shadow-soft">
+            {"event" in item ? (
+              <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gold/30">
+                <span className="h-2 w-2 rounded-full bg-gold-text" />
+              </span>
+            ) : (
+              <Tick done={item.done} />
+            )}
+            <span className="flex-1">
+              <span className={`block text-sm ${item.done ? "text-moss line-through decoration-moss/50" : ""}`}>
+                {item.task}
+              </span>
+              <span className="block text-[0.7rem] text-moss">{item.meta}</span>
             </span>
           </li>
         ))}
       </ul>
+      <p className="mt-5 text-center text-xs text-moss">{p.footer}</p>
     </PhoneFrame>
   );
 }

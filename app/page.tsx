@@ -2,7 +2,9 @@ import { landing } from "@/content/landing";
 import { Header } from "@/components/landing/Header";
 import { Hero } from "@/components/landing/Hero";
 import { Problems } from "@/components/landing/Problems";
+import { Steps } from "@/components/landing/Steps";
 import { Features } from "@/components/landing/Features";
+import { Extras } from "@/components/landing/Extras";
 import { Family } from "@/components/landing/Family";
 import { Plans } from "@/components/landing/Plans";
 import { Faq } from "@/components/landing/Faq";
@@ -32,7 +34,9 @@ export default function HomePage() {
       <main>
         <Hero />
         <Problems />
+        <Steps />
         <Features />
+        <Extras />
         <Family />
         <Plans />
         <Faq />

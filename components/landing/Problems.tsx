@@ -1,10 +1,10 @@
 import { landing } from "@/content/landing";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { Card } from "@/components/ui/Card";
-import { GiftIllustration, HomeIllustration, SuitcaseIllustration } from "@/components/illustrations/Illustrations";
+import { CalendarIllustration, GiftIllustration, HomeIllustration } from "@/components/illustrations/Illustrations";
 
 const t = landing.problems;
-const icons = { gift: GiftIllustration, home: HomeIllustration, suitcase: SuitcaseIllustration };
+const icons = { calendar: CalendarIllustration, gift: GiftIllustration, home: HomeIllustration };
 
 export function Problems() {
   return (

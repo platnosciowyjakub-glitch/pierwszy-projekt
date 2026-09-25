@@ -6,7 +6,7 @@ export const landing = {
     // Tytuł i opis widoczne w Google. Tytuł do ok. 60 znaków, opis do ok. 155.
     title: "Gviazdka – Twoje spokojne święta. Planer świąteczny",
     description:
-      "Planer świąteczny na spokojne święta: lista prezentów, porządki przed świętami i lista pakowania w jednym miejscu. Planuj razem z rodziną, bez stresu.",
+      "Planer świąteczny na spokojne święta: gotowy plan przygotowań do świąt, lista prezentów i zadania z rodziną. Od listopada do Wigilii, bez stresu.",
   },
 
   nav: {
@@ -17,16 +17,12 @@ export const landing = {
     eyebrow: "Planer świąteczny",
     title: "Twoje spokojne święta.",
     subtitle:
-      "Gviazdka to planer świąteczny w Twoim telefonie. Porządkuje prezenty, domowe przygotowania i pakowanie, żeby grudzień nie przytłaczał.",
+      "Gviazdka prowadzi Cię przez przygotowania do świąt krok po kroku, od listopada do Wigilii. Nie zaczynasz od pustej kartki – plan już na Ciebie czeka.",
     // Trzy rzeczy, które dostajesz (krótko, widoczne od razu na pierwszym ekranie)
-    points: [
-      "Lista prezentów z budżetem",
-      "Zadania dla całej rodziny",
-      "Lista pakowania na wyjazd",
-    ],
+    points: ["Gotowy plan w kalendarzu", "Lista prezentów z budżetem", "Zadania z całą rodziną"],
     note: "Damy znać, gdy Gviazdka wystartuje. Bez spamu, obiecujemy.",
     // Używane dopiero po premierze (gdy w config/site.ts jest launched: true)
-    launchedButton: "Zacznij za darmo",
+    launchedButton: "Zaplanuj spokojne święta",
     launchedNote: "Wersja darmowa na zawsze. Bez karty, bez zobowiązań.",
   },
 
@@ -54,11 +50,11 @@ export const landing = {
     greeting: "Dobry wieczór, Ania",
     date: "Wtorek, 9 grudnia",
     lists: [
+      { name: "Plan na ten tydzień", done: 3, total: 5, hint: "Wysłać kartki świąteczne" },
       { name: "Prezenty", done: 5, total: 8, hint: "Szalik dla mamy – kupione" },
       { name: "Zadania rodzinne", done: 4, total: 7, hint: "Umyć okna – Kasia" },
-      { name: "Pakowanie", done: 9, total: 12, hint: "Ładowarka do telefonu" },
     ],
-    footer: "Wszystko idzie swoim rytmem.",
+    footer: "Zostało kilka drobnych rzeczy. Dasz radę.",
   },
 
   // Sekcja 2: problemy, które rozwiązujemy
@@ -67,69 +63,114 @@ export const landing = {
     title: "Grudzień potrafi przytłoczyć. Gviazdka pomaga to poukładać.",
     items: [
       {
+        icon: "calendar",
+        question: "Od czego w ogóle zacząć?",
+        answer: "Od gotowego planu. Gviazdka ułożyła przygotowania za Ciebie, Ty tylko dopasowujesz i odhaczasz.",
+      },
+      {
         icon: "gift",
         question: "Co ja kupię i komu?",
-        answer:
-          "Wszystkie pomysły na prezenty w jednym miejscu. Widzisz, co już kupione, a co jeszcze czeka.",
+        answer: "Wszystkie pomysły na prezenty w jednym miejscu. Widzisz, co już kupione, a co jeszcze czeka.",
       },
       {
         icon: "home",
         question: "Kto miał posprzątać?",
         answer: "Zaproś rodzinę, rozdzielcie zadania i odhaczajcie je razem.",
       },
+    ],
+  },
+
+  // Sekcja 3: jak to działa
+  steps: {
+    eyebrow: "Jak to działa",
+    title: "Trzy kroki do spokojnych świąt.",
+    items: [
       {
-        icon: "suitcase",
-        question: "Czy o czymś nie zapomniałem?",
-        answer: "Spokojne listy: na zakupy, porządki i wyjazd do bliskich.",
+        title: "Odpowiadasz na 4 pytania",
+        text: "Gdzie spędzasz święta, dla ilu osób kupujesz prezenty i czy planujesz z rodziną.",
+      },
+      {
+        title: "Dostajesz gotowy plan",
+        text: "Gviazdka układa przygotowania od listopada do Wigilii, dopasowane do Ciebie.",
+      },
+      {
+        title: "Odhaczasz w swoim tempie",
+        text: "Samodzielnie albo razem z bliskimi. Wszystko możesz zmienić, przesunąć, dopisać.",
       },
     ],
   },
 
-  // Sekcja 3: co dokładnie dostajesz (z podglądem ekranów)
+  // Sekcja 4: najważniejsze funkcje (z podglądem ekranów)
   features: {
     eyebrow: "Co znajdziesz w Gviazdce",
-    title: "Trzy spokojne listy zamiast karteczek, notatek i czatów.",
+    title: "Jedno miejsce zamiast karteczek, notatek i czatów.",
     items: [
+      {
+        id: "plan",
+        name: "Kalendarz i gotowy plan",
+        title: "Przygotowania do świąt, rozpisane za Ciebie",
+        text: "Po otwarciu widzisz tylko ten tydzień: co spokojnie ogarnąć w najbliższych dniach. Reszta czeka na swoją kolej.",
+        points: [
+          "Gotowy plan przygotowań oparty na polskich tradycjach",
+          "Twoje wydarzenia: Mikołajki, jasełka, wyjazd, Wigilia",
+          "Zadania z prezentów i rodziny w jednym kalendarzu",
+          "Delikatne przypomnienia, bez poganiania",
+        ],
+      },
       {
         id: "prezenty",
         name: "Lista prezentów",
         title: "Prezenty bez zgadywania",
-        text: "Zapisujesz, komu chcesz coś dać, i zbierasz pomysły przez cały rok. W grudniu nic nie umyka.",
+        text: "Zapisujesz, komu chcesz coś dać, i zbierasz pomysły wcześniej. W grudniu nic nie umyka.",
         points: [
-          "Osoby, pomysły i linki do sklepów",
+          "Osoby, pomysły, rozmiary i linki do sklepów",
           "Status: pomysł, kupione, zapakowane, wręczone",
           "Podsumowanie „ile wydałem” w złotówkach",
           "Tylko Ty widzisz swoje prezenty",
         ],
       },
       {
-        id: "zadania",
-        name: "Zadania rodzinne",
+        id: "rodzina",
+        name: "Zadania z rodziną",
         title: "Porządki przed świętami, podzielone po równo",
         text: "Jedna wspólna lista dla całego domu. Każdy wie, co ma zrobić, i nikt nie musi przypominać.",
         points: [
-          "Twoja lista i wspólna lista rodziny",
           "Przydzielasz zadanie konkretnej osobie",
           "Bliscy dołączają przez link, bez instalowania",
-          "Widać, co już zrobione",
-        ],
-      },
-      {
-        id: "pakowanie",
-        name: "Lista pakowania",
-        title: "Wyjazd na święta bez „a czy wzięliśmy…”",
-        text: "Gotowa lista na świąteczny wyjazd, którą dopasujesz do siebie. Odhaczasz i jedziesz spokojnie.",
-        points: [
-          "Gotowa lista na start, do zmiany",
-          "Osobne listy na różne wyjazdy",
-          "Prezenty do zabrania w jednym miejscu",
+          "Widać postęp całej rodziny",
         ],
       },
     ],
   },
 
-  // Przykładowe dane na ekranach telefonów w sekcji 3
+  // Sekcja 5: pozostałe funkcje, w skrócie
+  extras: {
+    eyebrow: "I wszystko, czego potrzebują święta",
+    title: "Różnica jest w szczegółach.",
+    items: [
+      { icon: "suitcase", title: "Lista pakowania", text: "Gotowa lista na świąteczny wyjazd. Ładowarki, prezenty, leki – nic nie zostaje w domu." },
+      { icon: "envelope", title: "Goście i zaproszenia", text: "Ładne zaproszenie wysłane linkiem. Goście potwierdzają obecność bez zakładania konta." },
+      { icon: "card", title: "Kartki i życzenia", text: "Lista osób, którym składasz życzenia, i spokój, że nikogo nie pominiesz." },
+      { icon: "sparkle", title: "Pomoc w pomysłach", text: "Opisz osobę, a podpowiemy prezent. Pomożemy też napisać ciepłe życzenia." },
+      { icon: "bell", title: "Odliczanie do Wigilii", text: "Łagodne przypomnienia w stylu: „Na ten tydzień zostały 3 drobne rzeczy.”" },
+      { icon: "phone", title: "Bez instalowania", text: "Działa w przeglądarce na telefonie i komputerze. Możesz dodać ją do ekranu głównego." },
+    ],
+  },
+
+  // Przykładowe dane na ekranach telefonów w sekcji 4
   screens: {
+    plan: {
+      title: "Ten tydzień",
+      subtitle: "15–21 grudnia",
+      items: [
+        { task: "Umyć okna", meta: "Kasia · pon", done: true },
+        { task: "Zamówić karpia", meta: "wt", done: true },
+        { task: "Jasełka u Zosi", meta: "czw, 17:00", done: false, event: true },
+        { task: "Zapakować prezenty", meta: "pt", done: false },
+        { task: "Kupić choinkę", meta: "Tata · sob", done: false },
+      ],
+      footer: "Na ten tydzień zostały 3 drobne rzeczy.",
+    },
     gifts: {
       title: "Prezenty",
       summaryLabel: "Wydane",
@@ -143,7 +184,7 @@ export const landing = {
     },
     tasks: {
       title: "Zadania rodzinne",
-      subtitle: "Dom · 4 osoby",
+      subtitle: "Dom · 4 osoby · 2 z 5",
       items: [
         { task: "Umyć okna", who: "Kasia", done: true },
         { task: "Upiec pierniki", who: "Mama", done: true },
@@ -152,32 +193,20 @@ export const landing = {
         { task: "Odebrać karpia", who: "Tata", done: false },
       ],
     },
-    packing: {
-      title: "Wyjazd do babci",
-      subtitle: "23 grudnia · 7 z 10",
-      items: [
-        { item: "Prezenty dla rodziny", done: true },
-        { item: "Ładowarka do telefonu", done: true },
-        { item: "Ciepły sweter", done: true },
-        { item: "Kapcie", done: false },
-        { item: "Leki", done: false },
-        { item: "Ciasto dla babci", done: false },
-      ],
-    },
   },
 
-  // Sekcja 4: wspólne planowanie
+  // Sekcja 6: wspólne planowanie
   family: {
     eyebrow: "Razem z rodziną",
     title: "Święta to praca zespołowa.",
     text: "Zaproś bliskich jednym linkiem – nie muszą niczego instalować.",
     linkText:
-      "Link do wspólnej listy wysyłasz na czacie rodzinnym. Każdy otwiera go w telefonie i od razu widzi swoje zadania.",
+      "Link wysyłasz SMS-em, na WhatsAppie albo mailem. Każdy otwiera go w telefonie i od razu widzi swoje zadania.",
     privacyTitle: "A prezenty?",
     privacyText: "Tylko Ty je widzisz. Niespodzianka zostaje niespodzianką.",
   },
 
-  // Sekcja 5: pakiety (ceny wpisujesz w config/site.ts)
+  // Sekcja 7: pakiety (ceny wpisujesz w config/site.ts)
   plans: {
     eyebrow: "Pakiety",
     title: "Zacznij za darmo. Więcej, gdy zechcesz.",
@@ -187,36 +216,41 @@ export const landing = {
         id: "darmowy",
         name: "Darmowy",
         for: "Na dobry początek",
-        points: ["Lista prezentów dla kilku osób", "Twoja lista zadań", "Jedna lista pakowania"],
+        points: [
+          "Gotowy plan w kalendarzu",
+          "Odliczanie do Wigilii",
+          "Lista prezentów dla kilku osób",
+          "Lista pakowania",
+        ],
       },
       {
-        id: "podstawowy",
-        name: "Podstawowy",
-        for: "Dla Ciebie, bez ograniczeń",
-        points: [
-          "Prezenty dla dowolnej liczby osób",
-          "Podsumowanie wydatków",
-          "Wiele list pakowania",
-        ],
+        id: "pelny",
+        name: "Pełny",
+        for: "Dla Ciebie, bez limitów",
+        points: ["Wszystko bez limitów", "Kartki i życzenia", "Pomoc w pomysłach na prezenty i życzenia"],
       },
       {
         id: "rodzinny",
         name: "Rodzinny",
         for: "Dla całego domu",
         points: [
-          "Wszystko z pakietu Podstawowego",
-          "Wspólna lista zadań rodziny",
-          "Zapraszanie bliskich linkiem",
+          "Wszystko z pakietu Pełnego",
+          "Zadania z rodziną i zapraszanie linkiem",
+          "Goście i zaproszenia na Wigilię",
         ],
       },
     ],
   },
 
-  // Sekcja 6: pytania
+  // Sekcja 8: pytania
   faq: {
     eyebrow: "Pytania",
     title: "Zanim zapytasz.",
     items: [
+      {
+        q: "Od czego zacznę?",
+        a: "Od czterech krótkich pytań. Na ich podstawie Gviazdka układa Twój plan przygotowań do świąt, a Ty tylko dopasowujesz go do siebie.",
+      },
       {
         q: "Czy muszę instalować aplikację?",
         a: "Nie. Gviazdka działa w przeglądarce na telefonie i komputerze. Jeśli chcesz, dodasz ją do ekranu głównego telefonu jak zwykłą aplikację.",
@@ -227,20 +261,20 @@ export const landing = {
       },
       {
         q: "Czy ktoś zobaczy prezenty, które dla niego planuję?",
-        a: "Nie. Lista prezentów jest tylko Twoja. Rodzina widzi wyłącznie wspólne zadania.",
+        a: "Nie. Lista prezentów jest tylko Twoja, nawet jeśli obdarowany należy do tej samej rodziny w Gviazdce.",
       },
       {
         q: "Kiedy Gviazdka wystartuje?",
-        a: "W listopadzie, z zapasem przed świętami. Jeśli się zapiszesz, napiszemy do Ciebie w dniu startu.",
+        a: "W połowie listopada, z zapasem przed świętami. Jeśli się zapiszesz, napiszemy do Ciebie w dniu startu.",
       },
       {
         q: "Ile to kosztuje?",
-        a: "Będzie wersja darmowa. Ceny pozostałych pakietów ogłosimy przed startem.",
+        a: "Będzie wersja darmowa z gotowym planem i listą prezentów. Ceny pozostałych pakietów ogłosimy przed startem.",
       },
     ],
   },
 
-  // Sekcja 7: zakończenie
+  // Sekcja 9: zakończenie
   closing: {
     title: "Tegoroczne święta mogą być inne. Spokojniejsze.",
     text: "Zapisz się, a damy Ci znać, gdy Gviazdka będzie gotowa.",
