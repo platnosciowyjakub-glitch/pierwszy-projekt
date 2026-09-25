@@ -43,36 +43,57 @@ W specyfikacji nazwa jest jeszcze „Gwiazdka” — obowiązuje „Gviazdka”.
 - **Premiera aplikacji:** 10–15 listopada 2026. Strona główna rusza wcześniej i zbiera zapisy.
 
 ## Aktualny etap
-Etap 1: **tylko strona główna (landing page)**, na razie jako strona przedpremierowa z zapisami
-(„Zapisz się – damy znać, gdy ruszymy”). Po premierze jeden przełącznik w konfiguracji zmienia ją
-w stronę sprzedażową z przyciskiem „Zacznij za darmo”. Nie buduj jeszcze aplikacji (konta, prezenty, zadania).
+Etap 1: **tylko strona główna (landing page)**, strona przedpremierowa z zapisem na listę oczekujących.
+Po premierze przełącznik w konfiguracji zamienia zapis na rejestrację („Zaczynajmy”).
+Nie buduj jeszcze aplikacji (konta, prezenty, zadania).
 
-Stan: cała strona główna zbudowana i dopasowana do specyfikacji: hero (gotowy plan, prezenty, rodzina), „Znasz to?”, „Jak to działa” (3 kroki), trzy główne funkcje z podglądem ekranów (kalendarz i plan, prezenty, zadania z rodziną), „Różnica jest w szczegółach” (pozostałe funkcje), rodzina, pakiety Darmowy/Pełny/Rodzinny, pytania, zakończenie, stopka, strony „Wkrótce”. Czeka na uwagi właściciela. Zapisy jeszcze nie są nigdzie przechowywane (trzeba wybrać usługę).
+Stan: **przebudowa strony na wzór układu zola.com** (brief z 25.09.2026). Krok 0: analiza Zoli i plan
+czekają na akceptację właściciela. Kolejność pracy: analiza + plan → strona `/style` do porównania
+z Zolą → sekcje po kolei, z akceptacją. Zapisy jeszcze nie są nigdzie przechowywane.
+
+## Kierunek: układ Zoli, marka Gviazdki
+Strona ma wyglądać i działać bardzo podobnie do zola.com (układ, rytm, hierarchia, sposób prezentowania
+funkcji), ale w kolorach, tekstach i grafikach Gviazdki: świątecznie, ciepło, po polsku.
+- **Wolno:** wzorować się na siatce, kolejności sekcji, proporcjach, rodzajach komponentów, odstępach,
+  hierarchii typografii i zachowaniu nawigacji.
+- **Nie wolno:** kopiować kodu, grafik, zdjęć, ilustracji, logo, fontów firmowych ani tekstów Zoli.
+  Wszystkie treści i grafiki są nasze.
+- Analiza Zoli (liczby i zasady): `docs/analiza-zola.md`. Źródła i licencje zdjęć: `docs/zdjecia.md`.
+- Nie wymyślamy nazwisk, zdjęć zespołu, opinii ani liczb użytkowników.
+- Ton i zasady ukojenia poniżej nadal obowiązują (bez presji, bez wykrzykników, bez emoji).
 
 ## Najważniejsza zasada: ukojenie
 Przytulnie, ciepło, łatwo, bez przepychu. Ciepłe światło, koc, kubek herbaty, cichy grudniowy wieczór.
 Nie jarmark, nie reklama, nie kicz.
-- Jedna myśl na ekran, dużo wolnej przestrzeni, krótkie zdania.
+- Krótkie zdania, dużo wolnej przestrzeni.
 - Zero presji: bez liczników dni, bez wykrzykników, bez „OSTATNIA SZANSA”, bez wyskakujących okienek.
 - Ton: życzliwy, spokojny, jak rozmowa z bliską osobą.
-- Miękkość: zaokrąglone rogi, miękkie cienie, łagodne przejścia.
-- Animacje delikatne i powolne; wszystkie wyłączone przy `prefers-reduced-motion`.
-- Bez zdjęć stockowych i bez emoji. Tylko proste, ciepłe ilustracje SVG w jednej konwencji.
+- Animacje delikatne (pojawianie się przy przewijaniu, lekkie powiększenie zdjęcia na kafelku);
+  wszystkie wyłączone przy `prefers-reduced-motion`.
+- Bez emoji. Duże, ciepłe zdjęcia w zaokrąglonych kadrach, makiety ekranów w HTML/CSS, ikony i ozdobniki
+  jako własne SVG.
 
-## Wygląd
-- Tło `#FBF6EE` (krem), sekcje na zmianę `#F4ECDF` (beż).
-- Tekst `#1F3A2E` (zieleń świerku), pomocniczy `#5B6B61`.
-- Akcent `#A8443A` (żurawina) — przyciski i najważniejsze elementy.
-- Złoto `#C9A15B` — tylko ozdoby (za mały kontrast na tekst; na złoty tekst użyj `#8A6A2F`).
-- Nagłówki: Fraunces. Tekst: Nunito Sans. Obie z polskimi znakami. Tekst min. 18 px, wysoka interlinia.
-- Logo: napis „Gviazdka” (Fraunces) + mała złota gwiazdka SVG (też jako favicon i ikona aplikacji).
+## Wygląd (nowa paleta, jako zmienne CSS / motyw Tailwinda)
+- Tło strony `#FFFCF7` (ciepła biel); tła sekcji i kafelków `#F7F0E4` (krem), `#EFE5D5` (beż).
+- Tekst i nagłówki `#1F3A2E` (świerk); pomocniczy `#56665C` (kontrast min. 4.5:1).
+- Akcent (przyciski, linki) `#A8443A` żurawina, hover `#8E382F`.
+- Ciemne sekcje i stopka `#1F3A2E` z tekstem `#FBF6EE`.
+- Detale: złoto `#C9A15B` (tylko ozdobniki, nigdy tekst na jasnym tle), szałwia `#DCE5DA` (tła ikon, tagi).
+- Linie i obramowania `#E8DDCC`.
+- Nagłówki: szeryf z Google Fonts (Fraunces / Playfair Display / DM Serif Display — wybór na stronie `/style`),
+  z wyróżnieniem jednego słowa (kursywa lub pogrubienie). Tekst: DM Sans albo Nunito Sans. Polskie znaki.
+- Logo: nazwa w kroju nagłówkowym + mała złota gwiazdka SVG, wersje na jasne i ciemne tło, favicon.
 
 ## Technika
 - Next.js (App Router) + TypeScript + Tailwind CSS, wdrożenie na Vercel.
 - Kolory, czcionki, zaokrąglenia i odstępy w jednym miejscu (zmienne CSS / motyw Tailwinda).
 - Wszystkie teksty strony w `content/landing.ts` — właściciel poprawia je sam.
-- Ustawienia (przełącznik przed/po premierze, ceny pakietów) w `config/site.ts`.
-- Mobile-first, bez poziomego przewijania. Dostępność: prawdziwe przyciski, etykiety pól,
+- Ustawienia (przełącznik przed/po premierze, adres kontaktowy) w `config/site.ts`, ceny i nazwy pakietów w `config/pricing.ts`.
+- Komponenty: `components/ui` (wspólne klocki), `components/landing` (sekcje), `components/mockups` (makiety ekranów).
+- Responsywność: 360, 390, 768, 1024, 1440 px; przyciski min. 44 px; jeden H1 na stronie.
+- Wydajność: next/image, next/font, bez ciężkich bibliotek, Lighthouse mobile docelowo 90+.
+- Podglądy na Vercelu mają działać bez logowania (wyłączona Deployment Protection).
+- Mobile-first (na telefonie układ jak u Zoli: stosy, przewijane rzędy kafelków), bez poziomego przewijania strony. Dostępność: prawdziwe przyciski, etykiety pól,
   kontrast min. 4.5:1, klawiatura, teksty alternatywne, `lang="pl"`.
 - Czcionki przez `next/font`, lekkie SVG zamiast ciężkich obrazów.
 - SEO: tytuł, opis, Open Graph, favicon, dane strukturalne.
@@ -83,4 +104,4 @@ Nie jarmark, nie reklama, nie kicz.
   przyjazny błąd, checkbox zgody (RODO) z linkiem do polityki prywatności, ukryte pole „honeypot”.
   Zapis przez funkcję serwerową z miejscem na podłączenie usługi.
   **Przed podłączeniem konkretnej usługi (Supabase, Resend, MailerLite itp.) zapytaj właściciela.**
-- Analityka: na razie brak.
+- Analityka i ciasteczka: na razie brak.
