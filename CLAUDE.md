@@ -61,6 +61,8 @@ funkcji), ale w kolorach, tekstach i grafikach Gviazdki: świątecznie, ciepło,
 - Analiza Zoli (liczby i zasady): `docs/analiza-zola.md`. Źródła i licencje zdjęć: `docs/zdjecia.md`.
 - Nie wymyślamy nazwisk, zdjęć zespołu, opinii ani liczb użytkowników.
 - Ton i zasady ukojenia poniżej nadal obowiązują (bez presji, bez wykrzykników, bez emoji).
+- Decyzje właściciela (25.09.2026): nazwa zostaje **Gviazdka** (przez v, także tam, gdzie brief pisze
+  „Gwiazdka”); **bez padającego śniegu**.
 
 ## Najważniejsza zasada: ukojenie
 Przytulnie, ciepło, łatwo, bez przepychu. Ciepłe światło, koc, kubek herbaty, cichy grudniowy wieczór.
