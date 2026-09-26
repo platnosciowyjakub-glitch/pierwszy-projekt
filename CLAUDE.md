@@ -47,6 +47,9 @@ Etap 1: **tylko strona główna (landing page)**, strona przedpremierowa z zapis
 Po premierze przełącznik w konfiguracji zamienia zapis na rejestrację („Zaczynajmy”).
 Nie buduj jeszcze aplikacji (konta, prezenty, zadania).
 
+Pierwszy ekran strony głównej celowo różni się od zakładek: wyśrodkowane hasło i przycisk, szeroki film,
+a pod nim „droga do Wigilii” (5 przystanków prowadzących do zakładek; teksty w `landing.hero.journey`).
+
 Stan: **strona główna przebudowana na wzór układu Zoli** (analiza: `docs/analiza-zola.md`). Właściciel
 pominął osobną stronę `/style` – od razu powstała strona główna. Sekcje: przyklejone menu z panelami,
 hero ze zdjęciem, 6 kafelków, 4 funkcje w ciemnym pasie ze spisem, „szczegóły”, wsparcie, cennik, FAQ,

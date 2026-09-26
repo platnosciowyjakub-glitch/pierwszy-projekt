@@ -6,12 +6,13 @@ type Props = {
   label: string; // opis filmu dla czytników ekranu
   placeholder: string; // napis w pustym polu
   priority?: boolean;
+  wide?: boolean; // szeroki, panoramiczny kadr (strona główna)
 };
 
 // Ramka na film. Dopóki nie ma pliku, pokazuje ciepłe zdjęcie z przyciskiem „play” i podpisem.
-export function VideoFrame({ src, poster, label, placeholder, priority }: Props) {
+export function VideoFrame({ src, poster, label, placeholder, priority, wide }: Props) {
   const frame =
-    "relative aspect-[4/3] w-full overflow-hidden rounded-frame bg-sand ring-1 ring-gold/40 shadow-[0_30px_60px_-30px_rgb(31_58_46/0.35)]";
+    `relative w-full overflow-hidden ${wide ? "aspect-[4/3] sm:aspect-video lg:aspect-[21/9]" : "aspect-[4/3]"}  rounded-frame bg-sand ring-1 ring-gold/40 shadow-[0_30px_60px_-30px_rgb(31_58_46/0.35)]`;
   if (src) {
     return (
       <div className={frame}>
@@ -31,7 +32,7 @@ export function VideoFrame({ src, poster, label, placeholder, priority }: Props)
   return (
     <div className={frame}>
       <div className="absolute inset-0">
-        <Photo name="zapis" alt="" sizes="(min-width: 1024px) 50vw, 100vw" priority={priority} className="h-full">
+        <Photo name="zapis" alt="" sizes={wide ? "(min-width: 1280px) 1200px, 100vw" : "(min-width: 1024px) 50vw, 100vw"} priority={priority} className="h-full">
           <div aria-hidden="true" className="absolute inset-0 bg-[linear-gradient(to_top,rgb(31_58_46/0.55),rgb(31_58_46/0.1)_60%)]" />
         </Photo>
       </div>

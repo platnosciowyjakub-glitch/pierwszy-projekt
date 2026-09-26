@@ -34,11 +34,24 @@ export const landing = {
     // Słowa w *gwiazdkach* są w nagłówku wyróżnione pochyłą, żurawinową kursywą.
     title: "Planer świąteczny *dla całej rodziny*",
     subtitle:
-      "Gotowy plan przygotowań od listopada do Wigilii. Zaplanuj święta, przygotuj prezenty, podziel się zadaniami z bliskimi i zaproś gości – w jednym miejscu.",
+      "Gotowy plan przygotowań do świąt, od listopada do Wigilii. Ty tylko dopasowujesz go do siebie i odhaczasz – spokojnie, krok po kroku.",
     // Trzy drobne zapewnienia obok przycisku
     trust: ["Za darmo na start", "Bez instalowania", "Premiera w listopadzie"],
     videoPlaceholder: "Tu będzie krótki film o Gviazdce",
     videoLabel: "Film: jak działa Gviazdka",
+    // Droga do Wigilii pod filmem: pięć przystanków, każdy prowadzi do swojej zakładki
+    journey: {
+      label: "Droga do Wigilii",
+      start: "Listopad",
+      end: "Wigilia",
+      stops: [
+        { icon: "calendar", label: "Zaplanuj święta", href: "/plan" },
+        { icon: "gift", label: "Przygotuj prezenty", href: "/prezenty" },
+        { icon: "family", label: "Podziel się zadaniami", href: "/zadania" },
+        { icon: "envelope", label: "Zaproś gości", href: "/goscie" },
+        { icon: "card", label: "Wyślij życzenia", href: "/zyczenia" },
+      ],
+    },
   },
 
   // Sekcja z sześcioma kafelkami
