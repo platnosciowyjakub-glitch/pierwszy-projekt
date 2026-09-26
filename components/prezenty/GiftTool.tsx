@@ -4,10 +4,11 @@ import { useCallback, useEffect, useId, useMemo, useState, type FormEvent } from
 import type { Session } from "@supabase/supabase-js";
 import { prezenty } from "@/content/prezenty";
 import { getSupabase, type Gift, type GiftPerson, type GiftStatus } from "@/lib/supabase";
-import { isValidEmail } from "@/lib/email";
 import { Button } from "@/components/ui/Button";
 import { Rich } from "@/components/ui/Rich";
 import { CheckIcon } from "@/components/ui/CheckIcon";
+import { LoginForm } from "@/components/auth/LoginForm";
+import { useSession } from "@/components/auth/useSession";
 
 // Narzędzie „Lista prezentów”: logowanie linkiem z e-maila, osoby z budżetem i prezenty z etapami.
 // Dane leżą w Supabase; zasady w bazie pilnują, żeby każdy widział tylko swoje.
@@ -44,22 +45,7 @@ function spentOn(gifts: Gift[]) {
 }
 
 export function GiftTool() {
-  const supabase = getSupabase();
-  const [session, setSession] = useState<Session | null>(null);
-  const [ready, setReady] = useState(false);
-
-  useEffect(() => {
-    if (!supabase) return;
-    supabase.auth.getSession().then(({ data }) => {
-      setSession(data.session);
-      setReady(true);
-    });
-    const { data } = supabase.auth.onAuthStateChange((_event, s) => {
-      setSession(s);
-      setReady(true);
-    });
-    return () => data.subscription.unsubscribe();
-  }, [supabase]);
+  const { supabase, session, ready } = useSession();
 
   // Po powrocie z linku w e-mailu przewiń prosto do listy
   useEffect(() => {
@@ -96,69 +82,12 @@ function Notice({ children }: { children: React.ReactNode }) {
 }
 
 function LoginCard() {
-  const id = useId();
-  const [state, setState] = useState<"idle" | "sending" | "sent">("idle");
-  const [error, setError] = useState("");
-
-  async function onSubmit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    const email = String(new FormData(e.currentTarget).get("email") ?? "").trim();
-    if (!isValidEmail(email)) {
-      setError(t.emailInvalid);
-      return;
-    }
-    setError("");
-    setState("sending");
-    const { error } = await getSupabase()!.auth.signInWithOtp({
-      email,
-      options: { emailRedirectTo: `${window.location.origin}/prezenty` },
-    });
-    if (error) {
-      setState("idle");
-      setError(t.loginError);
-    } else {
-      setState("sent");
-    }
-  }
-
-  if (state === "sent") {
-    return (
-      <div role="status" className="rounded-frame border border-line bg-paper p-8 text-center">
-        <p className="font-serif text-2xl font-medium">{t.sentTitle}</p>
-        <p className="mx-auto mt-2 max-w-md text-moss">{t.sentText}</p>
-      </div>
-    );
-  }
-
   return (
-    <form onSubmit={onSubmit} noValidate className="mx-auto max-w-xl rounded-frame border border-line bg-paper p-6 sm:p-8">
+    <div className="mx-auto max-w-xl rounded-frame border border-line bg-paper p-6 shadow-soft sm:p-8">
       <p className="font-serif text-2xl font-medium">{t.loginTitle}</p>
-      <p className="mt-2 text-moss">{t.loginText}</p>
-      <label htmlFor={`${id}-email`} className="mt-6 block font-semibold">
-        {t.emailLabel}
-      </label>
-      <div className="mt-2 flex flex-col gap-3 sm:flex-row">
-        <input
-          id={`${id}-email`}
-          name="email"
-          type="email"
-          inputMode="email"
-          autoComplete="email"
-          placeholder={t.emailPlaceholder}
-          aria-invalid={error ? true : undefined}
-          aria-describedby={error ? `${id}-error` : undefined}
-          className={`${inputClass} flex-1`}
-        />
-        <Button type="submit" disabled={state === "sending"}>
-          {state === "sending" ? t.sending : t.sendLink}
-        </Button>
-      </div>
-      {error && (
-        <p id={`${id}-error`} role="alert" className="mt-2 text-sm text-cranberry">
-          {error}
-        </p>
-      )}
-    </form>
+      <p className="mt-2 mb-6 text-moss">{t.loginText}</p>
+      <LoginForm returnTo="/prezenty" />
+    </div>
   );
 }
 
