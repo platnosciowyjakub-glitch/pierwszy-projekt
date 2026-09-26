@@ -27,10 +27,10 @@ function errorText(error: AuthError) {
   return konto.genericError;
 }
 
-export function AuthForm({ returnTo = "/prezenty#lista" }: { returnTo?: string }) {
+export function AuthForm({ returnTo = "/prezenty#lista", initialEmail = "" }: { returnTo?: string; initialEmail?: string }) {
   const id = useId();
   const [mode, setMode] = useState<AuthMode>("login");
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState(initialEmail);
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [busy, setBusy] = useState(false);
@@ -74,7 +74,7 @@ export function AuthForm({ returnTo = "/prezenty#lista" }: { returnTo?: string }
       const { data, error } = await supabase.auth.signUp({
         email: address,
         password,
-        options: { emailRedirectTo: `${origin}${returnTo}` },
+        options: { emailRedirectTo: `${origin}/logowanie?konto=potwierdzone` },
       });
       setBusy(false);
       if (error) return setError(errorText(error));
@@ -131,7 +131,7 @@ export function AuthForm({ returnTo = "/prezenty#lista" }: { returnTo?: string }
               type="button"
               aria-pressed={mode === m}
               onClick={() => switchMode(m)}
-              className="min-h-12 rounded-full px-3 text-[0.9375rem] font-semibold text-moss transition-colors duration-200 aria-pressed:bg-paper aria-pressed:text-spruce aria-pressed:shadow-[0_1px_4px_rgb(31_58_46/0.12)]"
+              className="min-h-12 whitespace-nowrap rounded-full px-2 text-sm font-semibold sm:text-[0.9375rem] text-moss transition-colors duration-200 aria-pressed:bg-paper aria-pressed:text-spruce aria-pressed:shadow-[0_1px_4px_rgb(31_58_46/0.12)]"
             >
               {m === "login" ? konto.tabLogin : konto.tabSignup}
             </button>

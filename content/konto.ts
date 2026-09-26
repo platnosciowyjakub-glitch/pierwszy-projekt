@@ -32,7 +32,7 @@ export const konto = {
   // Po wysłaniu maila
   signupSentTitle: "Jeszcze jeden krok",
   signupSentText:
-    "Wysłaliśmy wiadomość na adres {email}. Otwórz ją i kliknij link, żeby potwierdzić konto. Potem od razu będziesz w środku. Jeśli jej nie widzisz, zajrzyj do spamu lub do zakładki „Oferty”.",
+    "Wysłaliśmy wiadomość na adres {email}. Otwórz ją i kliknij link, żeby potwierdzić konto. Potem wrócisz tutaj i się zalogujesz. Jeśli jej nie widzisz, zajrzyj do spamu lub do zakładki „Oferty”.",
   resetSentTitle: "Sprawdź skrzynkę",
   resetSentText:
     "Jeśli konto na adres {email} istnieje, znajdziesz w poczcie link do ustawienia nowego hasła. Jeśli go nie widzisz, zajrzyj do spamu.",
@@ -47,6 +47,10 @@ export const konto = {
   tooMany: "Za dużo prób w krótkim czasie. Odczekaj proszę kilka minut.",
   alreadyExists: "Konto na ten adres już istnieje. Zaloguj się albo ustaw nowe hasło.",
   genericError: "Coś poszło nie tak. Spróbuj proszę za chwilę.",
+
+  // Po kliknięciu linku potwierdzającego konto
+  confirmedNotice: "Twoje konto zostało potwierdzone. Zaloguj się.",
+  linkExpired: "Ten link już nie działa. Jeśli konto jest potwierdzone, po prostu się zaloguj. Jeśli nie, załóż je jeszcze raz.",
 
   unavailable: "Logowanie jeszcze się przygotowuje. Zajrzyj tu wkrótce.",
   loading: "Chwilkę…",
