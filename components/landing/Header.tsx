@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 import { landing } from "@/content/landing";
 import { primaryAction, siteConfig } from "@/config/site";
 import { resolveHref } from "@/lib/links";
@@ -18,6 +19,7 @@ export function Header() {
   const menuButton = useRef<HTMLButtonElement>(null);
   const drawer = useRef<HTMLDivElement>(null);
   const cta = primaryAction();
+  const pathname = usePathname();
 
   // Escape zamyka panel i menu
   useEffect(() => {
@@ -75,7 +77,8 @@ export function Header() {
                 <a
                   href={item.href}
                   onClick={() => setOpen(null)}
-                  className={`relative whitespace-nowrap rounded-full px-3.5 py-2 text-[0.9375rem] font-medium transition-colors duration-200 hover:bg-cream ${
+                  aria-current={pathname === item.href ? "page" : undefined}
+                  className={`relative whitespace-nowrap rounded-full px-3.5 py-2 aria-[current=page]:bg-cream aria-[current=page]:font-semibold text-[0.9375rem] font-medium transition-colors duration-200 hover:bg-cream ${
                     open === i ? "bg-cream" : ""
                   }`}
                 >
@@ -108,7 +111,7 @@ export function Header() {
         </nav>
 
         <div className="ml-auto flex items-center gap-2 sm:gap-3 lg:gap-5">
-          <a href="#cennik" className="hidden whitespace-nowrap text-[0.9375rem] font-medium underline-offset-4 hover:underline xl:inline">
+          <a href="/#cennik" className="hidden whitespace-nowrap text-[0.9375rem] font-medium underline-offset-4 hover:underline xl:inline">
             {t.pricing}
           </a>
           <ButtonLink href={cta.href} size="md" className="px-4 lg:px-5">
@@ -178,7 +181,7 @@ export function Header() {
             ))}
           </ul>
           <ul className="mt-4 space-y-1">
-            {[{ label: t.pricing, href: "#cennik" }, ...t.mobileExtra].map((l) => (
+            {[{ label: t.pricing, href: "/#cennik" }, ...t.mobileExtra].map((l) => (
               <li key={l.label}>
                 <a href={resolveHref(l.href)} onClick={() => setMenuOpen(false)} className="block py-2.5 text-lg">
                   {l.label}
