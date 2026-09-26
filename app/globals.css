@@ -21,6 +21,10 @@
 
   --radius-frame: 1.5rem;      /* duże kadry zdjęć (24 px) */
   --radius-panel: 1rem;        /* panele, kadry na telefonie (16 px) */
+  --radius-soft: 0.875rem;     /* pola formularzy (14 px) */
+  --radius-card: 1.5rem;       /* karty (24 px) */
+
+  --shadow-soft: 0 1px 2px rgb(31 58 46 / 0.04), 0 8px 24px -6px rgb(31 58 46 / 0.1);
 
   --ease-calm: cubic-bezier(0.22, 1, 0.36, 1);
 }

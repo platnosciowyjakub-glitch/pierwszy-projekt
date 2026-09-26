@@ -3,6 +3,7 @@ import { prezenty } from "@/content/prezenty";
 import { Header } from "@/components/landing/Header";
 import { Footer } from "@/components/landing/Footer";
 import { GiftsHero, GiftsInfo } from "@/components/prezenty/Sections";
+import { GiftTool } from "@/components/prezenty/GiftTool";
 
 export const metadata: Metadata = {
   title: prezenty.meta.title,
@@ -11,8 +12,8 @@ export const metadata: Metadata = {
   openGraph: { title: prezenty.meta.title, description: prezenty.meta.description, url: "/prezenty" },
 };
 
-// Podstrona „Przygotuj prezenty”. Na razie widok dla osób niezalogowanych:
-// krótkie wyjaśnienie z filmem i jedna sekcja o funkcjach. Pod nimi powstanie samo narzędzie.
+// Podstrona „Przygotuj prezenty”: krótkie wyjaśnienie z filmem, sekcja o funkcjach,
+// a pod nimi samo narzędzie (po zalogowaniu linkiem z e-maila).
 export default function PrezentyPage() {
   return (
     <>
@@ -20,6 +21,7 @@ export default function PrezentyPage() {
       <main>
         <GiftsHero />
         <GiftsInfo />
+        <GiftTool />
       </main>
       <Footer />
     </>
