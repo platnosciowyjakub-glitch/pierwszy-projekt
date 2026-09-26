@@ -82,6 +82,11 @@ Wzór funkcji: Wishpile – tylko logika, nigdy kod, grafiki, ikony, teksty ani 
 - „Ukryj kwoty” → „••• zł”. Po przekroczeniu budżetu łagodny komunikat, nigdy alarm.
 - Teksty modułu w `content/gifts.ts`. Linki partnerskie tylko przez `affiliateUrl()` i z oznaczeniem „Link partnerski”.
 - Usługi zewnętrzne (e-mail, programy partnerskie) – najpierw pytamy właściciela.
+- Baza: migracje w `supabase/migrations` (właściciel uruchamia je w SQL Editor), dane przykładowe
+  `supabase/seed/prezenty_przyklad.sql`. Testy: `npm test` („Wklej link”, SSRF, odczyt produktu) i `npm run test:baza`
+  (prywatność RLS na lokalnym Postgresie; `PGHOST/PGPORT/PGUSER` do lokalnej bazy). Test RLS można też wkleić w Supabase.
+- Kod: `lib/gifts` (typy, dane, daty), `components/gifts` (ekrany), `app/prezenty/*` (zakładki),
+  `app/api/prezenty/*` + `lib/server` (pobieranie linku i kopia zdjęcia – tylko na serwerze).
 
 ### Zakładki funkcji – wspólny schemat
 `/plan` (Zaplanuj święta), `/prezenty`, `/zadania` (Podziel się zadaniami), `/goscie` (Zaproś gości), `/zyczenia` (Wyślij życzenia).

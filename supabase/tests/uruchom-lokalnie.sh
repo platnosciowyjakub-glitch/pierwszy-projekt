@@ -26,3 +26,8 @@ select case when (select count(*) from public.gifts where title = 'Szalik' and p
 SQL
 psql -q -v ON_ERROR_STOP=1 -d "$DB" -o /dev/null -f supabase/tests/rls_prezenty.sql
 echo "Testy prywatności: OK"
+# Dane przykładowe: działają i można je wgrać dwa razy
+psql -q -d "$DB" -c "insert into auth.users (id, email) values ('00000000-0000-4000-8000-0000000000ee', 'wlasciciel@test')"
+sed "s/TWOJ@EMAIL.PL/wlasciciel@test/" supabase/seed/prezenty_przyklad.sql | psql -q -v ON_ERROR_STOP=1 -d "$DB"
+sed "s/TWOJ@EMAIL.PL/wlasciciel@test/" supabase/seed/prezenty_przyklad.sql | psql -q -v ON_ERROR_STOP=1 -d "$DB"
+psql -q -v ON_ERROR_STOP=1 -d "$DB" -At -c "select 'Dane przykładowe: ' || count(*) || ' osób, ' || (select count(*) from public.gifts g join public.gift_lists l on l.id = g.list_id where l.name = 'Święta 2026 – przykład') || ' prezentów' from public.recipients r join public.gift_lists l on l.id = r.list_id where l.name = 'Święta 2026 – przykład'"

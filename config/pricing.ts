@@ -50,3 +50,11 @@ export const pricing = [
 ] as const;
 
 export const priceSoon = "Cena wkrótce";
+
+// Limity wersji darmowej w module prezentów. null = bez limitu (na razie wszystko wyłączone).
+// Gdy ustalimy limity, wystarczy wpisać liczbę, np. maxRecipients: 5.
+export const freeLimits = {
+  maxRecipients: null as number | null,
+  maxLists: null as number | null,
+  maxAttachmentsPerGift: null as number | null,
+};

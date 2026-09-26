@@ -26,7 +26,7 @@ export const gifts = {
   loading: "Chwilkę, wczytuję Twoje prezenty…",
   saveError: "Nie udało się zapisać. Sprawdź połączenie i spróbuj jeszcze raz.",
   loadError: "Nie udało się wczytać listy. Odśwież proszę stronę za chwilę.",
-  setupMissing: "Lista prezentów jeszcze się przygotowuje. Zajrzyj tu wkrótce.",
+  limitReached: "W wersji darmowej to już wszystkie osoby. Pełny pakiet nie ma limitów.",
 
   // Zakładki modułu
   tabs: {

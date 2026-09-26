@@ -3,6 +3,7 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import type { Session, SupabaseClient } from "@supabase/supabase-js";
 import { gifts as t } from "@/content/gifts";
+import { freeLimits } from "@/config/pricing";
 import { fill } from "@/lib/plural";
 import {
   GIFT_BUCKET,
@@ -230,6 +231,11 @@ export function GiftsProvider({ supabase, session, children }: { supabase: Supab
   const addRecipient = useCallback(
     async (input: RecipientInput) => {
       if (!activeId) return null;
+      // Miejsce na limit wersji darmowej (config/pricing.ts → freeLimits; na razie wyłączony)
+      if (freeLimits.maxRecipients !== null && recipients.length >= freeLimits.maxRecipients) {
+        notify(t.limitReached);
+        return null;
+      }
       const { data, error } = await supabase
         .from("recipients")
         .insert({ ...input, list_id: activeId })
@@ -242,7 +248,7 @@ export function GiftsProvider({ supabase, session, children }: { supabase: Supab
       setRecipients((rs) => [...rs, data as Recipient]);
       return data as Recipient;
     },
-    [supabase, activeId, failed],
+    [supabase, activeId, failed, notify, recipients.length],
   );
 
   const updateRecipient = useCallback(
