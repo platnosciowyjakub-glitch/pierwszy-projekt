@@ -31,8 +31,8 @@ export const landing = {
   },
 
   hero: {
-    // Słowa w *gwiazdkach* dostają w tym nagłówku podświetlenie jak markerem.
-    title: "*Planer świąteczny* dla całej rodziny",
+    // Słowa w *gwiazdkach* są w nagłówku wyróżnione pochyłą, żurawinową kursywą.
+    title: "Planer świąteczny *dla całej rodziny*",
     subtitle:
       "Gotowy plan przygotowań od listopada do Wigilii. Zaplanuj święta, przygotuj prezenty, podziel się zadaniami z bliskimi i zaproś gości – w jednym miejscu.",
     // Trzy drobne zapewnienia obok przycisku
