@@ -59,7 +59,7 @@ export function LoginPanel() {
             <div className="text-center">
               <p className="font-serif text-2xl font-medium">{konto.loggedInTitle}</p>
               <p className="mt-2 text-moss">{konto.loggedInText.replace("{email}", session.user.email ?? "")}</p>
-              <ButtonLink href="/prezenty#lista" className="mt-6 w-full">
+              <ButtonLink href="/prezenty" className="mt-6 w-full">
                 {konto.goToGifts}
               </ButtonLink>
               <button

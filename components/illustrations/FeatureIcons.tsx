@@ -74,53 +74,6 @@ function Card({ className }: Props) {
   );
 }
 
-
-function LinkIcon({ className }: Props) {
-  return (
-    <svg viewBox="0 0 32 32" aria-hidden="true" className={className}>
-      <path d="M13.5 18.5a5 5 0 007 0l4-4a5 5 0 00-7-7l-1.5 1.5" {...line} />
-      <path d="M18.5 13.5a5 5 0 00-7 0l-4 4a5 5 0 007 7l1.5-1.5" {...line} />
-      <circle cx="25" cy="25" r="2.2" fill="var(--color-cranberry)" />
-    </svg>
-  );
-}
-
-function Note({ className }: Props) {
-  return (
-    <svg viewBox="0 0 32 32" aria-hidden="true" className={className}>
-      <path d="M8 5h12l5 5v17H8z" {...line} />
-      <path d="M20 5v5h5M12 16h9M12 20h9M12 24h5" {...line} />
-      <circle cx="12.5" cy="11" r="1.6" fill="var(--color-cranberry)" />
-    </svg>
-  );
-}
-
-
-
-
-function Coins({ className }: Props) {
-  return (
-    <svg viewBox="0 0 32 32" aria-hidden="true" className={className}>
-      <ellipse cx="13" cy="10" rx="7" ry="3" {...line} />
-      <path d="M6 10v5c0 1.7 3.1 3 7 3s7-1.3 7-3v-5M6 15v5c0 1.7 3.1 3 7 3 1 0 2-.1 2.8-.3" {...line} />
-      <circle cx="22" cy="21" r="5" {...line} stroke="var(--color-cranberry)" />
-      <path d="M22 19v4M20 21h4" {...line} stroke="var(--color-cranberry)" />
-    </svg>
-  );
-}
-
-
-
-function Lock({ className }: Props) {
-  return (
-    <svg viewBox="0 0 32 32" aria-hidden="true" className={className}>
-      <rect x="7" y="14" width="18" height="13" rx="3" {...line} />
-      <path d="M11 14v-3.5a5 5 0 0110 0V14" {...line} />
-      <circle cx="16" cy="20.5" r="1.8" fill="var(--color-cranberry)" />
-    </svg>
-  );
-}
-
 export const featureIcons = {
   calendar: Calendar,
   gift: Gift,
@@ -128,8 +81,4 @@ export const featureIcons = {
   envelope: Envelope,
   suitcase: Suitcase,
   card: Card,
-  link: LinkIcon,
-  note: Note,
-  coins: Coins,
-  lock: Lock,
 };

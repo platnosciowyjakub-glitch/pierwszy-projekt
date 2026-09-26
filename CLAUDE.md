@@ -55,10 +55,11 @@ zapis, stopka. Czeka na uwagi właściciela. Zapisy jeszcze nie są nigdzie prze
 
 ### Podstrona „Przygotuj prezenty” (`/prezenty`)
 Gałąź robocza: `claude/podstrona-prezenty` (odgałęziona od `claude/amazing-johnson-1x06q5`).
-To przyszłe miejsce **samego narzędzia do prezentów**. Osoba niezalogowana widzi tylko: pierwszy ekran
-(krótkie wyjaśnienie + film „jak to obsługiwać”, plik w `config/site.ts` → `giftsVideo`) i jedną sekcję
-informacyjną o funkcjach. Pod nimi (dla zalogowanych) zbudujemy narzędzie.
-Teksty w `content/prezenty.ts`, sekcje w `components/prezenty/`.
+To zakładka z **samym narzędziem do prezentów** – od razu od góry, bez filmu i opisu funkcji
+(filmy o obsłudze będą na stronie głównej). Ma być proste bez nauki: podpowiedzi osób na start, dopisywanie
+prezentu jednym polem („Szalik 80 zł” zapisuje też cenę), etap prezentu w jednym przycisku, szczegóły po
+kliknięciu w prezent. Dostępy (co widzi niezalogowany) ustalimy później; na razie do zapisu trzeba konta.
+Teksty w `content/prezenty.ts`, narzędzie w `components/prezenty/GiftTool.tsx`.
 Inspiracja funkcjami z wishpile.com (budżet na osobę, etapy prezentu, planowanie z partnerem, rodzinna lista
 życzeń z rezerwacją, wklejanie linku) – bierzemy wyłącznie pomysły na funkcje, wygląd i teksty są nasze.
 Linki w menu i stopce prowadzą do `/#sekcja` albo do podstron, żeby działały z każdej strony.

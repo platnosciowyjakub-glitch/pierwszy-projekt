@@ -30,7 +30,7 @@ function errorText(error: AuthError) {
   return konto.genericError;
 }
 
-export function AuthForm({ returnTo = "/prezenty#lista", initialEmail = "" }: { returnTo?: string; initialEmail?: string }) {
+export function AuthForm({ returnTo = "/prezenty", initialEmail = "" }: { returnTo?: string; initialEmail?: string }) {
   const id = useId();
   const [mode, setMode] = useState<AuthMode>("login");
   const [email, setEmail] = useState(initialEmail);

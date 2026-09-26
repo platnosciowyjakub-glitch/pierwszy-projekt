@@ -25,8 +25,6 @@ export const siteConfig = {
   // Puste ("") = w tym miejscu widać spokojne pole z napisem „Tu będzie krótki film”.
   heroVideo: "",
   heroVideoPoster: "",
-  // Film na podstronie „Przygotuj prezenty” (jak obsługiwać listę prezentów). Zasada ta sama co wyżej.
-  giftsVideo: "",
 
   // Adres e-mail do przycisku „Napisz do nas”. Puste ("") = przycisk prowadzi na stronę Kontakt.
   contactEmail: "",

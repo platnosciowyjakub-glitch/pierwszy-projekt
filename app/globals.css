@@ -74,6 +74,11 @@
   animation-delay: var(--delay, 0ms);
 }
 
+/* Nowy wpis na liście prezentów: krótko i spokojnie */
+.pop-in {
+  animation: rise-in 320ms var(--ease-calm) both;
+}
+
 /* Elementy wyłaniają się przy przewijaniu (tam, gdzie przeglądarka to umie) */
 @supports (animation-timeline: view()) {
   @media (prefers-reduced-motion: no-preference) {
@@ -91,6 +96,6 @@
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .rise-in { animation: none; }
+  .rise-in, .pop-in { animation: none; }
   *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
 }

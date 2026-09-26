@@ -53,7 +53,7 @@ export function NewPasswordPanel() {
           ) : done ? (
             <div role="status" className="text-center">
               <p className="font-serif text-2xl font-medium">{konto.newPasswordDone}</p>
-              <ButtonLink href="/prezenty#lista" className="mt-6 w-full">
+              <ButtonLink href="/prezenty" className="mt-6 w-full">
                 {konto.goToGifts}
               </ButtonLink>
             </div>
