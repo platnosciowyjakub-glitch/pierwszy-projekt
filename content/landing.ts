@@ -13,11 +13,11 @@ export const landing = {
   // Nawigacja u góry strony. „Panel” pokazuje się po najechaniu myszką.
   nav: {
     items: [
-      { label: "Plan świąt", href: "#plan", photo: "tile-kalendarz", text: "Twój plan świąt, tydzień po tygodniu, od listopada do Wigilii." },
-      { label: "Lista prezentów", href: "#prezenty", photo: "tile-prezenty", text: "Pomysły, zakupy i budżet w jednym miejscu. Tylko dla Twoich oczu." },
-      { label: "Zadania z rodziną", href: "#rodzina", photo: "tile-rodzina", text: "Wspólne porządki i przygotowania. Każdy wie, co ma zrobić." },
-      { label: "Goście na Wigilię", href: "#wigilia", photo: "tile-goscie", text: "Zaproszenia, potwierdzenia i lista gości z dietami." },
-      { label: "Kartki i życzenia", href: "#szczegoly", photo: "tile-kartki", text: "Życzenia dla każdego, na czas. Z pomocą w pisaniu." },
+      { label: "Zaplanuj święta", href: "#plan", photo: "tile-kalendarz", text: "Twój plan świąt, tydzień po tygodniu, od listopada do Wigilii." },
+      { label: "Przygotuj prezenty", href: "#prezenty", photo: "tile-prezenty", text: "Pomysły, zakupy i budżet w jednym miejscu. Tylko dla Twoich oczu." },
+      { label: "Podziel się zadaniami", href: "#rodzina", photo: "tile-rodzina", text: "Wspólne porządki i przygotowania. Każdy wie, co ma zrobić." },
+      { label: "Zaproś gości", href: "#wigilia", photo: "tile-goscie", text: "Zaproszenia, potwierdzenia i lista gości z dietami." },
+      { label: "Wyślij życzenia", href: "#szczegoly", photo: "tile-kartki", text: "Życzenia dla każdego, na czas. Z pomocą w pisaniu." },
     ],
     panelLink: "Zobacz",
     pricing: "Cennik",
@@ -59,7 +59,7 @@ export const landing = {
     items: [
       {
         id: "plan",
-        label: "Plan świąt",
+        label: "Zaplanuj święta",
         title: "Zobacz swój *plan świąt*",
         text: "Odpowiedz na 4 pytania, a Gviazdka ułoży Twoje przygotowania w kalendarzu – od listopada do Wigilii. Zawsze wiesz, co warto zrobić w tym tygodniu.",
         primary: "cta",
@@ -69,7 +69,7 @@ export const landing = {
       },
       {
         id: "prezenty",
-        label: "Lista prezentów",
+        label: "Przygotuj prezenty",
         title: "Prezenty *pod kontrolą*",
         text: "Pomysły, linki, to, co już kupione, i ile wydałeś – w jednym miejscu. A obdarowany niczego nie podejrzy.",
         primary: "cta",
@@ -79,7 +79,7 @@ export const landing = {
       },
       {
         id: "rodzina",
-        label: "Zadania z rodziną",
+        label: "Podziel się zadaniami",
         title: "Cała rodzina *w jednym miejscu*",
         text: "Zaproś bliskich jednym linkiem – bez instalowania aplikacji. Rozdzielcie porządki i przygotowania, a potem odhaczajcie razem.",
         primary: "cta",
@@ -89,7 +89,7 @@ export const landing = {
       },
       {
         id: "wigilia",
-        label: "Goście na Wigilię",
+        label: "Zaproś gości",
         title: "Wigilia *u Ciebie*",
         text: "Wyślij ciepłe zaproszenie i zbierz potwierdzenia. Babcia nie ma smartfona? Potwierdzisz za nią jednym kliknięciem.",
         primary: "cta",
@@ -235,11 +235,11 @@ export const landing = {
       {
         title: "Funkcje",
         links: [
-          { label: "Plan świąt", href: "#plan" },
-          { label: "Lista prezentów", href: "#prezenty" },
-          { label: "Zadania z rodziną", href: "#rodzina" },
-          { label: "Goście na Wigilię", href: "#wigilia" },
-          { label: "Kartki i życzenia", href: "#szczegoly" },
+          { label: "Zaplanuj święta", href: "#plan" },
+          { label: "Przygotuj prezenty", href: "#prezenty" },
+          { label: "Podziel się zadaniami", href: "#rodzina" },
+          { label: "Zaproś gości", href: "#wigilia" },
+          { label: "Wyślij życzenia", href: "#szczegoly" },
         ],
       },
       { title: "Pomoc", links: [{ label: "Pytania i odpowiedzi", href: "#pytania" }, { label: "Napisz do nas", href: "contact" }] },
