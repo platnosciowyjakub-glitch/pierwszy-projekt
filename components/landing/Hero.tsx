@@ -34,7 +34,7 @@ export function Hero() {
           <Rich text={t.title} />
         </h1>
         <p
-          className="rise-in mt-4 max-w-[33rem] text-base leading-relaxed text-moss sm:text-lg lg:mt-6 lg:text-2xl lg:leading-8 lg:text-snow/90"
+          className="rise-in mt-4 max-w-[33rem] lg:max-w-[44rem] text-base leading-relaxed text-moss sm:text-lg lg:mt-6 lg:text-2xl lg:leading-8 lg:text-snow/90"
           style={{ "--delay": "150ms" } as React.CSSProperties}
         >
           {t.subtitle}

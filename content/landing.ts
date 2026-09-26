@@ -32,7 +32,7 @@ export const landing = {
 
   hero: {
     title: "Spokojne święta *zaczynają się* tutaj",
-    subtitle: "Od listy prezentów po wigilijny stół – Gviazdka jest z Tobą każdego dnia aż do świąt.",
+    subtitle: "Zaplanuj święta, przygotuj prezenty, podziel się zadaniami z bliskimi i zaproś gości – wszystko w jednym miejscu.",
     secondary: "Zobacz, jak to działa",
     photoAlt: "Gałązka świerku z czerwonymi owocami na tle ciepłych, rozmytych świateł",
   },
