@@ -5,11 +5,9 @@ import { landing } from "@/content/landing";
 import { Container } from "@/components/ui/Container";
 import { Rich } from "@/components/ui/Rich";
 
-type FaqItem = { readonly q: string; readonly a: string };
+const t = landing.faq;
 
-// Pytania i odpowiedzi. Domyślnie ze strony głównej; podstrony podają własne.
-export function Faq({ title = landing.faq.title, items = landing.faq.items }: { title?: string; items?: readonly FaqItem[] }) {
-  const t = { title, items };
+export function Faq() {
   const [open, setOpen] = useState<number | null>(0);
   return (
     <section id="pytania" aria-labelledby="faq-title" className="border-t border-line bg-cream py-16 lg:py-24">

@@ -95,35 +95,8 @@ function Note({ className }: Props) {
   );
 }
 
-function Spark({ className }: Props) {
-  return (
-    <svg viewBox="0 0 32 32" aria-hidden="true" className={className}>
-      <path d="M14 5c.8 5 2.8 7 8 8-5.2 1-7.2 3-8 8-.8-5-2.8-7-8-8 5.2-1 7.2-3 8-8z" {...line} />
-      <path d="M24 19c.4 2.2 1.3 3.1 3.5 3.5-2.2.4-3.1 1.3-3.5 3.5-.4-2.2-1.3-3.1-3.5-3.5 2.2-.4 3.1-1.3 3.5-3.5z" fill="var(--color-gold)" />
-      <circle cx="24.5" cy="7.5" r="1.4" fill="var(--color-cranberry)" />
-    </svg>
-  );
-}
 
-function Bell({ className }: Props) {
-  return (
-    <svg viewBox="0 0 32 32" aria-hidden="true" className={className}>
-      <path d="M9 21v-6a7 7 0 0114 0v6l2.5 2.5h-19z" {...line} />
-      <path d="M13.5 27a2.5 2.5 0 005 0M16 5v3" {...line} />
-      <circle cx="23" cy="8" r="2.2" fill="var(--color-cranberry)" />
-    </svg>
-  );
-}
 
-function Hat({ className }: Props) {
-  return (
-    <svg viewBox="0 0 32 32" aria-hidden="true" className={className}>
-      <path d="M6 23c2-9 7-15 14-15 3 0 5 2 5 5" {...line} stroke="var(--color-cranberry)" />
-      <rect x="4" y="22" width="20" height="5" rx="2.5" {...line} />
-      <circle cx="25" cy="15" r="2.4" {...line} />
-    </svg>
-  );
-}
 
 function Coins({ className }: Props) {
   return (
@@ -136,22 +109,14 @@ function Coins({ className }: Props) {
   );
 }
 
-function Receipt({ className }: Props) {
-  return (
-    <svg viewBox="0 0 32 32" aria-hidden="true" className={className}>
-      <path d="M8 4h16v24l-2.7-1.8L18.7 28 16 26.2 13.3 28l-2.6-1.8L8 28z" {...line} />
-      <path d="M12 11h8M12 15h8M12 19h5" {...line} />
-      <path d="M20 19h.01" {...line} strokeWidth="2.5" stroke="var(--color-cranberry)" />
-    </svg>
-  );
-}
 
-function Phone({ className }: Props) {
+
+function Lock({ className }: Props) {
   return (
     <svg viewBox="0 0 32 32" aria-hidden="true" className={className}>
-      <rect x="9" y="4" width="14" height="24" rx="3" {...line} />
-      <path d="M14 7.5h4" {...line} />
-      <path d="M13 17l2 2 4-4" {...line} stroke="var(--color-cranberry)" />
+      <rect x="7" y="14" width="18" height="13" rx="3" {...line} />
+      <path d="M11 14v-3.5a5 5 0 0110 0V14" {...line} />
+      <circle cx="16" cy="20.5" r="1.8" fill="var(--color-cranberry)" />
     </svg>
   );
 }
@@ -165,10 +130,6 @@ export const featureIcons = {
   card: Card,
   link: LinkIcon,
   note: Note,
-  spark: Spark,
-  bell: Bell,
-  hat: Hat,
   coins: Coins,
-  receipt: Receipt,
-  phone: Phone,
+  lock: Lock,
 };

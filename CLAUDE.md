@@ -55,11 +55,12 @@ zapis, stopka. Czeka na uwagi właściciela. Zapisy jeszcze nie są nigdzie prze
 
 ### Podstrona „Przygotuj prezenty” (`/prezenty`)
 Gałąź robocza: `claude/podstrona-prezenty` (odgałęziona od `claude/amazing-johnson-1x06q5`).
-Teksty w `content/prezenty.ts`, sekcje w `components/prezenty/`, makiety w `components/mockups/GiftMockups.tsx`.
-Inspiracja: **funkcje** z wishpile.com (budżet na osobę, etapy prezentu, wspólne planowanie z partnerem,
-rodzinna lista życzeń z rezerwacją, wklejanie linku, losowanie Mikołaja, wspólny prezent, paragony).
-Z Wishpile bierzemy wyłącznie pomysły na funkcje – wygląd i teksty są nasze. Funkcje spoza specyfikacji
-oznaczamy na stronie etykietą „Wkrótce” (`soon: true`), dopóki właściciel nie zdecyduje inaczej.
+To przyszłe miejsce **samego narzędzia do prezentów**. Osoba niezalogowana widzi tylko: pierwszy ekran
+(krótkie wyjaśnienie + film „jak to obsługiwać”, plik w `config/site.ts` → `giftsVideo`) i jedną sekcję
+informacyjną o funkcjach. Pod nimi (dla zalogowanych) zbudujemy narzędzie.
+Teksty w `content/prezenty.ts`, sekcje w `components/prezenty/`.
+Inspiracja funkcjami z wishpile.com (budżet na osobę, etapy prezentu, planowanie z partnerem, rodzinna lista
+życzeń z rezerwacją, wklejanie linku) – bierzemy wyłącznie pomysły na funkcje, wygląd i teksty są nasze.
 Linki w menu i stopce prowadzą do `/#sekcja` albo do podstron, żeby działały z każdej strony.
 
 ## Kierunek: układ Zoli, marka Gviazdki

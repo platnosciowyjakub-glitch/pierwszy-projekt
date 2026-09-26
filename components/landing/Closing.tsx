@@ -6,10 +6,10 @@ import { Photo } from "@/components/ui/Photo";
 import { Rich } from "@/components/ui/Rich";
 import { SignupForm } from "@/components/landing/SignupForm";
 
+const t = landing.closing;
+
 // Zamknięcie: kremowe tło, duże zdjęcie z ciepłym światłem i formularz zapisu.
-// Podstrony mogą podać własny nagłówek i tekst.
-export function Closing({ title = landing.closing.title, text = landing.closing.text }: { title?: string; text?: string }) {
-  const t = { ...landing.closing, title, text };
+export function Closing() {
   const cta = primaryAction();
   return (
     <section id="zapis" aria-labelledby="closing-title" className="bg-cream py-16 lg:py-24">
