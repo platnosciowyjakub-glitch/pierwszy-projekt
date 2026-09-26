@@ -26,6 +26,10 @@ export const siteConfig = {
   heroVideo: "",
   heroVideoPoster: "",
 
+  // Film albo obrazek w zakładce „Przygotuj prezenty” (dla osób niezalogowanych). Zasada ta sama co wyżej.
+  giftsVideo: "",
+  giftsVideoPoster: "",
+
   // Adres e-mail do przycisku „Napisz do nas”. Puste ("") = przycisk prowadzi na stronę Kontakt.
   contactEmail: "",
 

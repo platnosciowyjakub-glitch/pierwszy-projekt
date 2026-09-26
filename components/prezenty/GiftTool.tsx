@@ -3,11 +3,10 @@
 import { useCallback, useEffect, useId, useMemo, useState, type FormEvent } from "react";
 import type { Session } from "@supabase/supabase-js";
 import { prezenty } from "@/content/prezenty";
-import { konto } from "@/content/konto";
 import { getSupabase, type Gift, type GiftPerson, type GiftStatus } from "@/lib/supabase";
-import { ButtonLink } from "@/components/ui/Button";
 import { Rich } from "@/components/ui/Rich";
 import { useSession } from "@/components/auth/useSession";
+import { GiftsIntro } from "@/components/prezenty/GiftsIntro";
 
 // Zakładka „Przygotuj prezenty”: od razu samo narzędzie, bez instrukcji.
 // Osoby z budżetem, prezenty z etapami. Dane leżą w Supabase; każdy widzi tylko swoje.
@@ -68,6 +67,10 @@ function spentOn(gifts: Gift[]) {
 export function GiftTool() {
   const { supabase, session, ready } = useSession();
 
+  // Dopóki nie wiadomo, czy ktoś jest zalogowany, zostaje spokojne kremowe tło (bez mignięcia treści).
+  if (!supabase || (ready && !session)) return <GiftsIntro />;
+  if (!session) return <section aria-busy="true" className="min-h-[70vh] bg-cream" />;
+
   return (
     <section aria-labelledby="tool-title" className="min-h-[70vh] bg-cream pb-20 pt-10 sm:pt-14 lg:pb-28">
       <div className="mx-auto w-full max-w-3xl px-4 sm:px-6">
@@ -80,17 +83,8 @@ export function GiftTool() {
           <Rich text={t.title} />
         </h1>
         <p className="mt-3 text-lg text-moss">{t.subtitle}</p>
-
         <div className="mt-8">
-          {!supabase ? (
-            <Notice>{t.unavailable}</Notice>
-          ) : !ready ? (
-            <Notice>{t.loading}</Notice>
-          ) : session ? (
-            <GiftBoard session={session} />
-          ) : (
-            <LoginCard />
-          )}
+          <GiftBoard session={session} />
         </div>
       </div>
     </section>
@@ -99,21 +93,6 @@ export function GiftTool() {
 
 function Notice({ children }: { children: React.ReactNode }) {
   return <p className="rounded-frame bg-paper p-8 text-center text-moss shadow-soft">{children}</p>;
-}
-
-function LoginCard() {
-  return (
-    <div className="rounded-frame bg-paper p-6 text-center shadow-soft sm:p-10">
-      <p className="font-serif text-2xl font-medium">{t.loginTitle}</p>
-      <p className="mt-2 text-moss">{t.loginText}</p>
-      <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center">
-        <ButtonLink href="/logowanie">{konto.loginButton}</ButtonLink>
-        <ButtonLink href="/logowanie?konto=nowe" variant="outline">
-          {konto.signupButton}
-        </ButtonLink>
-      </div>
-    </div>
-  );
 }
 
 function GiftBoard({ session }: { session: Session }) {

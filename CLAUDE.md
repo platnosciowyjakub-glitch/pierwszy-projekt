@@ -55,8 +55,9 @@ zapis, stopka. Czeka na uwagi właściciela. Zapisy jeszcze nie są nigdzie prze
 
 ### Podstrona „Przygotuj prezenty” (`/prezenty`)
 Gałąź robocza: `claude/podstrona-prezenty` (odgałęziona od `claude/amazing-johnson-1x06q5`).
-To zakładka z **samym narzędziem do prezentów** – od razu od góry, bez filmu i opisu funkcji
-(filmy o obsłudze będą na stronie głównej). Ma być proste bez nauki: podpowiedzi osób na start, dopisywanie
+Niezalogowany widzi pierwszy ekran jak na stronie głównej: opis + „Załóż konto i zacznij” po lewej,
+film lub obrazek po prawej (`config/site.ts` → `giftsVideo`, `components/prezenty/GiftsIntro.tsx`).
+Zalogowany widzi od razu **samo narzędzie do prezentów**, bez opisów. Ma być proste bez nauki: podpowiedzi osób na start, dopisywanie
 prezentu jednym polem („Szalik 80 zł” zapisuje też cenę), etap prezentu w jednym przycisku, szczegóły po
 kliknięciu w prezent. Dostępy (co widzi niezalogowany) ustalimy później; na razie do zapisu trzeba konta.
 Teksty w `content/prezenty.ts`, narzędzie w `components/prezenty/GiftTool.tsx`.

@@ -9,14 +9,25 @@ export const prezenty = {
       "Lista prezentów na święta z budżetem dla każdej osoby. Pomysły, ceny i to, co już kupione, w jednym miejscu. Obdarowany niczego nie podejrzy.",
   },
 
+  // Pierwszy ekran dla osób niezalogowanych (po prawej film albo obrazek z config/site.ts → giftsVideo)
+  intro: {
+    eyebrow: "Przygotuj prezenty",
+    title: "Lista prezentów *bez stresu*",
+    subtitle:
+      "Wpisz bliskich, dopisz pomysły i odhaczaj: kupione, zapakowane, wręczone. Budżet liczy się sam, a obdarowani niczego nie podejrzą.",
+    cta: "Załóż konto i zacznij",
+    login: "Masz już konto? Zaloguj się",
+    trust: ["Gotowe w minutę", "Tylko Ty widzisz swoją listę", "Bez instalowania"],
+    videoPlaceholder: "Tu będzie krótki film: jak działa lista prezentów",
+    videoLabel: "Film: jak działa lista prezentów w Gviazdce",
+  },
+
+  // Samo narzędzie (po zalogowaniu)
   eyebrow: "Przygotuj prezenty",
   title: "Twoja *lista prezentów*",
   subtitle: "Wpisz bliskich, dopisz pomysły i odhaczaj, co już kupione.",
 
-  unavailable: "Lista jeszcze się przygotowuje. Zajrzyj tu wkrótce.",
   loading: "Chwilkę, wczytuję Twoją listę…",
-  loginTitle: "Zaloguj się, żeby zacząć swoją listę",
-  loginText: "Wystarczy e-mail i hasło. Twoją listę zobaczysz tylko Ty.",
 
   // Podsumowanie
   spentLabel: "Wydane",
