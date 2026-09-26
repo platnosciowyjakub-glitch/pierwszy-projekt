@@ -45,6 +45,7 @@ export const konto = {
   notConfirmed: "Najpierw potwierdź konto – kliknij link w wiadomości, którą od nas dostałeś.",
   weakPassword: "To hasło jest zbyt łatwe do odgadnięcia. Wymyśl proszę trudniejsze.",
   tooMany: "Za dużo prób w krótkim czasie. Odczekaj proszę kilka minut.",
+  waitSeconds: "Chwilkę. Kolejną wiadomość możemy wysłać za {s} s.",
   tooManyEmails: "Na razie możemy wysłać tylko kilka wiadomości na godzinę. Spróbuj proszę za godzinę.",
   alreadyExists: "Konto na ten adres już istnieje. Zaloguj się albo ustaw nowe hasło.",
   genericError: "Coś poszło nie tak. Spróbuj proszę za chwilę.",

@@ -23,6 +23,8 @@ function errorText(error: AuthError) {
   if (code === "email_not_confirmed" || message.includes("not confirmed")) return konto.notConfirmed;
   if (code === "weak_password") return konto.weakPassword;
   if (code === "user_already_exists") return konto.alreadyExists;
+  const seconds = message.match(/after (\d+) seconds?/);
+  if (seconds) return konto.waitSeconds.replace("{s}", seconds[1]);
   if (code === "over_email_send_rate_limit" || message.includes("email rate limit")) return konto.tooManyEmails;
   if (code.startsWith("over_") || error.status === 429) return konto.tooMany;
   return konto.genericError;
