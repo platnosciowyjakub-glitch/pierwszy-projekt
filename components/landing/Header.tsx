@@ -59,7 +59,7 @@ export function Header() {
         </a>
 
         {/* Kategorie z panelami (komputer) */}
-        <nav aria-label="Funkcje" className="hidden h-full lg:block">
+        <nav aria-label="Funkcje" className="hidden h-full xl:block">
           <ul className="flex h-full items-center gap-1">
             {t.items.map((item, i) => (
               <li
@@ -75,7 +75,7 @@ export function Header() {
                 <a
                   href={item.href}
                   onClick={() => setOpen(null)}
-                  className={`relative rounded-full px-3.5 py-2 text-[0.9375rem] font-medium transition-colors duration-200 hover:bg-cream ${
+                  className={`relative whitespace-nowrap rounded-full px-3.5 py-2 text-[0.9375rem] font-medium transition-colors duration-200 hover:bg-cream ${
                     open === i ? "bg-cream" : ""
                   }`}
                 >
@@ -108,7 +108,7 @@ export function Header() {
         </nav>
 
         <div className="ml-auto flex items-center gap-2 sm:gap-3 lg:gap-5">
-          <a href="#cennik" className="hidden text-[0.9375rem] font-medium underline-offset-4 hover:underline lg:inline">
+          <a href="#cennik" className="hidden whitespace-nowrap text-[0.9375rem] font-medium underline-offset-4 hover:underline xl:inline">
             {t.pricing}
           </a>
           <ButtonLink href={cta.href} size="md" className="px-4 lg:px-5">
@@ -120,7 +120,7 @@ export function Header() {
             aria-expanded={menuOpen}
             aria-controls="menu-mobilne"
             onClick={() => setMenuOpen(true)}
-            className="-mr-2 flex h-11 w-11 items-center justify-center rounded-full hover:bg-cream lg:hidden"
+            className="-mr-2 flex h-11 w-11 items-center justify-center rounded-full hover:bg-cream xl:hidden"
           >
             <span className="sr-only">{t.menu}</span>
             <svg viewBox="0 0 24 24" aria-hidden="true" className="h-6 w-6">
@@ -139,7 +139,7 @@ export function Header() {
         aria-modal="true"
         aria-label={t.menu}
         hidden={!menuOpen}
-        className="fixed inset-0 z-50 h-dvh overflow-y-auto bg-paper lg:hidden"
+        className="fixed inset-0 z-50 h-dvh overflow-y-auto bg-paper xl:hidden"
       >
         <Container className="flex h-16 items-center justify-between border-b border-line">
           <Logo />
