@@ -31,10 +31,14 @@ export const landing = {
   },
 
   hero: {
-    title: "Spokojne święta *zaczynają się* tutaj",
-    subtitle: "Zaplanuj święta, przygotuj prezenty, podziel się zadaniami z bliskimi i zaproś gości – wszystko w jednym miejscu.",
-    secondary: "Zobacz, jak to działa",
-    photoAlt: "Gałązka świerku z czerwonymi owocami na tle ciepłych, rozmytych świateł",
+    // Słowa w *gwiazdkach* dostają w tym nagłówku podświetlenie jak markerem.
+    title: "*Planer świąteczny* dla całej rodziny",
+    subtitle:
+      "Gotowy plan przygotowań od listopada do Wigilii. Zaplanuj święta, przygotuj prezenty, podziel się zadaniami z bliskimi i zaproś gości – w jednym miejscu.",
+    // Trzy drobne zapewnienia obok przycisku
+    trust: ["Za darmo na start", "Bez instalowania", "Premiera w listopadzie"],
+    videoPlaceholder: "Tu będzie krótki film o Gviazdce",
+    videoLabel: "Film: jak działa Gviazdka",
   },
 
   // Sekcja z sześcioma kafelkami

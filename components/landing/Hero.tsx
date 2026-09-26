@@ -1,64 +1,92 @@
 import { landing } from "@/content/landing";
-import { primaryAction } from "@/config/site";
+import { primaryAction, siteConfig } from "@/config/site";
+import { Container } from "@/components/ui/Container";
 import { ButtonLink } from "@/components/ui/Button";
-import { Photo } from "@/components/ui/Photo";
 import { Rich } from "@/components/ui/Rich";
+import { CheckIcon } from "@/components/ui/CheckIcon";
+import { Star } from "@/components/illustrations/Star";
 
 const t = landing.hero;
 
-// Pierwszy ekran. Komputer: zdjęcie na całą szerokość i tekst na środku (jak u Zoli).
-// Telefon: zdjęcie w zaokrąglonym kadrze, pod nim tekst.
+// Pierwszy ekran: po lewej jasno, czym jest Gviazdka i jeden przycisk; po prawej miejsce na film.
 export function Hero() {
   const cta = primaryAction();
   return (
-    <section aria-labelledby="hero-title" className="relative lg:h-[calc(100svh-4.75rem)] lg:max-h-[52rem] lg:min-h-[38rem]">
-      <div className="px-5 pt-5 lg:absolute lg:inset-0 lg:p-0">
-        <Photo
-          name="hero"
-          alt={t.photoAlt}
-          priority
-          sizes="(min-width: 1024px) 100vw, 92vw"
-          rounded="panel"
-          className="h-56 sm:h-80 lg:h-full lg:rounded-none"
-        >
-          <div aria-hidden="true" className="absolute inset-0 hidden bg-[radial-gradient(ellipse_at_center,rgb(20_36_28/0.62),rgb(20_36_28/0.38))] lg:block" />
-        </Photo>
-      </div>
-
-      <div className="relative flex flex-col items-center px-5 pb-12 pt-8 text-center lg:absolute lg:inset-0 lg:justify-center lg:p-0 lg:text-snow">
-        <h1
-          id="hero-title"
-          className="rise-in max-w-[20ch] font-serif text-[2rem] font-medium leading-[1.12] tracking-[-0.03em] sm:text-5xl lg:max-w-[18ch] lg:text-[4rem] lg:leading-[1.02] [&_.accent]:italic [&_.accent]:font-medium"
-          style={{ fontVariationSettings: '"SOFT" 50' }}
-        >
-          <Rich text={t.title} />
-        </h1>
-        <p
-          className="rise-in mt-4 max-w-[33rem] lg:max-w-[44rem] text-base leading-relaxed text-moss sm:text-lg lg:mt-6 lg:text-2xl lg:leading-8 lg:text-snow/90"
-          style={{ "--delay": "150ms" } as React.CSSProperties}
-        >
-          {t.subtitle}
-        </p>
-        <div
-          className="rise-in mt-7 flex w-full flex-col items-center gap-4 sm:w-auto sm:flex-row lg:mt-10"
-          style={{ "--delay": "300ms" } as React.CSSProperties}
-        >
-          <ButtonLink href={cta.href} className="w-full max-w-xs sm:w-auto">
-            {cta.label}
-          </ButtonLink>
-          <a
-            href="#plan"
-            className="font-semibold underline decoration-1 underline-offset-4 lg:hidden"
+    <section aria-labelledby="hero-title">
+      <Container className="grid items-center gap-10 pb-14 pt-8 sm:pt-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:gap-14 lg:pb-24 lg:pt-20">
+        <div className="max-w-[36rem]">
+          <h1
+            id="hero-title"
+            className="rise-in text-[2.5rem] font-bold leading-[1.1] tracking-[-0.035em] sm:text-[3.25rem] lg:text-[4.25rem] lg:leading-[1.05]"
           >
-            {t.secondary}
-          </a>
-          <span className="hidden lg:block">
-            <ButtonLink href="#plan" variant="outlineLight">
-              {t.secondary}
+            <Rich text={t.title} variant="mark" />
+          </h1>
+          <p
+            className="rise-in mt-6 text-lg leading-relaxed text-moss lg:mt-8 lg:text-[1.375rem] lg:leading-[1.55]"
+            style={{ "--delay": "120ms" } as React.CSSProperties}
+          >
+            {t.subtitle}
+          </p>
+          <div
+            className="rise-in mt-8 flex flex-col gap-5 sm:flex-row sm:items-center lg:mt-10"
+            style={{ "--delay": "240ms" } as React.CSSProperties}
+          >
+            <ButtonLink href={cta.href} className="min-h-[3.75rem] px-9 text-lg">
+              {cta.label}
             </ButtonLink>
-          </span>
+            <ul className="flex flex-wrap gap-x-4 gap-y-2 sm:flex-col sm:gap-y-1">
+              {t.trust.map((item) => (
+                <li key={item} className="flex items-center gap-1.5 text-sm font-medium text-moss">
+                  <CheckIcon className="h-4 w-4 shrink-0 text-cranberry" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
-      </div>
+
+        <div className="rise-in" style={{ "--delay": "360ms" } as React.CSSProperties}>
+          <HeroVideo />
+        </div>
+      </Container>
     </section>
+  );
+}
+
+// Pole na film. Gdy w config/site.ts wpiszesz heroVideo, pojawi się tu prawdziwy film.
+function HeroVideo() {
+  const frame = "relative aspect-[4/3] w-full overflow-hidden rounded-frame bg-spruce";
+  if (siteConfig.heroVideo) {
+    return (
+      <div className={frame}>
+        <video
+          src={siteConfig.heroVideo}
+          poster={siteConfig.heroVideoPoster || undefined}
+          aria-label={t.videoLabel}
+          controls
+          muted
+          playsInline
+          preload="metadata"
+          className="h-full w-full object-cover"
+        />
+      </div>
+    );
+  }
+  return (
+    <div className={`${frame} on-dark flex flex-col items-center justify-center gap-4 text-snow`}>
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_20%,rgb(201_161_91/0.22),transparent_60%)]"
+      />
+      <span aria-hidden="true" className="relative flex h-16 w-16 items-center justify-center rounded-full border-[1.5px] border-snow/60">
+        <svg viewBox="0 0 24 24" className="ml-1 h-6 w-6">
+          <path d="M8 5.5v13l10.5-6.5z" fill="currentColor" />
+        </svg>
+      </span>
+      <p className="relative flex items-center gap-2 text-sm text-snow/75">
+        <Star className="h-3.5 w-3.5 text-gold" />
+        {t.videoPlaceholder}
+      </p>
+    </div>
   );
 }

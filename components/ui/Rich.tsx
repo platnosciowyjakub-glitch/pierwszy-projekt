@@ -1,15 +1,22 @@
 import { Fragment } from "react";
 
 // Zamienia *słowa w gwiazdkach* z pliku z tekstami na wyróżnienie ozdobnym krojem.
-export function Rich({ text }: { text: string }) {
+// variant="mark" = podświetlenie jak markerem (pierwszy ekran).
+export function Rich({ text, variant = "accent" }: { text: string; variant?: "accent" | "mark" }) {
   const parts = text.split(/\*(.+?)\*/g);
   return (
     <>
       {parts.map((part, i) =>
         i % 2 === 1 ? (
-          <em key={i} className="accent">
-            {part}
-          </em>
+          variant === "mark" ? (
+            <mark key={i} className="rounded-[0.18em] bg-sage px-[0.12em] text-spruce [box-decoration-break:clone] [-webkit-box-decoration-break:clone]">
+              {part}
+            </mark>
+          ) : (
+            <em key={i} className="accent">
+              {part}
+            </em>
+          )
         ) : (
           <Fragment key={i}>{part}</Fragment>
         ),

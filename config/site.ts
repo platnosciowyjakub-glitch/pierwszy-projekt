@@ -21,6 +21,11 @@ export const siteConfig = {
       ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
       : "http://localhost:3000"),
 
+  // Film w pierwszym ekranie. Wrzuć plik do folderu public/ (np. public/film.mp4) i wpisz tu "/film.mp4".
+  // Puste ("") = w tym miejscu widać spokojne pole z napisem „Tu będzie krótki film”.
+  heroVideo: "",
+  heroVideoPoster: "",
+
   // Adres e-mail do przycisku „Napisz do nas”. Puste ("") = przycisk prowadzi na stronę Kontakt.
   contactEmail: "",
 

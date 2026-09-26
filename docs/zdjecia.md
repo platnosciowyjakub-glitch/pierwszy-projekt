@@ -4,11 +4,10 @@ Wszystkie zdjęcia pochodzą z wyszukiwarki [Openverse](https://openverse.org) i
 wolno ich używać komercyjnie, zmieniać je i nie trzeba podawać autora. Mimo to zapisujemy źródła.
 Pliki leżą w `public/zdjecia/` (zmniejszone do ok. 1000 px, stronę dodatkowo optymalizuje `next/image`).
 
-Docelowo warto je wymienić na własne zdjęcia w wyższej rozdzielczości (zwłaszcza tło pierwszego ekranu).
+Docelowo warto je wymienić na własne zdjęcia w wyższej rozdzielczości .
 
 | Plik | Gdzie na stronie | Autor | Źródło | Licencja |
 |---|---|---|---|---|
-| `hero.jpg` | Pierwszy ekran (tło) | Nubia Navarro | [stocksnap](https://stocksnap.io/photo/christmas-decor-YJVZO6N8L7) | CC0 |
 | `tile-kalendarz.jpg` | Kafelek: Kalendarz świąteczny | Kristin Hardwick | [stocksnap](https://stocksnap.io/photo/writing-letter-BWIF3ZLSWB) | CC0 |
 | `tile-plan.jpg` | Kafelek: Gotowy plan | Kristin Hardwick | [stocksnap](https://stocksnap.io/photo/writing-hand-2FRRD2PUVA) | CC0 |
 | `tile-prezenty.jpg` | Kafelek: Prezenty | Porapak Apichodilok | [stocksnap](https://stocksnap.io/photo/birthday-gift-P36YO6TM0I) | CC0 |
