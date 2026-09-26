@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Testujemy czy to działa</title>
+  <style>
+    :root { --bg: #0f172a; --card: #1e293b; --text: #e2e8f0; --accent: #22c55e; --button: #ec4899; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; min-height: 100vh; display: grid; place-items: center;
+      background: var(--bg); color: var(--text);
+      font-family: system-ui, -apple-system, sans-serif; padding: 16px;
+    }
+    .card {
+      background: var(--card); border-radius: 16px; padding: 32px;
+      max-width: 480px; width: 100%; text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,.4);
+    }
+    h1 { margin-top: 0; }
+    .ok { color: var(--accent); font-size: 48px; }
+    button {
+      background: var(--button); color: #0f172a; border: 0; border-radius: 8px;
+      padding: 12px 20px; font-size: 16px; font-weight: 600; cursor: pointer;
+    }
+    #count { font-size: 32px; margin: 16px 0; }
+    small { opacity: .6; }
+    .badge { display: inline-block; background: #334155; border-radius: 999px; padding: 2px 10px; font-size: 12px; }
+    hr { border: 0; border-top: 1px solid #334155; margin: 24px 0; }
+    h2 { font-size: 20px; margin: 0 0 12px; }
+    form { display: flex; gap: 8px; }
+    input {
+      flex: 1; min-width: 0; padding: 10px 12px; border-radius: 8px;
+      border: 1px solid #334155; background: var(--bg); color: var(--text); font-size: 16px;
+    }
+    ul { list-style: none; padding: 0; margin: 16px 0 0; text-align: left; }
+    li {
+      display: flex; align-items: center; gap: 10px; padding: 8px 10px;
+      border-radius: 8px; background: var(--bg); margin-bottom: 6px;
+    }
+    li span { flex: 1; cursor: pointer; overflow-wrap: anywhere; }
+    li.done span { text-decoration: line-through; opacity: .5; }
+    li button { background: transparent; color: #f87171; padding: 4px 8px; font-size: 18px; }
+    #quote { font-style: italic; min-height: 48px; }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="ok">✅</div>
+    <h1>Działa!</h1>
+    <p>Jeśli to widzisz, repo na GitHubie i deploy na Vercelu działają poprawnie.</p>
+    <div id="count">0</div>
+    <button id="btn">Kliknij mnie</button>
+    <p><small id="time"></small></p>
+    <span class="badge">wersja 2</span>
+
+    <hr>
+    <h2>📝 Lista zadań</h2>
+    <form id="todo-form">
+      <input id="todo-input" placeholder="Co masz do zrobienia?" autocomplete="off">
+      <button type="submit">Dodaj</button>
+    </form>
+    <ul id="todo-list"></ul>
+    <small id="todo-info"></small>
+
+    <hr>
+    <h2>💡 Losowy cytat</h2>
+    <p id="quote"></p>
+    <button id="quote-btn">Losuj</button>
+  </main>
+  <script>
+    let n = 0;
+    document.getElementById('btn').addEventListener('click', () => {
+      document.getElementById('count').textContent = ++n;
+    });
+    document.getElementById('time').textContent =
+      'Strona załadowana: ' + new Date().toLocaleString('pl-PL');
+
+    // Lista zadań zapisywana w przeglądarce (localStorage)
+    const KEY = 'todos';
+    let todos = [];
+    try { todos = JSON.parse(localStorage.getItem(KEY)) || []; } catch (e) {}
+    const save = () => { try { localStorage.setItem(KEY, JSON.stringify(todos)); } catch (e) {} };
+    const list = document.getElementById('todo-list');
+
+    function render() {
+      list.innerHTML = '';
+      todos.forEach((t, i) => {
+        const li = document.createElement('li');
+        if (t.done) li.className = 'done';
+        const span = document.createElement('span');
+        span.textContent = t.text;
+        span.onclick = () => { t.done = !t.done; save(); render(); };
+        const del = document.createElement('button');
+        del.textContent = '✕';
+        del.title = 'Usuń';
+        del.onclick = () => { todos.splice(i, 1); save(); render(); };
+        li.append(span, del);
+        list.append(li);
+      });
+      const left = todos.filter(t => !t.done).length;
+      document.getElementById('todo-info').textContent =
+        todos.length ? `Do zrobienia: ${left} z ${todos.length}` : 'Brak zadań. Dodaj coś!';
+    }
+
+    document.getElementById('todo-form').addEventListener('submit', e => {
+      e.preventDefault();
+      const input = document.getElementById('todo-input');
+      const text = input.value.trim();
+      if (!text) return;
+      todos.push({ text, done: false });
+      input.value = '';
+      save(); render();
+    });
+    render();
+
+    // Losowe cytaty
+    const quotes = [
+      'Najlepszy moment na start był wczoraj. Drugi najlepszy jest teraz.',
+      'Kod, który działa, jest lepszy niż idealny kod, który nie istnieje.',
+      'Małe kroki każdego dnia dają wielkie wyniki.',
+      'Nie bój się błędów, one uczą najwięcej.',
+      'Najpierw zrób, żeby działało. Potem zrób, żeby było ładne.',
+      'Każdy ekspert był kiedyś początkującym.',
+    ];
+    let last = -1;
+    function newQuote() {
+      let i;
+      do { i = Math.floor(Math.random() * quotes.length); } while (i === last);
+      last = i;
+      document.getElementById('quote').textContent = '„' + quotes[i] + '”';
+    }
+    document.getElementById('quote-btn').addEventListener('click', newQuote);
+    newQuote();
+  </script>
+</body>
+</html>
