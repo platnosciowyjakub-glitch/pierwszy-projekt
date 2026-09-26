@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+/* Wygląd całej strony w jednym miejscu: kolory, czcionki, zaokrąglenia. */
+@theme static {
+  --color-paper: #fffcf7;      /* tło strony: ciepła biel */
+  --color-cream: #f7f0e4;      /* delikatne tła sekcji i kafelków */
+  --color-sand: #efe5d5;       /* beż */
+  --color-spruce: #1f3a2e;     /* tekst, nagłówki, ciemne sekcje */
+  --color-spruce-soft: #2a4a3b;/* odrobinę jaśniejszy świerk (elementy na ciemnym tle) */
+  --color-moss: #56665c;       /* tekst pomocniczy */
+  --color-cranberry: #a8443a;  /* akcent: przyciski, linki */
+  --color-cranberry-deep: #8e382f; /* akcent po najechaniu */
+  --color-snow: #fbf6ee;       /* jasny tekst na ciemnym tle */
+  --color-gold: #c9a15b;       /* tylko ozdobniki */
+  --color-gold-text: #8a6a2f;  /* złoty tekst na jasnym tle */
+  --color-sage: #dce5da;       /* tła ikon, tagi */
+  --color-line: #e8ddcc;       /* linie i obramowania */
+
+  --font-sans: var(--font-dm-sans), system-ui, sans-serif;
+  --font-serif: var(--font-fraunces), Georgia, serif;
+
+  --radius-frame: 1.5rem;      /* duże kadry zdjęć (24 px) */
+  --radius-panel: 1rem;        /* panele, kadry na telefonie (16 px) */
+  --radius-soft: 0.875rem;     /* pola formularzy (14 px) */
+  --radius-card: 1.5rem;       /* karty (24 px) */
+
+  --shadow-soft: 0 1px 2px rgb(31 58 46 / 0.04), 0 8px 24px -6px rgb(31 58 46 / 0.1);
+
+  --ease-calm: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  body {
+    background: var(--color-paper);
+    color: var(--color-spruce);
+    font-family: var(--font-sans);
+    font-size: 1.0625rem; /* 17 px */
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: clip;
+  }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  [id] { scroll-margin-top: 5.5rem; }
+  ::selection { background: rgb(201 161 91 / 0.35); }
+  :focus-visible {
+    outline: 2px solid var(--color-cranberry);
+    outline-offset: 3px;
+    border-radius: 0.5rem;
+  }
+  .on-dark :focus-visible { outline-color: var(--color-gold); }
+}
+
+/* Wyróżnione słowo w nagłówku: ciepły, pogrubiony szeryf.
+   W warstwie „components”, żeby w konkretnym miejscu dało się to nadpisać (np. kursywą). */
+@layer components {
+  .accent {
+    font-family: var(--font-serif);
+    font-style: normal;
+    font-weight: 600;
+    font-variation-settings: "SOFT" 50;
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Łagodne pojawianie się przy wejściu na stronę */
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: none; }
+}
+.rise-in {
+  animation: rise-in 900ms var(--ease-calm) both;
+  animation-delay: var(--delay, 0ms);
+}
+
+/* Elementy wyłaniają się przy przewijaniu (tam, gdzie przeglądarka to umie) */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal {
+      animation: rise-in linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 30%;
+    }
+  }
+}
+
+/* Poziomo przewijane rzędy na telefonie bez paska przewijania */
+.scroll-row { scrollbar-width: none; }
+.scroll-row::-webkit-scrollbar { display: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .rise-in { animation: none; }
+  *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}
