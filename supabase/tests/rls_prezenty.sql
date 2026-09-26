@@ -6,6 +6,7 @@
 -- Osoby testowe: Ja (właściciel listy), Partner, Mama (obdarowana), Babcia (bez konta = anon).
 
 begin;
+set local client_min_messages = warning;
 
 create or replace function pg_temp.sprawdz(warunek boolean, opis text) returns void language plpgsql as $$
 begin
@@ -41,15 +42,15 @@ set local role authenticated;
 set local request.jwt.claims = '{"sub":"00000000-0000-4000-8000-00000000000a","role":"authenticated"}';
 
 insert into public.gift_lists (id, name, event_date, total_budget_grosze, is_default)
-values ('10000000-0000-4000-8000-000000000001', 'Święta 2026', '2026-12-24', 150000, true);
+values ('10000000-0000-4000-8000-000000000001', 'Święta 2026', '2026-12-24', 150000, true) returning id;
 insert into public.recipients (id, list_id, name, relation, budget_grosze) values
   ('20000000-0000-4000-8000-000000000001', '10000000-0000-4000-8000-000000000001', 'Mama', 'mama', 30000),
   ('20000000-0000-4000-8000-000000000002', '10000000-0000-4000-8000-000000000001', 'Babcia', 'dziadkowie', 20000),
-  ('20000000-0000-4000-8000-000000000003', '10000000-0000-4000-8000-000000000001', 'Partner', 'partner', 40000);
+  ('20000000-0000-4000-8000-000000000003', '10000000-0000-4000-8000-000000000001', 'Partner', 'partner', 40000) returning id;
 insert into public.gifts (id, list_id, recipient_id, title, price_grosze, status) values
   ('30000000-0000-4000-8000-000000000001', '10000000-0000-4000-8000-000000000001', '20000000-0000-4000-8000-000000000001', 'Szalik', 12900, 'bought'),
   ('30000000-0000-4000-8000-000000000002', '10000000-0000-4000-8000-000000000001', '20000000-0000-4000-8000-000000000002', 'Koc', 15000, 'idea'),
-  ('30000000-0000-4000-8000-000000000003', '10000000-0000-4000-8000-000000000001', '20000000-0000-4000-8000-000000000003', 'Zegarek', 39900, 'wrapped');
+  ('30000000-0000-4000-8000-000000000003', '10000000-0000-4000-8000-000000000001', '20000000-0000-4000-8000-000000000003', 'Zegarek', 39900, 'wrapped') returning id;
 insert into public.gift_attachments (gift_id, list_id, storage_path, kind, mime, size_bytes)
 values ('30000000-0000-4000-8000-000000000001', '10000000-0000-4000-8000-000000000001',
         '10000000-0000-4000-8000-000000000001/30000000-0000-4000-8000-000000000001/paragon.pdf', 'receipt', 'application/pdf', 1000);
@@ -84,8 +85,8 @@ delete from public.gifts where id = '30000000-0000-4000-8000-000000000001';
 delete from public.gift_lists where id = '10000000-0000-4000-8000-000000000001';
 
 -- Partner ma własną listę – Ja nie mogę podpiąć jego osoby pod swój prezent
-insert into public.gift_lists (id, name) values ('10000000-0000-4000-8000-000000000002', 'Lista partnera');
-insert into public.recipients (id, list_id, name) values ('20000000-0000-4000-8000-000000000009', '10000000-0000-4000-8000-000000000002', 'Kasia');
+insert into public.gift_lists (id, name) values ('10000000-0000-4000-8000-000000000002', 'Lista partnera') returning id;
+insert into public.recipients (id, list_id, name) values ('20000000-0000-4000-8000-000000000009', '10000000-0000-4000-8000-000000000002', 'Kasia') returning id;
 
 -- ── Mama (obdarowana, osobne konto) pyta wprost o swoje prezenty ───────────────────────
 set local request.jwt.claims = '{"sub":"00000000-0000-4000-8000-00000000000c","role":"authenticated"}';

@@ -15,9 +15,9 @@ insert into auth.users (id, email) values ('00000000-0000-4000-8000-0000000000ff
 insert into public.gift_people (id, user_id, name, budget) values ('40000000-0000-4000-8000-000000000001', '00000000-0000-4000-8000-0000000000ff', 'Mama', 200.50);
 insert into public.gifts (user_id, person_id, title, price, status) values ('00000000-0000-4000-8000-0000000000ff', '40000000-0000-4000-8000-000000000001', 'Szalik', 79.99, 'kupione');
 SQL
-for f in supabase/migrations/0002_*.sql; do run "$f"; done
+for f in supabase/migrations/000[23]_*.sql; do run "$f"; done
 # Drugie uruchomienie migracji nie może niczego zepsuć
-for f in supabase/migrations/0002_*.sql; do run "$f"; done
+for f in supabase/migrations/000[23]_*.sql; do run "$f"; done
 psql -q -v ON_ERROR_STOP=1 -d "$DB" -At <<'SQL'
 select case when (select count(*) from public.gifts where title = 'Szalik' and price_grosze = 7999 and status = 'bought') = 1
              and (select budget_grosze from public.recipients where name = 'Mama') = 20050
