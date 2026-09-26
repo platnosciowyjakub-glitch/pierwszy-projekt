@@ -30,18 +30,3 @@ export function getSupabase(): SupabaseClient | null {
   }
   return client;
 }
-
-export type GiftStatus = "pomysl" | "kupione" | "zapakowane" | "wreczone";
-
-export type GiftPerson = { id: string; name: string; budget: number | null; created_at: string };
-
-export type Gift = {
-  id: string;
-  person_id: string;
-  title: string;
-  url: string | null;
-  price: number | null;
-  status: GiftStatus;
-  note: string | null;
-  created_at: string;
-};
