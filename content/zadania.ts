@@ -11,7 +11,7 @@ export const zadania = {
   // Pierwszy ekran dla osób niezalogowanych (po prawej film albo obrazek z config/site.ts → videos.zadania)
   intro: {
     eyebrow: "Podziel się zadaniami",
-    title: "Przygotowania do świąt *we wspólnym rytmie*",
+    title: "Porządki przed świętami *razem z bliskimi*",
     subtitle:
       "Rozdziel porządki, zakupy i gotowanie między bliskich. Każdy dołącza z linku, widzi tylko swoje zadania i odhacza, co zrobione.",
     cta: "Załóż konto i zacznij",

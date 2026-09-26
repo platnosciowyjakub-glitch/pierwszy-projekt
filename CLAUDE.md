@@ -66,11 +66,11 @@ Inspiracja funkcjami z wishpile.com (budżet na osobę, etapy prezentu, planowan
 Linki w menu i stopce prowadzą do `/#sekcja` albo do podstron, żeby działały z każdej strony.
 
 ### Zakładki funkcji – wspólny schemat
-`/prezenty`, `/zadania` (Podziel się zadaniami), `/goscie` (Zaproś gości), `/zyczenia` (Wyślij życzenia).
+`/plan` (Zaplanuj święta), `/prezenty`, `/zadania` (Podziel się zadaniami), `/goscie` (Zaproś gości), `/zyczenia` (Wyślij życzenia).
 Każda: niezalogowany → pierwszy ekran z opisem, „Załóż konto i zacznij” i filmem (`components/features/FeatureIntro.tsx`,
 filmy w `config/site.ts` → `videos`); zalogowany → miejsce pracy (`components/features/Workspace.tsx`).
-Narzędzie jest na razie tylko w prezentach; zadania, goście i życzenia pokazują po zalogowaniu kartkę „Tu powstaje…”.
-Teksty: `content/prezenty.ts`, `content/zadania.ts`, `content/goscie.ts`, `content/zyczenia.ts`.
+Narzędzie jest na razie tylko w prezentach; plan, zadania, goście i życzenia pokazują po zalogowaniu kartkę „Tu powstaje…”.
+Teksty: `content/plan.ts`, `content/prezenty.ts`, `content/zadania.ts`, `content/goscie.ts`, `content/zyczenia.ts`.
 Konto (Supabase): e-mail + hasło, nowe konto potwierdzane linkiem z maila; strony `/logowanie` (zakładki „Mam już konto” / „Zakładam konto”, „Nie pamiętasz hasła?”) i `/nowe-haslo`; teksty w `content/konto.ts`. Pracujemy tylko na wersji testowej.
 
 ## Kierunek: układ Zoli, marka Gviazdki

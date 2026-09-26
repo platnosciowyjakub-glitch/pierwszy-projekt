@@ -29,6 +29,7 @@ export const siteConfig = {
   // Filmy w zakładkach (widzą je osoby niezalogowane). Zasada ta sama co wyżej:
   // src = film (np. "/prezenty.mp4"), poster = obrazek przed odtworzeniem albo sam obrazek zamiast filmu.
   videos: {
+    plan: { src: "", poster: "" },
     prezenty: { src: "", poster: "" },
     zadania: { src: "", poster: "" },
     goscie: { src: "", poster: "" },

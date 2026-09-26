@@ -13,7 +13,7 @@ export const landing = {
   // Nawigacja u góry strony. „Panel” pokazuje się po najechaniu myszką.
   nav: {
     items: [
-      { label: "Zaplanuj święta", href: "/#plan", photo: "tile-kalendarz", text: "Twój plan świąt, tydzień po tygodniu, od listopada do Wigilii." },
+      { label: "Zaplanuj święta", href: "/plan", photo: "tile-kalendarz", text: "Twój plan świąt, tydzień po tygodniu, od listopada do Wigilii." },
       { label: "Przygotuj prezenty", href: "/prezenty", photo: "tile-prezenty", text: "Pomysły, zakupy i budżet w jednym miejscu. Tylko dla Twoich oczu." },
       { label: "Podziel się zadaniami", href: "/zadania", photo: "tile-rodzina", text: "Wspólne porządki i przygotowania. Każdy wie, co ma zrobić." },
       { label: "Zaproś gości", href: "/goscie", photo: "tile-goscie", text: "Zaproszenia, potwierdzenia i lista gości z dietami." },
@@ -52,7 +52,7 @@ export const landing = {
         title: "Zaplanuj święta",
         text: "Gotowy plan przygotowań w kalendarzu. Co tydzień widzisz tylko to, co warto zrobić teraz.",
         example: "Ten tydzień: 3 drobne rzeczy",
-        href: "#plan",
+        href: "/plan",
       },
       {
         icon: "gift",
@@ -275,7 +275,7 @@ export const landing = {
       {
         title: "Funkcje",
         links: [
-          { label: "Zaplanuj święta", href: "/#plan" },
+          { label: "Zaplanuj święta", href: "/plan" },
           { label: "Przygotuj prezenty", href: "/prezenty" },
           { label: "Podziel się zadaniami", href: "/zadania" },
           { label: "Zaproś gości", href: "/goscie" },
