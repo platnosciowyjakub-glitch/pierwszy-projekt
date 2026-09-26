@@ -32,14 +32,3 @@ export function Photo({ name, alt, sizes, className = "", rounded = "frame", pri
     </div>
   );
 }
-
-// „Naklejka” na zdjęciu: mały element interfejsu, jak etykieta z aplikacji.
-export function Sticker({ children, className = "" }: { children: ReactNode; className?: string }) {
-  return (
-    <span
-      className={`absolute inline-flex items-center gap-1.5 rounded-full border-[1.5px] border-spruce bg-paper px-3.5 py-1.5 text-[0.8125rem] font-semibold text-spruce ${className}`}
-    >
-      {children}
-    </span>
-  );
-}

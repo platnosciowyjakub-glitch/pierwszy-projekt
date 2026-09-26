@@ -43,16 +43,52 @@ export const landing = {
 
   // Sekcja z sześcioma kafelkami
   categories: {
-    title: "Wszystko, czego potrzebujesz do *spokojnych świąt*",
-    subtitle: "Od listopada aż do Wigilii",
-    more: "Dowiedz się więcej",
+    title: "Wszystko, czego potrzebujesz *do spokojnych świąt*",
+    subtitle: "Sześć prostych narzędzi, które poukładają przygotowania – od listopada do Wigilii.",
+    more: "Zobacz, jak to wygląda",
     items: [
-      { title: "Kalendarz świąteczny", text: "Wszystko w swoim czasie, bez pośpiechu.", href: "#plan", photo: "tile-kalendarz", alt: "Osoba zapisuje coś w notesie na kanapie", sticker: "Ten tydzień · 3 rzeczy" },
-      { title: "Gotowy plan", text: "Kilkadziesiąt zadań, ułożonych za Ciebie.", href: "#plan", photo: "tile-plan", alt: "Ręka z ołówkiem nad otwartym planerem", sticker: "Plan gotowy" },
-      { title: "Prezenty", text: "Nikt nie zostanie bez prezentu.", href: "#prezenty", photo: "tile-prezenty", alt: "Dłonie trzymające zapakowany prezent", sticker: "Mama · kupione" },
-      { title: "Razem z rodziną", text: "Każdy wie, co ma zrobić.", href: "#rodzina", photo: "tile-rodzina", alt: "Dłonie wykrawające pierniki z ciasta", sticker: "Pierniki · Ola ✓" },
-      { title: "Goście i zaproszenia", text: "Zbierz potwierdzenia, także od babci.", href: "#wigilia", photo: "tile-goscie", alt: "Nakryty stół ze świecami i kieliszkami", sticker: "Babcia · będzie" },
-      { title: "Kartki i życzenia", text: "Ciepłe słowa dla każdego, na czas.", href: "#szczegoly", photo: "tile-kartki", alt: "Kartki świąteczne, herbata i gałązki na stole", sticker: "Wysłane · 12" },
+      {
+        icon: "calendar",
+        title: "Zaplanuj święta",
+        text: "Gotowy plan przygotowań w kalendarzu. Co tydzień widzisz tylko to, co warto zrobić teraz.",
+        example: "Ten tydzień: 3 drobne rzeczy",
+        href: "#plan",
+      },
+      {
+        icon: "gift",
+        title: "Przygotuj prezenty",
+        text: "Lista osób, pomysły, linki i to, co już kupione. Obdarowany niczego nie podejrzy.",
+        example: "Mama · szalik · kupione",
+        href: "#prezenty",
+      },
+      {
+        icon: "family",
+        title: "Podziel się zadaniami",
+        text: "Zaproś bliskich linkiem i rozdzielcie porządki. Każdy odhacza swoje.",
+        example: "Umyć okna – Kasia",
+        href: "#rodzina",
+      },
+      {
+        icon: "envelope",
+        title: "Zaproś gości",
+        text: "Zaproszenie na Wigilię i potwierdzenia w jednym miejscu. Za babcię potwierdzisz sam.",
+        example: "Babcia Hela · będzie",
+        href: "#wigilia",
+      },
+      {
+        icon: "suitcase",
+        title: "Spakuj się na wyjazd",
+        text: "Gotowa lista pakowania na święta u bliskich: ubrania, ładowarki, prezenty, leki.",
+        example: "Ładowarka do telefonu",
+        href: "#rodzina",
+      },
+      {
+        icon: "card",
+        title: "Wyślij życzenia",
+        text: "Lista osób do życzeń i pomoc w pisaniu ciepłych słów. Nikogo nie pominiesz.",
+        example: "Kartka dla cioci · wysłana",
+        href: "#szczegoly",
+      },
     ],
   },
 

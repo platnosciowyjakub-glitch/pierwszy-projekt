@@ -9,7 +9,6 @@ Docelowo warto je wymienić na własne zdjęcia w wyższej rozdzielczości .
 | Plik | Gdzie na stronie | Autor | Źródło | Licencja |
 |---|---|---|---|---|
 | `tile-kalendarz.jpg` | Kafelek: Kalendarz świąteczny | Kristin Hardwick | [stocksnap](https://stocksnap.io/photo/writing-letter-BWIF3ZLSWB) | CC0 |
-| `tile-plan.jpg` | Kafelek: Gotowy plan | Kristin Hardwick | [stocksnap](https://stocksnap.io/photo/writing-hand-2FRRD2PUVA) | CC0 |
 | `tile-prezenty.jpg` | Kafelek: Prezenty | Porapak Apichodilok | [stocksnap](https://stocksnap.io/photo/birthday-gift-P36YO6TM0I) | CC0 |
 | `tile-rodzina.jpg` | Kafelek: Razem z rodziną | Lukasz Dec | [stocksnap](https://stocksnap.io/photo/gingerbread-cookies-ZYZ8AZ78FI) | CC0 |
 | `tile-goscie.jpg` | Kafelek: Goście i zaproszenia | – | [rawpixel](https://www.rawpixel.com/image/5924700/photo-image-background-christmas-public-domain) | CC0 |
