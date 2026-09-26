@@ -88,11 +88,20 @@ Efekt: gotowy kalendarz z zadaniami dopasowanymi do odpowiedzi (np. gospodarz do
 - Widżet / skrót na ekranie telefonu (w ramach możliwości PWA).
 - Delikatne przypomnienia (powiadomienia push / e-mail) – bez presji, np. „Na ten tydzień zostały 3 drobne rzeczy.”
 
-### 5.5 Prezenty
-- Lista osób, pomysły, notatki (rozmiary, preferencje), link do produktu.
-- Statusy: **pomysł → kupione → zapakowane → wręczone**.
-- Opcjonalna cena i podsumowanie „ile wydałem”.
-- **Prezenty prywatne** – obdarowany ich nie widzi, nawet jeśli jest w tej samej rodzinie.
+### 5.5 Prezenty i budżet (szczegóły: `docs/modul-prezenty.md`)
+- **Okazje / listy:** „Święta 2026” tworzona automatycznie, kolejne (Mikołajki, urodziny, inne) z datą i odliczaniem.
+- Lista osób (relacja, budżet, notatki: rozmiary, preferencje, urodziny), pomysły, link do produktu, zdjęcia i paragony.
+- Statusy: **pomysł → kupione → zapakowane → wręczone**; widok „Do zapakowania” na wieczór pakowania.
+- Budżet na osobę i na całą listę, „wydane / planowane / zostało”, przełącznik „Ukryj kwoty”.
+- **„Wklej link”** – Gviazdka sama uzupełnia nazwę, cenę, zdjęcie i sklep.
+- **Prezenty prywatne** – obdarowany ich nie widzi, nawet jeśli jest w tej samej rodzinie lub współplanuje.
+- **Listy życzeń rodziny i rezerwacje** („ja to kupię”) – właściciel listy nie widzi rezerwacji; lista także dla
+  osób bez konta (link), rodzic prowadzi listę dziecka.
+- **Planowanie we dwoje** (wspólna lista i budżet z partnerem, prezenty dla siebie nawzajem ukryte) i **pomocnik
+  dla jednej osoby**.
+- **Prezenty grupowe** („Składamy się”) – kwota, uczestnicy, kto już wpłacił.
+- **Losowanie mikołajkowe** – uczestnicy bez kont, wykluczenia, limit kwoty, prywatne odsłonięcie wyniku.
+- **Kolejny rok** – kopia listy (osoby, budżety, niewykorzystane pomysły), archiwum „co komu daliśmy”.
 - **Linki afiliacyjne** (patrz sekcja 8).
 
 ### 5.6 Zadania z rodziną
@@ -130,7 +139,7 @@ Efekt: gotowy kalendarz z zadaniami dopasowanymi do odpowiedzi (np. gospodarz do
 - „Kto co przynosi” – goście deklarują danie lub ciasto.
 - Plan stołu.
 - Wspólna lista zakupów.
-- Historia z poprzednich lat (co komu dałem, przeniesienie planu na kolejny rok).
+- Historia z poprzednich lat dla planu i zadań (dla prezentów – w module 5.5).
 - Drukowane kartki i zaproszenia zamawiane z aplikacji (dodatkowy przychód, wzór: Zola).
 - Wersje językowe, aplikacje w sklepach mobilnych.
 

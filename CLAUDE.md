@@ -43,9 +43,10 @@ W specyfikacji nazwa jest jeszcze „Gwiazdka” — obowiązuje „Gviazdka”.
 - **Premiera aplikacji:** 10–15 listopada 2026. Strona główna rusza wcześniej i zbiera zapisy.
 
 ## Aktualny etap
-Etap 1: **tylko strona główna (landing page)**, strona przedpremierowa z zapisem na listę oczekujących.
-Po premierze przełącznik w konfiguracji zamienia zapis na rejestrację („Zaczynajmy”).
-Nie buduj jeszcze aplikacji (konta, prezenty, zadania).
+Strona główna (przedpremierowa, z zapisem na listę oczekujących) + zakładki funkcji. Po premierze przełącznik
+w konfiguracji zamienia zapis na rejestrację („Zaczynajmy”).
+Właściciel zlecił budowę modułu **„Prezenty i budżet”** dla zalogowanych (26.09.2026) – pozostałych modułów
+aplikacji (plan, zadania, goście, życzenia) jeszcze nie budujemy.
 
 Pierwszy ekran strony głównej celowo różni się od zakładek: wyśrodkowane hasło i przycisk, szeroki film,
 a pod nim „droga do Wigilii” (5 przystanków prowadzących do zakładek; teksty w `landing.hero.journey`).
@@ -67,6 +68,20 @@ Teksty w `content/prezenty.ts`, narzędzie w `components/prezenty/GiftTool.tsx`.
 Inspiracja funkcjami z wishpile.com (budżet na osobę, etapy prezentu, planowanie z partnerem, rodzinna lista
 życzeń z rezerwacją, wklejanie linku) – bierzemy wyłącznie pomysły na funkcje, wygląd i teksty są nasze.
 Linki w menu i stopce prowadzą do `/#sekcja` albo do podstron, żeby działały z każdej strony.
+
+### Moduł „Prezenty i budżet” (w budowie)
+Plan i model danych: **`docs/modul-prezenty.md`** (czyta się go przed każdą pracą nad modułem).
+Wzór funkcji: Wishpile – tylko logika, nigdy kod, grafiki, ikony, teksty ani wygląd.
+- Etapy: A rdzeń (listy/okazje, osoby, prezenty, statusy, budżet, „Wklej link”, zdjęcia i paragony, miejsce na linki
+  partnerskie) → B rodzina (listy życzeń, rezerwacje, osoby bez konta) → C planowanie we dwoje, pomocnik, prezenty
+  grupowe → D losowanie mikołajkowe → E kolejny rok, archiwum, przypomnienia.
+- Prywatność pilnowana przez bazę (RLS) i testy: plany widzi tylko autor (i współplanujący); **obdarowany nigdy nie widzi
+  swoich prezentów, rezerwacji ani kwot**; rezerwacji nie widzi właściciel listy życzeń; linki bez konta = długi losowy
+  klucz, w bazie tylko skrót, odwoływalny.
+- Kwoty w groszach (liczby całkowite), format `pl-PL`. Statusy w bazie `idea/bought/wrapped/given`, na ekranie po polsku.
+- „Ukryj kwoty” → „••• zł”. Po przekroczeniu budżetu łagodny komunikat, nigdy alarm.
+- Teksty modułu w `content/gifts.ts`. Linki partnerskie tylko przez `affiliateUrl()` i z oznaczeniem „Link partnerski”.
+- Usługi zewnętrzne (e-mail, programy partnerskie) – najpierw pytamy właściciela.
 
 ### Zakładki funkcji – wspólny schemat
 `/plan` (Zaplanuj święta), `/prezenty`, `/zadania` (Podziel się zadaniami), `/goscie` (Zaproś gości), `/zyczenia` (Wyślij życzenia).
