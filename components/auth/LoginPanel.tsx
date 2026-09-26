@@ -4,7 +4,7 @@ import { konto } from "@/content/konto";
 import { Container } from "@/components/ui/Container";
 import { ButtonLink } from "@/components/ui/Button";
 import { Rich } from "@/components/ui/Rich";
-import { LoginForm } from "@/components/auth/LoginForm";
+import { AuthForm } from "@/components/auth/AuthForm";
 import { useSession } from "@/components/auth/useSession";
 
 export function LoginPanel() {
@@ -47,7 +47,7 @@ export function LoginPanel() {
               </button>
             </div>
           ) : (
-            <LoginForm returnTo="/prezenty" autoFocus />
+            <AuthForm />
           )}
         </div>
         <p className="mt-6 text-center text-sm text-moss">{konto.note}</p>

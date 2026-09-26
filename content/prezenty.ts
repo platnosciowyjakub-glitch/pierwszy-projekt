@@ -40,7 +40,7 @@ export const prezenty = {
     unavailable: "Narzędzie jeszcze się przygotowuje. Zajrzyj tu wkrótce.",
     loading: "Chwilkę, wczytuję Twoją listę…",
     loginTitle: "Zaloguj się, żeby prowadzić swoją listę",
-    loginText: "Wpisz adres e-mail, a wyślemy Ci link do logowania. Bez hasła do zapamiętania.",
+    loginText: "Wystarczy e-mail i hasło. Twoją listę zobaczysz tylko Ty.",
     signedInAs: "Zalogowano jako",
     logout: "Wyloguj",
     spentLabel: "Wydane",

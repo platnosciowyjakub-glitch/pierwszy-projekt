@@ -62,7 +62,7 @@ Teksty w `content/prezenty.ts`, sekcje w `components/prezenty/`.
 Inspiracja funkcjami z wishpile.com (budżet na osobę, etapy prezentu, planowanie z partnerem, rodzinna lista
 życzeń z rezerwacją, wklejanie linku) – bierzemy wyłącznie pomysły na funkcje, wygląd i teksty są nasze.
 Linki w menu i stopce prowadzą do `/#sekcja` albo do podstron, żeby działały z każdej strony.
-Logowanie linkiem z e-maila (Supabase): strona `/logowanie`, przycisk „Zaloguj się” w menu, teksty w `content/konto.ts`.
+Konto (Supabase): e-mail + hasło, nowe konto potwierdzane linkiem z maila; strony `/logowanie` (zakładki „Mam już konto” / „Zakładam konto”, „Nie pamiętasz hasła?”) i `/nowe-haslo`; teksty w `content/konto.ts`. Pracujemy tylko na wersji testowej.
 
 ## Kierunek: układ Zoli, marka Gviazdki
 Strona ma wyglądać i działać bardzo podobnie do zola.com (układ, rytm, hierarchia, sposób prezentowania

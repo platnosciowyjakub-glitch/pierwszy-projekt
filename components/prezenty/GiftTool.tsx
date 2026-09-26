@@ -4,10 +4,10 @@ import { useCallback, useEffect, useId, useMemo, useState, type FormEvent } from
 import type { Session } from "@supabase/supabase-js";
 import { prezenty } from "@/content/prezenty";
 import { getSupabase, type Gift, type GiftPerson, type GiftStatus } from "@/lib/supabase";
-import { Button } from "@/components/ui/Button";
+import { Button, ButtonLink } from "@/components/ui/Button";
 import { Rich } from "@/components/ui/Rich";
 import { CheckIcon } from "@/components/ui/CheckIcon";
-import { LoginForm } from "@/components/auth/LoginForm";
+import { konto } from "@/content/konto";
 import { useSession } from "@/components/auth/useSession";
 
 // Narzędzie „Lista prezentów”: logowanie linkiem z e-maila, osoby z budżetem i prezenty z etapami.
@@ -83,10 +83,15 @@ function Notice({ children }: { children: React.ReactNode }) {
 
 function LoginCard() {
   return (
-    <div className="mx-auto max-w-xl rounded-frame border border-line bg-paper p-6 shadow-soft sm:p-8">
+    <div className="mx-auto max-w-xl rounded-frame border border-line bg-paper p-6 text-center shadow-soft sm:p-8">
       <p className="font-serif text-2xl font-medium">{t.loginTitle}</p>
-      <p className="mt-2 mb-6 text-moss">{t.loginText}</p>
-      <LoginForm returnTo="/prezenty" />
+      <p className="mt-2 text-moss">{t.loginText}</p>
+      <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center">
+        <ButtonLink href="/logowanie">{konto.loginButton}</ButtonLink>
+        <ButtonLink href="/logowanie?konto=nowe" variant="outline">
+          {konto.signupButton}
+        </ButtonLink>
+      </div>
     </div>
   );
 }
