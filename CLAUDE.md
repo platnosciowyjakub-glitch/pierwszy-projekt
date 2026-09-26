@@ -56,7 +56,7 @@ zapis, stopka. Czeka na uwagi właściciela. Zapisy jeszcze nie są nigdzie prze
 ### Podstrona „Przygotuj prezenty” (`/prezenty`)
 Gałąź robocza: `claude/podstrona-prezenty` (odgałęziona od `claude/amazing-johnson-1x06q5`).
 Niezalogowany widzi pierwszy ekran jak na stronie głównej: opis + „Załóż konto i zacznij” po lewej,
-film lub obrazek po prawej (`config/site.ts` → `giftsVideo`, `components/prezenty/GiftsIntro.tsx`).
+film lub obrazek po prawej (`config/site.ts` → `videos.prezenty`).
 Zalogowany widzi od razu **samo narzędzie do prezentów**, bez opisów. Ma być proste bez nauki: podpowiedzi osób na start, dopisywanie
 prezentu jednym polem („Szalik 80 zł” zapisuje też cenę), etap prezentu w jednym przycisku, szczegóły po
 kliknięciu w prezent. Dostępy (co widzi niezalogowany) ustalimy później; na razie do zapisu trzeba konta.
@@ -64,6 +64,13 @@ Teksty w `content/prezenty.ts`, narzędzie w `components/prezenty/GiftTool.tsx`.
 Inspiracja funkcjami z wishpile.com (budżet na osobę, etapy prezentu, planowanie z partnerem, rodzinna lista
 życzeń z rezerwacją, wklejanie linku) – bierzemy wyłącznie pomysły na funkcje, wygląd i teksty są nasze.
 Linki w menu i stopce prowadzą do `/#sekcja` albo do podstron, żeby działały z każdej strony.
+
+### Zakładki funkcji – wspólny schemat
+`/prezenty`, `/zadania` (Podziel się zadaniami), `/goscie` (Zaproś gości), `/zyczenia` (Wyślij życzenia).
+Każda: niezalogowany → pierwszy ekran z opisem, „Załóż konto i zacznij” i filmem (`components/features/FeatureIntro.tsx`,
+filmy w `config/site.ts` → `videos`); zalogowany → miejsce pracy (`components/features/Workspace.tsx`).
+Narzędzie jest na razie tylko w prezentach; zadania, goście i życzenia pokazują po zalogowaniu kartkę „Tu powstaje…”.
+Teksty: `content/prezenty.ts`, `content/zadania.ts`, `content/goscie.ts`, `content/zyczenia.ts`.
 Konto (Supabase): e-mail + hasło, nowe konto potwierdzane linkiem z maila; strony `/logowanie` (zakładki „Mam już konto” / „Zakładam konto”, „Nie pamiętasz hasła?”) i `/nowe-haslo`; teksty w `content/konto.ts`. Pracujemy tylko na wersji testowej.
 
 ## Kierunek: układ Zoli, marka Gviazdki

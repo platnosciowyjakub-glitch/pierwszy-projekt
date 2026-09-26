@@ -1,18 +1,25 @@
-import { prezenty } from "@/content/prezenty";
-import { siteConfig } from "@/config/site";
 import { Container } from "@/components/ui/Container";
 import { ButtonLink } from "@/components/ui/Button";
 import { Rich } from "@/components/ui/Rich";
 import { CheckIcon } from "@/components/ui/CheckIcon";
 import { VideoFrame } from "@/components/ui/VideoFrame";
 
-const t = prezenty.intro;
+export type IntroTexts = {
+  eyebrow: string;
+  title: string;
+  subtitle: string;
+  cta: string;
+  login: string;
+  trust: readonly string[];
+  videoPlaceholder: string;
+  videoLabel: string;
+};
 
 // Pierwszy ekran zakładki dla osób niezalogowanych: po lewej krótko, co to jest, po prawej film lub obrazek.
-// Układ taki sam jak na stronie głównej.
-export function GiftsIntro() {
+// Ten sam układ w każdej zakładce i na stronie głównej.
+export function FeatureIntro({ t, video }: { t: IntroTexts; video: { src: string; poster: string } }) {
   return (
-    <section aria-labelledby="gifts-title" className="relative isolate overflow-hidden bg-cream">
+    <section aria-labelledby="feature-title" className="relative isolate overflow-hidden bg-cream">
       <div
         aria-hidden="true"
         className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_60%_70%_at_10%_0%,rgb(201_161_91/0.22),transparent_70%),radial-gradient(ellipse_50%_60%_at_95%_100%,rgb(168_68_58/0.08),transparent_70%)]"
@@ -21,7 +28,7 @@ export function GiftsIntro() {
         <div className="max-w-[36rem]">
           <p className="rise-in text-sm font-semibold uppercase tracking-[0.1em] text-gold-text">{t.eyebrow}</p>
           <h1
-            id="gifts-title"
+            id="feature-title"
             className="rise-in mt-3 font-serif text-[2.5rem] font-medium leading-[1.08] tracking-[-0.025em] sm:text-[3.25rem] lg:text-[4.25rem] lg:leading-[1.02] [&_.accent]:block [&_.accent]:font-normal [&_.accent]:italic [&_.accent]:text-cranberry"
             style={{ fontVariationSettings: '"SOFT" 100' }}
           >
@@ -55,13 +62,7 @@ export function GiftsIntro() {
           </div>
         </div>
         <div className="rise-in" style={{ "--delay": "360ms" } as React.CSSProperties}>
-          <VideoFrame
-            src={siteConfig.giftsVideo}
-            poster={siteConfig.giftsVideoPoster}
-            label={t.videoLabel}
-            placeholder={t.videoPlaceholder}
-            priority
-          />
+          <VideoFrame src={video.src} poster={video.poster} label={t.videoLabel} placeholder={t.videoPlaceholder} priority />
         </div>
       </Container>
     </section>

@@ -26,9 +26,14 @@ export const siteConfig = {
   heroVideo: "",
   heroVideoPoster: "",
 
-  // Film albo obrazek w zakładce „Przygotuj prezenty” (dla osób niezalogowanych). Zasada ta sama co wyżej.
-  giftsVideo: "",
-  giftsVideoPoster: "",
+  // Filmy w zakładkach (widzą je osoby niezalogowane). Zasada ta sama co wyżej:
+  // src = film (np. "/prezenty.mp4"), poster = obrazek przed odtworzeniem albo sam obrazek zamiast filmu.
+  videos: {
+    prezenty: { src: "", poster: "" },
+    zadania: { src: "", poster: "" },
+    goscie: { src: "", poster: "" },
+    zyczenia: { src: "", poster: "" },
+  },
 
   // Adres e-mail do przycisku „Napisz do nas”. Puste ("") = przycisk prowadzi na stronę Kontakt.
   contactEmail: "",

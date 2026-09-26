@@ -4,9 +4,9 @@ import { useCallback, useEffect, useId, useMemo, useState, type FormEvent } from
 import type { Session } from "@supabase/supabase-js";
 import { prezenty } from "@/content/prezenty";
 import { getSupabase, type Gift, type GiftPerson, type GiftStatus } from "@/lib/supabase";
-import { Rich } from "@/components/ui/Rich";
-import { useSession } from "@/components/auth/useSession";
-import { GiftsIntro } from "@/components/prezenty/GiftsIntro";
+import { siteConfig } from "@/config/site";
+import { FeatureGate } from "@/components/features/FeatureGate";
+import { Workspace } from "@/components/features/Workspace";
 
 // Zakładka „Przygotuj prezenty”: od razu samo narzędzie, bez instrukcji.
 // Osoby z budżetem, prezenty z etapami. Dane leżą w Supabase; każdy widzi tylko swoje.
@@ -65,29 +65,14 @@ function spentOn(gifts: Gift[]) {
 }
 
 export function GiftTool() {
-  const { supabase, session, ready } = useSession();
-
-  // Dopóki nie wiadomo, czy ktoś jest zalogowany, zostaje spokojne kremowe tło (bez mignięcia treści).
-  if (!supabase || (ready && !session)) return <GiftsIntro />;
-  if (!session) return <section aria-busy="true" className="min-h-[70vh] bg-cream" />;
-
   return (
-    <section aria-labelledby="tool-title" className="min-h-[70vh] bg-cream pb-20 pt-10 sm:pt-14 lg:pb-28">
-      <div className="mx-auto w-full max-w-3xl px-4 sm:px-6">
-        <p className="text-sm font-semibold uppercase tracking-[0.1em] text-gold-text">{t.eyebrow}</p>
-        <h1
-          id="tool-title"
-          className="mt-2 font-serif text-[2.25rem] font-medium leading-[1.1] tracking-[-0.025em] sm:text-5xl [&_.accent]:italic [&_.accent]:text-cranberry"
-          style={{ fontVariationSettings: '"SOFT" 100' }}
-        >
-          <Rich text={t.title} />
-        </h1>
-        <p className="mt-3 text-lg text-moss">{t.subtitle}</p>
-        <div className="mt-8">
+    <FeatureGate intro={t.intro} video={siteConfig.videos.prezenty}>
+      {(session) => (
+        <Workspace t={t}>
           <GiftBoard session={session} />
-        </div>
-      </div>
-    </section>
+        </Workspace>
+      )}
+    </FeatureGate>
   );
 }
 
